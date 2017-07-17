@@ -1,0 +1,23 @@
+SELECT
+	p.Id,
+	P.IdFinanciacion,
+	p.IdAdjudicacion,
+	p.Fecha,
+	p.IdTercero,
+	p.idcargo,
+	p.tasacomision,
+	sum(p.Comision) Comision,
+	sum(p.Retencion) Retencion,
+	sum(p.DctoAnticipo) DctoAnticipo,
+	Sum(p.PagoNeto) PagoNeto,
+	p.Usuario,
+	p.FechaOperacion,
+	p.Transaccion,
+	a.NombreComPleto AS Cliente,
+	g.NombreCompleto AS Asesor
+FROM pagocomision P
+LEFT JOIN Contabilidad_alttum.terceros g ON g.idtercero = p.idtercero
+LEFT JOIN adjudicacion t ON t.idadjudicacion = p.idadjudicacion
+LEFT JOIN Contabilidad_alttum.terceros a ON a.idtercero = t.idtercero1
+WHERE 	p.Fecha =@Fecha
+GROUP BY 	p.idtercero

@@ -1,0 +1,8 @@
+SELECT 
+f.IdGestor,
+t.NombreCompleto,
+sum(f.Valor)ValorTotal 
+FROM fondosmonterrey f
+JOIN Contabilidad_alttum.terceros t
+ON f.IdGestor=t.IdTercero
+GROUP BY IdGestor 

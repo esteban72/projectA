@@ -1,0 +1,17 @@
+Select 
+m.IdLote,
+m.Fecha,
+m.IdAdjudicacion,
+d.nombrecompleto as Cliente,
+m.Contrato,
+m.ValorContrato,
+c.FinanciacionMfs,
+c.CuotaMfs,
+m.Estado,
+c.TipoOperacion,
+m.ReferenciaMonterey,
+m.Clasificacion
+From enviosmonterey m
+join adjudicacion c on c.IdAdjudicacion=m.IdAdjudicacion
+join Contabilidad_alttum.terceros d on d.idtercero=c.IdTercero1
+Where c.TipoOperacion='Monterey'

@@ -1,0 +1,1 @@
+select IdAdjudicacion, IdTercero1,Identificacion,TipodeAdjudicacion,Temporada,Grado,IdInmueble From 004cnsadjudica WHERE IdAdjudicacion =@Parametro1

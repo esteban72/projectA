@@ -1,0 +1,13 @@
+select 
+a.IdAdjudicacion,
+a.FechaContrato,
+a.Contrato,
+a.Trm,
+a.Valor,
+convert(ROUND((a.Valor*a.trm),2),decimal (18,2)) as ValorMonedaLocal,
+a.IdTercero1,
+t.nombrecompleto as Cliente
+from adjudicacion a 
+LEFT JOIN Contabilidad_alttum.terceros t on a.IdTercero1=t.IdTercero
+where a.tipooperacion='Normal' and a.Estado='Aprobado'
+and a.negociacion='Pendiente'

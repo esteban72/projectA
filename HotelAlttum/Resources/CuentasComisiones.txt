@@ -1,0 +1,8 @@
+
+Select operacion,Debe ,Haber,Documento  From Contabilidad_alttum.datoscuenta Where Operacion= 'PagoComision'
+union
+Select operacion,debe,Haber,Documento   From Contabilidad_alttum.datoscuenta Where Operacion= 'PagoComision'
+union
+Select operacion,Debe ,haber ,Documento  From Contabilidad_alttum.datoscuenta Where Operacion= 'Anticipo Comision'
+union
+Select operacion,debe, Haber,Documento   From Contabilidad_alttum.datoscuenta Where Operacion= 'Descuento Fondo'

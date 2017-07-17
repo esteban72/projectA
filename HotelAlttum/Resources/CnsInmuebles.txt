@@ -1,0 +1,25 @@
+ Select 
+ i.IdInmueble,
+ i.TipodeSemana,
+ i.Villa,
+ i.Unidad,
+ i.Semana,
+ i.Temporada,  
+ i.CnsCompra,
+if(a.Cliente is null,'SIN ADJUDICAR',a.Cliente)Cliente,
+if(a.FechaContrato is null,curdate(),a.FechaContrato)FechaContrato,
+ upper(i.Estado)Estado 
+ From Inmuebles  i
+left join   
+
+(
+select a.IdAdjudicacion  ,a.IdInmueble,a.FechaContrato,c.NombreCompleto AS Cliente
+from adjudicacion a join Contabilidad_alttum.terceros c on c.IdTercero = a.IdTercero1
+where a.Estado != 'Desistido' and a.Estado != 'DesistidoJuridico'
+union
+select a.IdReserva IdAdjudicacion ,a.IdInmueble,a.Fecha FechaContrato,c.NombreCompleto AS Cliente
+from reservas a join Contabilidad_alttum.terceros c on c.IdTercero = a.IdTercero1
+where a.Estado= 'Pendiente'
+
+)a
+on a.IdInmueble=i.IdInmueble

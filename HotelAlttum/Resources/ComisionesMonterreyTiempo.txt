@@ -1,0 +1,89 @@
+ 
+ 
+
+SELECT a7.* 
+,
+ (A7.TotalComision-A7.Retencion-A7.Anticipo-A7.DctoFondo)As PagoNeto
+FROM
+(SELECT A6.*,if(PdteFondo > ReteFondo,ReteFondo,PdteFondo)As DctoFondo
+FROM
+(
+Select
+CAST(concat(IdCargo,'ADJ',IdAdjudicacion)as char) IdFinanciacion,
+ IdAdjudicacion,Cliente,Nombres as Gestor,IdCargo,NombreCargo as Cargo,Comision1,Comision2,Comision3,Lqd1,Lqd2,Lqd3,PagoComision,TotalComision,Retencion,ReteFondo,SaldoAnticipo Anticipo,
+Saldofondo,TopeFondo,(TopeFondo-SaldoFondo)PdteFondo,Dias,FechaContrato
+
+From
+(
+SELECT A4.*
+FROM
+(
+select A3.*,convert( (A3.TotalComision*A3.TasaRetencion/100),dec (18,2))Retencion,
+convert( (A3.TotalComision*10/100),dec (18,2))ReteFondo
+
+FROM
+(select A2.* ,(A2.Lqd1+A2.Lqd2+A2.Lqd3-A2.pagocomision)TotalComision,g.Cuenta,if( g.retencion is null,0,g.retencion)TasaRetencion,
+IF(Fd.SaldoFondo IS NULL ,0, Fd.SaldoFondo) SaldoFondo 
+from 
+(
+Select A1.*,
+convert( IF(A1.Dias>=(30),A1.BaseComision*A1.Comision1/A1.Veces/100,0),dec(18,2)) Lqd1,
+convert( IF(A1.Dias>=(30),A1.BaseComision*A1.Comision2/A1.Veces/100,0),dec(18,2)) Lqd2,
+convert( IF(A1.Dias>=(30),A1.BaseComision*A1.Comision3/A1.Veces/100,0),dec(18,2)) Lqd3, TopeFondo
+ 
+FROM
+(
+SELECT c.IdComision, c.IdAdjudicacion,C.Estado AS EstadoComision,t.NombreCompleto as Cliente, c.IdTercero as IdGestor,t1.NombreCompleto as Nombres,c.Veces,2 Decimales,
+c.IdCargo,tc.NombreCargo,a.BaseComision,c.Comision1,c.Comision2,c.Comision3,
+CONVERT((((a.Valor * a.Porcentaje) / 100) / c.Veces),dec (18,2)) AS BaseRecaudo, if(PG.comision is null,0,PG.comision) PagoComision,
+if(ap1.SaldoAnticipo is null,0,ap1.SaldoAnticipo)SaldoAnticipo,a.FechaContrato,DATEDIFF(curdate(),a.FechaContrato )Dias
+FROM comision c
+
+JOIN adjudicacion a   on a.idadjudicacion=c.idadjudicacion 
+JOIN Contabilidad_alttum.terceros t on t.idtercero=a.idtercero1
+JOIN Contabilidad_alttum.terceros t1 on t1.idtercero=c.idtercero
+
+join tablacomision tc on tc.IdCargo=c.IdCargo
+
+LEFT JOIN
+(
+SELECT p.IdFinanciacion,p.IdAdjudicacion,p.Idtercero as IdGestor,p.IdCargo,p.TasaComision,sum(p.Comision)comision
+FROM pagocomision p
+group by p.IdFinanciacion
+)PG ON PG.IdFinanciacion=C.IdComision
+left join
+(
+/*Anticipo por pagar*/
+SELECT IdFinanciacion ,IdAdjudicacion , IdGestor,IdCargo , SUM(Anticipo) AS SaldoAnticipo
+FROM  
+
+(
+SELECT a.IdFinanciacion ,a.IdAdjudicacion ,a.IdTercero IdGestor,a.IdCargo , SUM(a.Valor) AS Anticipo
+FROM pagoanticipo a
+GROUP BY a.IdFinanciacion 
+UNION
+SELECT p.IdFinanciacion ,p.IdAdjudicacion ,p.IdTercero AS IdGestor,p.IdCargo, SUM(-(p.DctoAnticipo)) AS DctoAnticipo
+FROM pagocomision p
+WHERE (p.DctoAnticipo > 0)
+GROUP BY p.IdFinanciacion
+)p  GROUP BY p.IdFinanciacion
+)ap1 on ap1.IdFinanciacion=c.IdComision
+where a.TipoOperacion='Monterey'
+)A1
+LEFT JOIN 
+tablacomision tc on A1.IdCargo =tc.IdCargo
+)A2
+left JOIN
+Gestor g
+on g.Idgestor= A2.IdGestor
+LEFT JOIN
+(
+SELECT f.IdGestor AS IdGestor ,SUM(f.Valor) AS SaldoFondo
+FROM fondosmonterrey f
+group by f.IdGestor
+)Fd on Fd.IdGestor=g.IdGestor
+)A3
+)A4
+)A5 Where  TotalComision>0 order by IdAdjudicacion
+)A6
+)A7 

@@ -1,0 +1,19 @@
+SELECT
+a.IdReserva,
+UPPER(a.TipoReserva) AS TipoSemana,
+a.IdInmueble,
+a.Fecha,
+a.ValorContrato,
+a.FechaInicio AS FchRadica,
+a.ValorPago1 AS VrRadica,
+a.Estado,
+a.IdTercero1,
+003cnsadjudica.Titular1 AS Cliente,
+a.IdGestor,
+001cnsgestor.Nombres AS Asesor
+FROM
+reservas AS a
+LEFT JOIN  001cnsgestor ON a.IdGestor = 001cnsgestor.IdTercero
+LEFT JOIN 003cnsadjudica ON a.IdTercero1 = 003cnsadjudica.idTercero1
+WHERE
+a.Estado = 'Pendiente'

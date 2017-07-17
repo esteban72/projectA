@@ -1,0 +1,9 @@
+SELECT
+Sum(Capital)ValorFncPh,
+Count(Capital)PlazoFncPh, 
+0 TasaFncPh,
+30 PeriodoFncPh,
+cuota CuotaFncPh,
+min(fecha)FechaFncPh
+FROM financiacion WHERE Concepto='FN'
+AND idadjudicacion=@Parametro1

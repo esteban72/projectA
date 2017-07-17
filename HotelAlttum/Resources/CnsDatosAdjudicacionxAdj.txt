@@ -1,0 +1,22 @@
+SELECT
+a.IdInmueble,
+a.Contrato,
+a.TipodeAdjudicacion as TipoSemana,
+a.Temporada,
+a.Grado,
+a.IdTercero1,
+a.IdTercero2,
+a.IdTercero3,
+a.Fecha as FechaElaboracion,
+a.FechaContrato,
+a.Trm,
+a.Valor as ValorContrato,
+a.GastosLegales,
+a.CuotaInicial,
+a.FinanciacionMfs,
+a.Financiacion,
+r.IdReserva,
+a.BaseComision
+from adjudicacion a
+join reservas r on a.idadjudicacion=r.idadjudicacion
+Where a.IdAdjudicacion=@Parametro1

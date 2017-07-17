@@ -1,0 +1,14 @@
+SELECT
+f.Fecha,
+f.IdGestor,
+t.NombreCompleto,
+f.IdAdjudicacion,
+c.Identificacion as Cliente,
+c.Contrato,
+f.Valor
+FROM fondosmonterrey f
+JOIN Contabilidad_alttum.terceros t
+ON f.IdGestor=t.IdTercero
+JOIN 004cnsadjudica c 
+on f.IdAdjudicacion=c.IdAdjudicacion
+where f.IdGestor=@Parametro1

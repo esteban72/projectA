@@ -1,0 +1,5 @@
+SELECT a.IdAdjudicacion AS IdAdjudicacion,t.NombreCompleto AS Titular1,c.NombreCompleto AS Titular2,a.IdTercero1 AS idTercero1,a.IdTercero2 AS idTercero2,a.IdProyecto AS IdProyecto,a.IdInmueble AS IdInmueble
+FROM ((hotelalttum.adjudicacion a
+LEFT JOIN Contabilidad_alttum.terceros t ON((t.IdTercero = (a.IdTercero1))))
+LEFT JOIN Contabilidad_alttum.terceros c ON((c.IdTercero = (a.IdTercero2))))
+where TipoOperacion='Normal' And Estado='Aprobado'

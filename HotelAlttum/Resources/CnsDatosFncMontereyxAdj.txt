@@ -1,0 +1,10 @@
+SELECT
+Sum(Capital)ValorFncMfs,
+Count(Capital)PlazoFncMfs, 
+0 TasaFncMfs,
+30 PeriodoFncMfs,
+cuota CuotaFncMfs,
+min(fecha)
+FechaFncMfs
+FROM financiacion WHERE Concepto='CM'
+AND idadjudicacion=@Parametro1

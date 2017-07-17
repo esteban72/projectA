@@ -1,0 +1,11 @@
+SELECT 
+c.IdTercero,
+t.NombreCompleto,
+c.IdCargo,
+s.NombreCargo,
+c.Comision1
+FROM comision c
+JOIN Contabilidad_alttum.terceros t ON t.idtercero=c.idtercero
+JOIN tablacomision s ON c.idcargo=s.idCargo
+WHERE IdAdjudicacion=@Parametro1
+ORDER BY c.IdCargo

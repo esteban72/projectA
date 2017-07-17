@@ -1,0 +1,7 @@
+select  a.IdAdjudicacion,a.IdTercero1,t.NombreCompleto Cliente,a.Fecha,a.Contrato,a.IdInmueble,a.TipodeAdjudicacion,a.Temporada,
+upper(a.Grado)Grado,a.TipoOperacion,
+a.Valor,Upper(a.Estado)Estado From adjudicacion a 
+join Contabilidad_alttum.terceros t
+on t.idtercero=a.idtercero1
+Where (Estado='Pendiente' or Estado='Aprobado') 
+and Radicacion='Pendiente'

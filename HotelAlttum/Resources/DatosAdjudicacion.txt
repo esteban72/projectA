@@ -1,0 +1,9 @@
+SELECT a.IdAdjudicacion,a.IdTercero1,t.NombreCompleto Cliente,
+t2.NombreCompleto Cliente2,
+a.Fecha,a.Contrato,a.IdInmueble,
+a.TipodeAdjudicacion,a.Temporada, UPPER(a.Grado)Grado,
+ a.Valor, UPPER(a.Estado)Estado,TipoOperacion
+FROM Adjudicacion a
+LEFT JOIN Contabilidad_alttum.Terceros t ON t.IdTercero=a.IdTercero1
+LEFT JOIN Contabilidad_alttum.Terceros t2 ON t2.IdTercero=a.IdTercero2
+WHERE Estado= 'Aprobado'

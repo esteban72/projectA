@@ -1,0 +1,6 @@
+SELECT a.IdReserva, UPPER(a.TipoReserva) AS TipoSemana, a.IdInmueble, a.Fecha,a.ValorContrato, t.NombreCompleto AS Cliente, 
+g.NombreCompleto AS Asesor, a.FechaInicio AS FchRadica, a.ValorPago1 AS VrRadica, a.Estado
+FROM Reservas a
+LEFT JOIN Contabilidad_alttum.terceros t ON t.IdTercero = a.IdTercero1
+LEFT JOIN Contabilidad_alttum.Terceros g ON g.IdTercero=a.idgestor
+WHERE a.Estado='Pendiente'

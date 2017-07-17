@@ -1,0 +1,11 @@
+select 
+Fecha,
+Concepto,
+NumCuota,
+Capital,
+Interes as InteresCte,
+Cuota
+from financiacion
+where IdAdjudicacion=@Parametro1
+AND Concepto !='GA'
+ORDER BY Fecha

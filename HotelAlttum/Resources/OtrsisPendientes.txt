@@ -1,0 +1,9 @@
+select  o.IdAdjudicacion,o.IdOtrosi, a.IdTercero1,t.NombreCompleto Cliente,o.Fecha,a.Contrato,a.IdInmueble,a.TipodeAdjudicacion,a.Temporada,
+upper(a.Grado)Grado,a.TipoOperacion,
+a.Valor,Upper(a.Estado)Estado 
+From Otrosi o
+join adjudicacion a 
+on o.idadjudicacion=a.idadjudicacion
+join Contabilidad_alttum.terceros t
+on t.idtercero=a.idtercero1
+Where o.Estado='Pendiente' 

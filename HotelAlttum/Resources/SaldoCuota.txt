@@ -1,0 +1,40 @@
+select l.*,
+l.SaldoIntMora+l.Mora as TotalMora,
+l.SaldoIntMora+l.Mora+l.SaldoCuota as TotalCuota,
+0 as Recaudo
+FROM
+(
+SELECT S.*,
+convert(if((s.concepto='CI')or (s.concepto='GA'),0,
+(s.Saldocuota*@Mora*s.DiasLqd/36000)),dec(18,2)) as Mora
+FROM
+(
+/*004SaldoCuotas*/
+SELECT f.IdCta AS IdCta,f.IdAdjudicacion AS IdAdjudicacion,f.Concepto AS Concepto,f.NumCuota AS NumCuota,f.Fecha AS Fecha,f.Capital AS Capital,f.Interes AS Interes,f.Cuota AS Cuota,f.SaldoCapital AS SaldoCapital,f.SaldoInteres AS SaldoInteres,f.SaldoCuota AS SaldoCuota,f.UltimaFechaPago AS UltimaFechaPago,f.Usuario AS Usuario,f.FechaOperacion AS FechaOperacion,f.Conse AS Conse, IF(ISNULL(r.Capital),0,r.Capital) AS RcdCapital, IF(ISNULL(r.InteresCte),0,r.InteresCte) AS RcdInteres, IF(ISNULL(r.Cuota),0,r.Cuota) AS RcdCuota, IF(ISNULL(r.InteresCnd),0,r.InteresCnd) AS InteresCnd, IF(ISNULL(r.MoraCalc),0,r.MoraCalc) AS MoraCalc, IF(ISNULL(r.InteresMora),0,r.InteresMora) AS Interesmora, IF(ISNULL(r.SaldoIntMora),0,r.SaldoIntMora) AS SaldoIntMora, IF(((TO_DAYS(CURDATE()) - TO_DAYS(f.Fecha)) <= 0),0,(TO_DAYS(CURDATE()) - TO_DAYS(f.Fecha))) AS DiasCpt, IF((f.UltimaFechaPago < f.Fecha), IF(((TO_DAYS(CURDATE()) - TO_DAYS(f.Fecha)) <= 0),0,(TO_DAYS(CURDATE()) - TO_DAYS(f.Fecha))), IF(((TO_DAYS(CURDATE()) - TO_DAYS(f.UltimaFechaPago)) <= 0),0,(TO_DAYS(CURDATE()) - TO_DAYS(f.UltimaFechaPago)))) AS DiasLqd
+FROM financiacion f
+LEFT JOIN  
+
+(
+/*Recaudos Resumidos*/
+SELECT r.Id AS Id, MAX(r.Fecha) AS Fecha,r.IdRecaudo AS IdRecaudo,r.Recibo AS Recibo,r.IdAdjudicacion AS IdAdjudicacion,r.CuotaNum AS CuotaNum, SUM(r.Capital) AS Capital, SUM(r.InteresCte) AS InteresCte, SUM(r.Cuota) AS Cuota, SUM(r.InteresMora) AS InteresMora, SUM(r.InteresCnd) AS InteresCnd, SUM(r.MoraCalc) AS MoraCalc, SUM(r.SaldoIntMora) AS SaldoIntMora,r.concepto AS concepto
+FROM 
+
+(
+/*Recaudos Detallados*/
+SELECT r.IdFinanciacion AS Id,r.Fecha AS Fecha,r.IdRecaudo AS IdRecaudo,r.Recibo AS Recibo,r.IdAdjudicacion AS IdAdjudicacion,r.NumCuota AS CuotaNum,-(r.Capital) AS Capital,-(r.InteresCte) AS InteresCte,(-(r.Capital) - r.InteresCte) AS Cuota,-(r.InteresMora) AS InteresMora,r.InteresCnd AS InteresCnd,r.VrMoraCalc AS MoraCalc,((r.VrMoraCalc - r.InteresCnd) - r.InteresMora) AS SaldoIntMora,r.Concepto AS concepto
+FROM recaudos r
+WHERE (r.Estado = 'Aprobado') UNION
+SELECT r.IdFinanciacion AS Id,r.Fecha AS Fecha,r.IdDescuento AS IdRecaudo,'Descuento' AS Recibo,r.IdAdjudicacion AS IdAdjudicacion,r.NumCuota AS CuotaNum,-(r.Capital) AS Capital,-(r.Interes) AS InteresCte,-(r.Cuota) AS Cuota,0 AS InteresMora,0 AS InteresCnd,0 AS MoraCalc,0 AS SaldoIntMora,r.Concepto AS concepto
+FROM descuento r UNION
+SELECT r.IdFinanciacion AS Id,r.Fecha AS Fecha,r.IdCanje AS IdRecaudo,'Traslado' AS Recibo,r.IdAdjudicacion AS IdAdjudicacion,r.NumCuota AS CuotaNum,-(r.Capital) AS Capital,-(r.Interes) AS InteresCte,-(r.Cuota) AS Cuota,0 AS InteresMora,0 AS InteresCnd,0 AS MoraCalc,0 AS SaldoIntMora,r.Concepto AS concepto
+FROM canje r
+/*Recaudos Detallados*/
+)r
+GROUP BY r.Id
+/*Recaudos Resumidos*/
+)r ON r.Id = f.IdCta
+/*SaldoCuotas*/
+)S
+)L
+where l.IdAdjudicacion=@IdAdjudicacion
+and l.saldocuota>0

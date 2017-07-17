@@ -1,0 +1,6 @@
+Select 
+f.Fecha,
+f.Capital Valor
+FROM 
+financiacion f
+Where concepto='CI' AND IdAdjudicacion=@Parametro1

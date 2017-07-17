@@ -1,0 +1,23 @@
+Select p.IdAdjudicacion,p.Cliente,max(p.DiasMoraInt)DiasMoraInt ,sum(p.Cuota)Cuota, sum(p.SdoCuota)SdoCuota,max(diasCpt)diasCpt,
+if(((p.DiasMoraInt >= -(2)) and (p.DiasMoraInt <= 0)),'L1',if(((p.DiasMoraInt >= 1) and (p.DiasMoraInt < 10)),'L2',if(((p.DiasMoraInt >= 10) and (p.DiasMoraInt <= 15)),'L3',if(((p.DiasMoraInt >= 16) and (p.DiasMoraInt <= 30)),'C1',if(((p.DiasMoraInt >= 31) and (p.DiasMoraInt <= 60)),'C2',if(((p.DiasMoraInt >= 61) and (p.DiasMoraInt <= 90)),'C3',if(((p.DiasMoraInt >= 91) and (p.DiasMoraInt <= 99)),'C4',if(((p.DiasMoraInt >= 100) and (p.DiasMoraInt <= 104)),'PJ',if(((p.DiasMoraInt >= 105) and (p.DiasMoraInt <= 119)),'J1',if(((p.DiasMoraInt >= 120) and (p.DiasMoraInt <= 149)),'J2',if((p.DiasMoraInt >= 150),'DM','Aldia'))))))))))) AS TipoCartera,
+Asesor
+
+From
+
+(
+Select p.*,IF ((p.SdoCuota = 0),0, (to_days(curdate()) - to_days(p.Fecha))) AS DiasMoraInt
+From
+(
+Select p.Id,p.IdAdjudicacion,p.Cliente,p.Concepto,p.CuotaNum,p.Fecha,p.FechaRec,p.Capital,p.Interes,p.Cuota,p.Mora ,
+(p.RcdCapital+p.RcdInteres)RcdCuota, (p.Cuota-p.RcdCapital-p.RcdInteres)SdoCuota,p.diasCpt,p.diaslqd,p.Asesor
+From
+(
+Select p.Id,p.IdAdjudicacion,p.Cliente,p.Cto Concepto,p.NCta CuotaNum,p.Fecha,p.UltPago FechaRec,p.Capital,p.Interes,p.Cuota,p.Mora,
+if(r.Capital is null,0,r.Capital)as RcdCapital,
+if(r.Interescte is null,0,r.Interescte)as RcdInteres,
+if(r.InteresMora is null,0,r.InteresMora)as RcdMora,p.diasCpt,p.diaslqd,p.Asesor
+fROM cartera_comercial.presupuestoadmin p
+left join cartera_comercial.recaudosresumidos  r on r.id=p.id	
+)p
+)p
+)p GROUP by IdAdjudicacion

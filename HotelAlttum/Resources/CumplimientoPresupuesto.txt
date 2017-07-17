@@ -1,0 +1,41 @@
+SELECT p2.*,
+p2.RecaudoGestionado/Presupuesto Cumpl,
+0 Rango
+FROM
+(
+SELECT
+p.IdAdjudicacion,
+p.Cliente,
+p.Presupuesto,
+p.DiasCpt,
+if(p.Recaudo > p.Presupuesto,p.Presupuesto,p.Recaudo)RecaudoGestionado,
+if(p.Recaudo > p.Presupuesto,p.Recaudo-p.Presupuesto,0)RecaudoNoEsperado,
+p.Recaudo TotalRecaudo,
+p.Asesor
+From
+(
+Select p.*,
+if(r.Recaudo is null,0,r.recaudo)Recaudo
+From 
+(
+SELECT
+p.IdAdjudicacion,
+sum(p.Cuota) Presupuesto,
+max(p.DiasCpt)DiasCpt,
+Cliente,
+p.Asesor
+from   cartera_comercial.presupuestogeneralinfo p
+where p.TipoCartera='Administrativa' and p.Estado='Aprobado'
+group  by p.IdAdjudicacion
+)p
+Left join 
+(
+select
+IdAdjudicacion,
+Sum(Capital+InteresCte+InteresMora)Recaudo
+From  cartera_comercial.recaudopresupuesto r
+where  r.fecha>=@FechaInicial and r.Fecha <=@Fechafinal and r.estado='Aprobado' 
+group by r.IdAdjudicacion
+)r on r.idadjudicacion=p.IdAdjudicacion
+)p
+)p2
