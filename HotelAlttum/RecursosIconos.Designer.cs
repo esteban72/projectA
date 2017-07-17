@@ -153,29 +153,9 @@ namespace CarteraGeneral {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Monterrey {
-            get {
-                object obj = ResourceManager.GetObject("Monterrey", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pago_comisiones_Alttum {
             get {
                 object obj = ResourceManager.GetObject("pago_comisiones_Alttum", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Pago_PIV {
-            get {
-                object obj = ResourceManager.GetObject("Pago_PIV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

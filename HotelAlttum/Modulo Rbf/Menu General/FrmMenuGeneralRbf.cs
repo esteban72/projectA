@@ -400,5 +400,7 @@ namespace CarteraGeneral
             ConsultarComisionesMonterrey.Show();
         }
 
+        
+
     }
 }

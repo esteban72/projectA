@@ -32,18 +32,6 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.BtnSalir = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnInmuebles = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnReservas = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnModuloAdjudicacion = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnAprobarVentas = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnRadicar = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnRecaudos = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnCondonar = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnSeguimientoCarteraADmin = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnRecaudosPorFecha = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnModuloOtrosi = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnPagoComisionAlttum = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagoComisionTiempo = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagoComisionEngache = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagoAnticipo = new DevExpress.XtraBars.BarButtonItem();
@@ -58,6 +46,28 @@
             this.BtnRptAntcipoFechas = new DevExpress.XtraBars.BarButtonItem();
             this.BtnRptAnticipoAdjudicacion = new DevExpress.XtraBars.BarButtonItem();
             this.BtnModComisionTabla = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnTrmMod = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnCnsPagos = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnClientes = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnGestor = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnInmuebles = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnReservas = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnModuloAdjudicacion = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnAprobarVentas = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnRadicar = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnRecaudos = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnCondonar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSeguimientoCarteraADmin = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnRecaudosPorFecha = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnModuloOtrosi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConsultaComisiones = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPagoComisionMonterrey = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConsultasMonterrey = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnCumplimientoPresupuesto = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagados = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTramiteEscritura = new DevExpress.XtraBars.BarButtonItem();
@@ -67,31 +77,25 @@
             this.BtnJuridicosDesistidos = new DevExpress.XtraBars.BarButtonItem();
             this.BtnJuridico = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDesistidoJuridico = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEnviosMonterey = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSaldosFondos = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEnviosMontereyAdmin = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEnviosDirecto = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUsuarios = new DevExpress.XtraBars.BarButtonItem();
             this.BtnParametros = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTablaComision = new DevExpress.XtraBars.BarButtonItem();
             this.BtnCambioClave = new DevExpress.XtraBars.BarButtonItem();
             this.BtnCambioConsecutivo = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTrmAdd = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnTrmMod = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnAddLotesEnvio = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnEnviosMonterey = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnEnviosMontereyAdmin = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnSaldosFondos = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnCnsPagos = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnEnviosDirecto = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnPagoComisionMonterrey = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnConsultaComisiones = new DevExpress.XtraBars.BarButtonItem();
-            this.btnConsultasMonterrey = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnClientes = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPagoComisionAlttum = new DevExpress.XtraBars.BarButtonItem();
             this.TsmTerceros = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.reservas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -117,7 +121,6 @@
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnGestor1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,18 +132,6 @@
             this.ribbon.ExpandCollapseItem,
             this.skinRibbonGalleryBarItem1,
             this.BtnSalir,
-            this.BtnInmuebles,
-            this.BtnReservas,
-            this.BtnModuloAdjudicacion,
-            this.BtnAprobarVentas,
-            this.BtnRadicar,
-            this.BtnRecaudos,
-            this.BtnCondonar,
-            this.barButtonItem3,
-            this.BtnSeguimientoCarteraADmin,
-            this.BtnRecaudosPorFecha,
-            this.BtnModuloOtrosi,
-            this.BtnPagoComisionAlttum,
             this.BtnPagoComisionTiempo,
             this.BtnPagoComisionEngache,
             this.BtnPagoAnticipo,
@@ -155,6 +146,28 @@
             this.BtnRptAntcipoFechas,
             this.BtnRptAnticipoAdjudicacion,
             this.BtnModComisionTabla,
+            this.BtnTrmMod,
+            this.BtnCnsPagos,
+            this.barButtonItem4,
+            this.BtnClientes,
+            this.BtnGestor,
+            this.BtnInmuebles,
+            this.BtnReservas,
+            this.BtnModuloAdjudicacion,
+            this.BtnAprobarVentas,
+            this.BtnRadicar,
+            this.BtnRecaudos,
+            this.BtnCondonar,
+            this.barButtonItem3,
+            this.BtnSeguimientoCarteraADmin,
+            this.barButtonItem1,
+            this.BtnRecaudosPorFecha,
+            this.BtnModuloOtrosi,
+            this.btnConsultaComisiones,
+            this.btnPagoComisionMonterrey,
+            this.btnConsultasMonterrey,
+            this.barButtonItem9,
+            this.barButtonItem10,
             this.BtnCumplimientoPresupuesto,
             this.BtnPagados,
             this.BtnTramiteEscritura,
@@ -164,28 +177,21 @@
             this.BtnJuridicosDesistidos,
             this.BtnJuridico,
             this.BtnDesistidoJuridico,
+            this.BtnEnviosMonterey,
+            this.BtnSaldosFondos,
+            this.BtnEnviosMontereyAdmin,
+            this.BtnEnviosDirecto,
             this.BtnUsuarios,
             this.BtnParametros,
             this.BtnTablaComision,
             this.BtnCambioClave,
             this.BtnCambioConsecutivo,
             this.BtnTrmAdd,
-            this.BtnTrmMod,
+            this.barButtonItem30,
             this.BtnAddLotesEnvio,
-            this.BtnEnviosMonterey,
-            this.BtnEnviosMontereyAdmin,
-            this.BtnSaldosFondos,
-            this.BtnCnsPagos,
-            this.BtnEnviosDirecto,
-            this.barButtonItem1,
-            this.btnPagoComisionMonterrey,
-            this.barButtonItem4,
-            this.btnConsultaComisiones,
-            this.btnConsultasMonterrey,
-            this.BtnClientes,
-            this.BtnGestor1});
+            this.BtnPagoComisionAlttum});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 62;
+            this.ribbon.MaxItemId = 103;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.TsmTerceros,
@@ -213,7 +219,6 @@
             this.skinRibbonGalleryBarItem1.Id = 1;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             this.skinRibbonGalleryBarItem1.GalleryPopupClose += new DevExpress.XtraBars.Ribbon.InplaceGalleryEventHandler(this.skinRibbonGalleryBarItem1_GalleryPopupClose);
-            
             // 
             // BtnSalir
             // 
@@ -223,125 +228,6 @@
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.BtnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSalir_ItemClick);
-            // 
-            // BtnInmuebles
-            // 
-            this.BtnInmuebles.Caption = "Semanas";
-            this.BtnInmuebles.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnInmuebles.Glyph")));
-            this.BtnInmuebles.Id = 6;
-            this.BtnInmuebles.Name = "BtnInmuebles";
-            this.BtnInmuebles.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnInmuebles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnInmuebles_ItemClick);
-            // 
-            // BtnReservas
-            // 
-            this.BtnReservas.Caption = "Modulo de Reservas";
-            this.BtnReservas.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnReservas.Glyph")));
-            this.BtnReservas.Id = 7;
-            this.BtnReservas.Name = "BtnReservas";
-            this.BtnReservas.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnReservas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReservas_ItemClick);
-            // 
-            // BtnModuloAdjudicacion
-            // 
-            this.BtnModuloAdjudicacion.Caption = "Modulo de Adjudicacion";
-            this.BtnModuloAdjudicacion.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloAdjudicacion.Glyph")));
-            this.BtnModuloAdjudicacion.Id = 8;
-            this.BtnModuloAdjudicacion.Name = "BtnModuloAdjudicacion";
-            this.BtnModuloAdjudicacion.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnModuloAdjudicacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModuloAdjudicacion_ItemClick);
-            // 
-            // BtnAprobarVentas
-            // 
-            this.BtnAprobarVentas.Caption = "Aprobar Ventas";
-            this.BtnAprobarVentas.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnAprobarVentas.Glyph")));
-            this.BtnAprobarVentas.Id = 9;
-            this.BtnAprobarVentas.Name = "BtnAprobarVentas";
-            this.BtnAprobarVentas.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnAprobarVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAprobarVentas_ItemClick);
-            // 
-            // BtnRadicar
-            // 
-            this.BtnRadicar.Caption = "Radicar";
-            this.BtnRadicar.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRadicar.Glyph")));
-            this.BtnRadicar.Id = 10;
-            this.BtnRadicar.Name = "BtnRadicar";
-            this.BtnRadicar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnRadicar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRadicar_ItemClick);
-            // 
-            // BtnRecaudos
-            // 
-            this.BtnRecaudos.Caption = "Modulo de Recaudos";
-            this.BtnRecaudos.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudos.Glyph")));
-            this.BtnRecaudos.Id = 12;
-            this.BtnRecaudos.Name = "BtnRecaudos";
-            this.BtnRecaudos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnRecaudos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRecaudos_ItemClick);
-            // 
-            // BtnCondonar
-            // 
-            this.BtnCondonar.Caption = "Condonar Intereses";
-            this.BtnCondonar.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCondonar.Glyph")));
-            this.BtnCondonar.Id = 13;
-            this.BtnCondonar.Name = "BtnCondonar";
-            this.BtnCondonar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnCondonar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCondonar_ItemClick);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Liberar Canje";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 14;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
-            // 
-            // BtnSeguimientoCarteraADmin
-            // 
-            this.BtnSeguimientoCarteraADmin.Caption = "Seguimiento Cartera Administrativa";
-            this.BtnSeguimientoCarteraADmin.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnSeguimientoCarteraADmin.Glyph")));
-            this.BtnSeguimientoCarteraADmin.Id = 15;
-            this.BtnSeguimientoCarteraADmin.Name = "BtnSeguimientoCarteraADmin";
-            this.BtnSeguimientoCarteraADmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnSeguimientoCarteraADmin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSeguimientoCarteraADmin_ItemClick);
-            // 
-            // BtnRecaudosPorFecha
-            // 
-            this.BtnRecaudosPorFecha.Caption = "Recaudos Por Fecha";
-            this.BtnRecaudosPorFecha.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudosPorFecha.Glyph")));
-            this.BtnRecaudosPorFecha.Id = 16;
-            this.BtnRecaudosPorFecha.Name = "BtnRecaudosPorFecha";
-            this.BtnRecaudosPorFecha.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnRecaudosPorFecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRecaudosPorFecha_ItemClick);
-            // 
-            // BtnModuloOtrosi
-            // 
-            this.BtnModuloOtrosi.Caption = "Modulo Otrosi";
-            this.BtnModuloOtrosi.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloOtrosi.Glyph")));
-            this.BtnModuloOtrosi.Id = 17;
-            this.BtnModuloOtrosi.Name = "BtnModuloOtrosi";
-            this.BtnModuloOtrosi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnModuloOtrosi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModuloOtrosi_ItemClick);
-            // 
-            // BtnPagoComisionAlttum
-            // 
-            this.BtnPagoComisionAlttum.Caption = "Pago Comsiones Alttum";
-            this.BtnPagoComisionAlttum.Id = 18;
-            this.BtnPagoComisionAlttum.Name = "BtnPagoComisionAlttum";
-            this.BtnPagoComisionAlttum.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnPagoComisionAlttum.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPagoComisionAlttum_ItemClick);
             // 
             // BtnPagoComisionTiempo
             // 
@@ -468,155 +354,6 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.BtnModComisionTabla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModComisionTabla_ItemClick);
             // 
-            // BtnCumplimientoPresupuesto
-            // 
-            this.BtnCumplimientoPresupuesto.Caption = "Cumplimiento Presupuesto";
-            this.BtnCumplimientoPresupuesto.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCumplimientoPresupuesto.Glyph")));
-            this.BtnCumplimientoPresupuesto.Id = 33;
-            this.BtnCumplimientoPresupuesto.Name = "BtnCumplimientoPresupuesto";
-            this.BtnCumplimientoPresupuesto.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.BtnCumplimientoPresupuesto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCumplimientoPresupuesto_ItemClick);
-            // 
-            // BtnPagados
-            // 
-            this.BtnPagados.Caption = "Pagado";
-            this.BtnPagados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnPagados.Glyph")));
-            this.BtnPagados.Id = 34;
-            this.BtnPagados.Name = "BtnPagados";
-            this.BtnPagados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnPagados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPagados_ItemClick);
-            // 
-            // BtnTramiteEscritura
-            // 
-            this.BtnTramiteEscritura.Caption = "Tramite Escritura";
-            this.BtnTramiteEscritura.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTramiteEscritura.Glyph")));
-            this.BtnTramiteEscritura.Id = 35;
-            this.BtnTramiteEscritura.Name = "BtnTramiteEscritura";
-            this.BtnTramiteEscritura.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnTramiteEscritura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTramiteEscritura_ItemClick);
-            // 
-            // BtnEscriturados
-            // 
-            this.BtnEscriturados.Caption = "Escriturados";
-            this.BtnEscriturados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEscriturados.Glyph")));
-            this.BtnEscriturados.Id = 36;
-            this.BtnEscriturados.Name = "BtnEscriturados";
-            this.BtnEscriturados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnEscriturados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEscriturados_ItemClick);
-            // 
-            // BtnArchivados
-            // 
-            this.BtnArchivados.Caption = "Archivados";
-            this.BtnArchivados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnArchivados.Glyph")));
-            this.BtnArchivados.Id = 37;
-            this.BtnArchivados.Name = "BtnArchivados";
-            this.BtnArchivados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnArchivados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnArchivados_ItemClick);
-            // 
-            // BtnJuridicosVigentes
-            // 
-            this.BtnJuridicosVigentes.Caption = "Enviar a Juridico Negocios Vigentes";
-            this.BtnJuridicosVigentes.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosVigentes.Glyph")));
-            this.BtnJuridicosVigentes.Id = 38;
-            this.BtnJuridicosVigentes.Name = "BtnJuridicosVigentes";
-            this.BtnJuridicosVigentes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnJuridicosVigentes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridicosVigentes_ItemClick);
-            // 
-            // BtnJuridicosDesistidos
-            // 
-            this.BtnJuridicosDesistidos.Caption = "Enviar a Juridico Negocios Desistidos";
-            this.BtnJuridicosDesistidos.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosDesistidos.Glyph")));
-            this.BtnJuridicosDesistidos.Id = 39;
-            this.BtnJuridicosDesistidos.Name = "BtnJuridicosDesistidos";
-            this.BtnJuridicosDesistidos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnJuridicosDesistidos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridicosDesistidos_ItemClick);
-            // 
-            // BtnJuridico
-            // 
-            this.BtnJuridico.Caption = "Juridico";
-            this.BtnJuridico.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridico.Glyph")));
-            this.BtnJuridico.Id = 40;
-            this.BtnJuridico.Name = "BtnJuridico";
-            this.BtnJuridico.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnJuridico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridico_ItemClick);
-            // 
-            // BtnDesistidoJuridico
-            // 
-            this.BtnDesistidoJuridico.Caption = "Desistido Juridico";
-            this.BtnDesistidoJuridico.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnDesistidoJuridico.Glyph")));
-            this.BtnDesistidoJuridico.Id = 41;
-            this.BtnDesistidoJuridico.Name = "BtnDesistidoJuridico";
-            this.BtnDesistidoJuridico.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnDesistidoJuridico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDesistidoJuridico_ItemClick);
-            // 
-            // BtnUsuarios
-            // 
-            this.BtnUsuarios.Caption = "Usuarios";
-            this.BtnUsuarios.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.Glyph")));
-            this.BtnUsuarios.Id = 42;
-            this.BtnUsuarios.Name = "BtnUsuarios";
-            this.BtnUsuarios.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUsuarios_ItemClick);
-            // 
-            // BtnParametros
-            // 
-            this.BtnParametros.Caption = "Parametros";
-            this.BtnParametros.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnParametros.Glyph")));
-            this.BtnParametros.Id = 43;
-            this.BtnParametros.Name = "BtnParametros";
-            this.BtnParametros.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnParametros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnParametros_ItemClick);
-            // 
-            // BtnTablaComision
-            // 
-            this.BtnTablaComision.Caption = "Tabla Comision";
-            this.BtnTablaComision.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTablaComision.Glyph")));
-            this.BtnTablaComision.Id = 44;
-            this.BtnTablaComision.Name = "BtnTablaComision";
-            this.BtnTablaComision.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnTablaComision.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTablaComision_ItemClick);
-            // 
-            // BtnCambioClave
-            // 
-            this.BtnCambioClave.Caption = "Cambio Clave";
-            this.BtnCambioClave.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioClave.Glyph")));
-            this.BtnCambioClave.Id = 45;
-            this.BtnCambioClave.Name = "BtnCambioClave";
-            this.BtnCambioClave.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnCambioClave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCambioClave_ItemClick);
-            // 
-            // BtnCambioConsecutivo
-            // 
-            this.BtnCambioConsecutivo.Caption = "Cambio Consecutivos";
-            this.BtnCambioConsecutivo.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioConsecutivo.Glyph")));
-            this.BtnCambioConsecutivo.Id = 46;
-            this.BtnCambioConsecutivo.Name = "BtnCambioConsecutivo";
-            this.BtnCambioConsecutivo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnCambioConsecutivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCambioConsecutivo_ItemClick);
-            // 
-            // BtnTrmAdd
-            // 
-            this.BtnTrmAdd.Caption = "Consulta TRM";
-            this.BtnTrmAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTrmAdd.Glyph")));
-            this.BtnTrmAdd.Id = 47;
-            this.BtnTrmAdd.Name = "BtnTrmAdd";
-            this.BtnTrmAdd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnTrmAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTrmAdd_ItemClick);
-            // 
             // BtnTrmMod
             // 
             this.BtnTrmMod.Caption = "Modificar Trm";
@@ -625,44 +362,6 @@
             this.BtnTrmMod.Name = "BtnTrmMod";
             this.BtnTrmMod.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            // 
-            // BtnAddLotesEnvio
-            // 
-            this.BtnAddLotesEnvio.Caption = "Adicionar Lotes Envio";
-            this.BtnAddLotesEnvio.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnAddLotesEnvio.Glyph")));
-            this.BtnAddLotesEnvio.Id = 49;
-            this.BtnAddLotesEnvio.Name = "BtnAddLotesEnvio";
-            this.BtnAddLotesEnvio.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnAddLotesEnvio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddLotesEnvio_ItemClick);
-            // 
-            // BtnEnviosMonterey
-            // 
-            this.BtnEnviosMonterey.Caption = "Envios Monterey";
-            this.BtnEnviosMonterey.Id = 50;
-            this.BtnEnviosMonterey.Name = "BtnEnviosMonterey";
-            this.BtnEnviosMonterey.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnEnviosMonterey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosMonterey_ItemClick);
-            // 
-            // BtnEnviosMontereyAdmin
-            // 
-            this.BtnEnviosMontereyAdmin.Caption = "Envios a Montery Negocios Admin";
-            this.BtnEnviosMontereyAdmin.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosMontereyAdmin.Glyph")));
-            this.BtnEnviosMontereyAdmin.Id = 51;
-            this.BtnEnviosMontereyAdmin.Name = "BtnEnviosMontereyAdmin";
-            this.BtnEnviosMontereyAdmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnEnviosMontereyAdmin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosMontereyAdmin_ItemClick);
-            // 
-            // BtnSaldosFondos
-            // 
-            this.BtnSaldosFondos.Caption = "Saldos Fondos Monterey";
-            this.BtnSaldosFondos.Id = 52;
-            this.BtnSaldosFondos.Name = "BtnSaldosFondos";
-            this.BtnSaldosFondos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnSaldosFondos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSaldosFondos_ItemClick);
             // 
             // BtnCnsPagos
             // 
@@ -674,14 +373,132 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.BtnCnsPagos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCnsPagos_ItemClick);
             // 
-            // BtnEnviosDirecto
+            // barButtonItem4
             // 
-            this.BtnEnviosDirecto.Caption = "Envio A Directa Negocios Monterey";
-            this.BtnEnviosDirecto.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosDirecto.Glyph")));
-            this.BtnEnviosDirecto.Id = 54;
-            this.BtnEnviosDirecto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosDirecto.LargeGlyph")));
-            this.BtnEnviosDirecto.Name = "BtnEnviosDirecto";
-            this.BtnEnviosDirecto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosDirecto_ItemClick_1);
+            this.barButtonItem4.Caption = "Pago Comisiones PIV";
+            this.barButtonItem4.Id = 57;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // BtnClientes
+            // 
+            this.BtnClientes.Caption = "Clientes";
+            this.BtnClientes.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnClientes.Glyph")));
+            this.BtnClientes.Id = 4;
+            this.BtnClientes.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnClientes.LargeGlyph")));
+            this.BtnClientes.Name = "BtnClientes";
+            this.BtnClientes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnClientes_ItemClick);
+            // 
+            // BtnGestor
+            // 
+            this.BtnGestor.Caption = "Asesores";
+            this.BtnGestor.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnGestor.Glyph")));
+            this.BtnGestor.Id = 3;
+            this.BtnGestor.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnGestor.LargeGlyph")));
+            this.BtnGestor.Name = "BtnGestor";
+            this.BtnGestor.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnGestor.Tag = "102";
+            this.BtnGestor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnGestor_ItemClick);
+            // 
+            // BtnInmuebles
+            // 
+            this.BtnInmuebles.Caption = "Semanas";
+            this.BtnInmuebles.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnInmuebles.Glyph")));
+            this.BtnInmuebles.Id = 6;
+            this.BtnInmuebles.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnInmuebles.LargeGlyph")));
+            this.BtnInmuebles.Name = "BtnInmuebles";
+            this.BtnInmuebles.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnInmuebles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnInmuebles_ItemClick);
+            // 
+            // BtnReservas
+            // 
+            this.BtnReservas.Caption = "Modulo de Reservas";
+            this.BtnReservas.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnReservas.Glyph")));
+            this.BtnReservas.Id = 7;
+            this.BtnReservas.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnReservas.LargeGlyph")));
+            this.BtnReservas.Name = "BtnReservas";
+            this.BtnReservas.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnReservas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReservas_ItemClick);
+            // 
+            // BtnModuloAdjudicacion
+            // 
+            this.BtnModuloAdjudicacion.Caption = "Modulo de Adjudicacion";
+            this.BtnModuloAdjudicacion.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloAdjudicacion.Glyph")));
+            this.BtnModuloAdjudicacion.Id = 8;
+            this.BtnModuloAdjudicacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloAdjudicacion.LargeGlyph")));
+            this.BtnModuloAdjudicacion.Name = "BtnModuloAdjudicacion";
+            this.BtnModuloAdjudicacion.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnModuloAdjudicacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModuloAdjudicacion_ItemClick);
+            // 
+            // BtnAprobarVentas
+            // 
+            this.BtnAprobarVentas.Caption = "Aprobar Ventas";
+            this.BtnAprobarVentas.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnAprobarVentas.Glyph")));
+            this.BtnAprobarVentas.Id = 9;
+            this.BtnAprobarVentas.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnAprobarVentas.LargeGlyph")));
+            this.BtnAprobarVentas.Name = "BtnAprobarVentas";
+            this.BtnAprobarVentas.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnAprobarVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAprobarVentas_ItemClick);
+            // 
+            // BtnRadicar
+            // 
+            this.BtnRadicar.Caption = "Radicar";
+            this.BtnRadicar.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRadicar.Glyph")));
+            this.BtnRadicar.Id = 10;
+            this.BtnRadicar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnRadicar.LargeGlyph")));
+            this.BtnRadicar.Name = "BtnRadicar";
+            this.BtnRadicar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnRadicar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRadicar_ItemClick);
+            // 
+            // BtnRecaudos
+            // 
+            this.BtnRecaudos.Caption = "Modulo de Recaudos";
+            this.BtnRecaudos.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudos.Glyph")));
+            this.BtnRecaudos.Id = 12;
+            this.BtnRecaudos.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudos.LargeGlyph")));
+            this.BtnRecaudos.Name = "BtnRecaudos";
+            this.BtnRecaudos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnRecaudos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRecaudos_ItemClick);
+            // 
+            // BtnCondonar
+            // 
+            this.BtnCondonar.Caption = "Condonar Intereses";
+            this.BtnCondonar.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCondonar.Glyph")));
+            this.BtnCondonar.Id = 13;
+            this.BtnCondonar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnCondonar.LargeGlyph")));
+            this.BtnCondonar.Name = "BtnCondonar";
+            this.BtnCondonar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnCondonar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCondonar_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Liberar Canje";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 14;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // BtnSeguimientoCarteraADmin
+            // 
+            this.BtnSeguimientoCarteraADmin.Caption = "Seguimiento Cartera Administrativa";
+            this.BtnSeguimientoCarteraADmin.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnSeguimientoCarteraADmin.Glyph")));
+            this.BtnSeguimientoCarteraADmin.Id = 15;
+            this.BtnSeguimientoCarteraADmin.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnSeguimientoCarteraADmin.LargeGlyph")));
+            this.BtnSeguimientoCarteraADmin.Name = "BtnSeguimientoCarteraADmin";
+            this.BtnSeguimientoCarteraADmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnSeguimientoCarteraADmin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSeguimientoCarteraADmin_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -692,41 +509,293 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-            // btnPagoComisionMonterrey
+            // BtnRecaudosPorFecha
             // 
-            this.btnPagoComisionMonterrey.Caption = "Pago Comisiones Monterrey";
-            this.btnPagoComisionMonterrey.Id = 56;
-            this.btnPagoComisionMonterrey.Name = "btnPagoComisionMonterrey";
-            this.btnPagoComisionMonterrey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPagoComisionMonterrey_ItemClick);
+            this.BtnRecaudosPorFecha.Caption = "Recaudos Por Fecha";
+            this.BtnRecaudosPorFecha.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudosPorFecha.Glyph")));
+            this.BtnRecaudosPorFecha.Id = 16;
+            this.BtnRecaudosPorFecha.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnRecaudosPorFecha.LargeGlyph")));
+            this.BtnRecaudosPorFecha.Name = "BtnRecaudosPorFecha";
+            this.BtnRecaudosPorFecha.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnRecaudosPorFecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRecaudosPorFecha_ItemClick);
             // 
-            // barButtonItem4
+            // BtnModuloOtrosi
             // 
-            this.barButtonItem4.Caption = "Pago Comisiones PIV";
-            this.barButtonItem4.Id = 57;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.BtnModuloOtrosi.Caption = "Modulo Otrosi";
+            this.BtnModuloOtrosi.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloOtrosi.Glyph")));
+            this.BtnModuloOtrosi.Id = 17;
+            this.BtnModuloOtrosi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnModuloOtrosi.LargeGlyph")));
+            this.BtnModuloOtrosi.Name = "BtnModuloOtrosi";
+            this.BtnModuloOtrosi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnModuloOtrosi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnModuloOtrosi_ItemClick);
             // 
             // btnConsultaComisiones
             // 
             this.btnConsultaComisiones.Caption = "Consulta Comisiones Pagadas";
             this.btnConsultaComisiones.Id = 58;
+            this.btnConsultaComisiones.LargeGlyph = global::CarteraGeneral.RecursosIconos.reporte_pagoComisiones;
             this.btnConsultaComisiones.Name = "btnConsultaComisiones";
             this.btnConsultaComisiones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsultaComisiones_ItemClick);
+            // 
+            // btnPagoComisionMonterrey
+            // 
+            this.btnPagoComisionMonterrey.Caption = "Pago Comisiones Monterrey";
+            this.btnPagoComisionMonterrey.Id = 56;
+            this.btnPagoComisionMonterrey.LargeGlyph = global::CarteraGeneral.RecursosIconos.bancos;
+            this.btnPagoComisionMonterrey.Name = "btnPagoComisionMonterrey";
+            this.btnPagoComisionMonterrey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPagoComisionMonterrey_ItemClick);
             // 
             // btnConsultasMonterrey
             // 
             this.btnConsultasMonterrey.Caption = "Consulta Comisiones Pagadas";
             this.btnConsultasMonterrey.Id = 59;
+            this.btnConsultasMonterrey.LargeGlyph = global::CarteraGeneral.RecursosIconos.Reports_icon;
             this.btnConsultasMonterrey.Name = "btnConsultasMonterrey";
             this.btnConsultasMonterrey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsultasMonterrey_ItemClick);
             // 
-            // BtnClientes
+            // barButtonItem9
             // 
-            this.BtnClientes.Caption = "Clientes";
-            this.BtnClientes.Id = 4;
-            this.BtnClientes.Name = "BtnClientes";
-            this.BtnClientes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.barButtonItem9.Caption = "Pago Comision PIV";
+            this.barButtonItem9.Id = 78;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Consulta comisiones pagadas";
+            this.barButtonItem10.Id = 79;
+            this.barButtonItem10.LargeGlyph = global::CarteraGeneral.RecursosIconos.reporte_pagoComisiones;
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // BtnCumplimientoPresupuesto
+            // 
+            this.BtnCumplimientoPresupuesto.Caption = "Cumplimiento Presupuesto";
+            this.BtnCumplimientoPresupuesto.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCumplimientoPresupuesto.Glyph")));
+            this.BtnCumplimientoPresupuesto.Id = 33;
+            this.BtnCumplimientoPresupuesto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnCumplimientoPresupuesto.LargeGlyph")));
+            this.BtnCumplimientoPresupuesto.Name = "BtnCumplimientoPresupuesto";
+            this.BtnCumplimientoPresupuesto.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.BtnCumplimientoPresupuesto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCumplimientoPresupuesto_ItemClick);
+            // 
+            // BtnPagados
+            // 
+            this.BtnPagados.Caption = "Pagado";
+            this.BtnPagados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnPagados.Glyph")));
+            this.BtnPagados.Id = 34;
+            this.BtnPagados.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnPagados.LargeGlyph")));
+            this.BtnPagados.Name = "BtnPagados";
+            this.BtnPagados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.BtnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnClientes_ItemClick);
+            this.BtnPagados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPagados_ItemClick);
+            // 
+            // BtnTramiteEscritura
+            // 
+            this.BtnTramiteEscritura.Caption = "Tramite Escritura";
+            this.BtnTramiteEscritura.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTramiteEscritura.Glyph")));
+            this.BtnTramiteEscritura.Id = 35;
+            this.BtnTramiteEscritura.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnTramiteEscritura.LargeGlyph")));
+            this.BtnTramiteEscritura.Name = "BtnTramiteEscritura";
+            this.BtnTramiteEscritura.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnTramiteEscritura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTramiteEscritura_ItemClick);
+            // 
+            // BtnEscriturados
+            // 
+            this.BtnEscriturados.Caption = "Escriturados";
+            this.BtnEscriturados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEscriturados.Glyph")));
+            this.BtnEscriturados.Id = 36;
+            this.BtnEscriturados.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnEscriturados.LargeGlyph")));
+            this.BtnEscriturados.Name = "BtnEscriturados";
+            this.BtnEscriturados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnEscriturados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEscriturados_ItemClick);
+            // 
+            // BtnArchivados
+            // 
+            this.BtnArchivados.Caption = "Archivados";
+            this.BtnArchivados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnArchivados.Glyph")));
+            this.BtnArchivados.Id = 37;
+            this.BtnArchivados.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnArchivados.LargeGlyph")));
+            this.BtnArchivados.Name = "BtnArchivados";
+            this.BtnArchivados.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnArchivados.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnArchivados_ItemClick);
+            // 
+            // BtnJuridicosVigentes
+            // 
+            this.BtnJuridicosVigentes.Caption = "Enviar a Juridico Negocios Vigentes";
+            this.BtnJuridicosVigentes.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosVigentes.Glyph")));
+            this.BtnJuridicosVigentes.Id = 38;
+            this.BtnJuridicosVigentes.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosVigentes.LargeGlyph")));
+            this.BtnJuridicosVigentes.Name = "BtnJuridicosVigentes";
+            this.BtnJuridicosVigentes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnJuridicosVigentes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridicosVigentes_ItemClick);
+            // 
+            // BtnJuridicosDesistidos
+            // 
+            this.BtnJuridicosDesistidos.Caption = "Enviar a Juridico Negocios Desistidos";
+            this.BtnJuridicosDesistidos.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosDesistidos.Glyph")));
+            this.BtnJuridicosDesistidos.Id = 39;
+            this.BtnJuridicosDesistidos.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridicosDesistidos.LargeGlyph")));
+            this.BtnJuridicosDesistidos.Name = "BtnJuridicosDesistidos";
+            this.BtnJuridicosDesistidos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnJuridicosDesistidos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridicosDesistidos_ItemClick);
+            // 
+            // BtnJuridico
+            // 
+            this.BtnJuridico.Caption = "Juridico";
+            this.BtnJuridico.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridico.Glyph")));
+            this.BtnJuridico.Id = 40;
+            this.BtnJuridico.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnJuridico.LargeGlyph")));
+            this.BtnJuridico.Name = "BtnJuridico";
+            this.BtnJuridico.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnJuridico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnJuridico_ItemClick);
+            // 
+            // BtnDesistidoJuridico
+            // 
+            this.BtnDesistidoJuridico.Caption = "Desistido Juridico";
+            this.BtnDesistidoJuridico.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnDesistidoJuridico.Glyph")));
+            this.BtnDesistidoJuridico.Id = 41;
+            this.BtnDesistidoJuridico.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnDesistidoJuridico.LargeGlyph")));
+            this.BtnDesistidoJuridico.Name = "BtnDesistidoJuridico";
+            this.BtnDesistidoJuridico.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnDesistidoJuridico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDesistidoJuridico_ItemClick);
+            // 
+            // BtnEnviosMonterey
+            // 
+            this.BtnEnviosMonterey.Caption = "Envios Monterey";
+            this.BtnEnviosMonterey.Id = 50;
+            this.BtnEnviosMonterey.Name = "BtnEnviosMonterey";
+            this.BtnEnviosMonterey.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnEnviosMonterey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosMonterey_ItemClick);
+            // 
+            // BtnSaldosFondos
+            // 
+            this.BtnSaldosFondos.Caption = "Saldos Fondos Monterey";
+            this.BtnSaldosFondos.Id = 52;
+            this.BtnSaldosFondos.Name = "BtnSaldosFondos";
+            this.BtnSaldosFondos.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnSaldosFondos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSaldosFondos_ItemClick);
+            // 
+            // BtnEnviosMontereyAdmin
+            // 
+            this.BtnEnviosMontereyAdmin.Caption = "Envios a Montery Negocios Admin";
+            this.BtnEnviosMontereyAdmin.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosMontereyAdmin.Glyph")));
+            this.BtnEnviosMontereyAdmin.Id = 51;
+            this.BtnEnviosMontereyAdmin.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosMontereyAdmin.LargeGlyph")));
+            this.BtnEnviosMontereyAdmin.Name = "BtnEnviosMontereyAdmin";
+            this.BtnEnviosMontereyAdmin.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnEnviosMontereyAdmin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosMontereyAdmin_ItemClick);
+            // 
+            // BtnEnviosDirecto
+            // 
+            this.BtnEnviosDirecto.Caption = "Envio A Directa Negocios Monterey";
+            this.BtnEnviosDirecto.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosDirecto.Glyph")));
+            this.BtnEnviosDirecto.Id = 54;
+            this.BtnEnviosDirecto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnEnviosDirecto.LargeGlyph")));
+            this.BtnEnviosDirecto.Name = "BtnEnviosDirecto";
+            this.BtnEnviosDirecto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEnviosDirecto_ItemClick_1);
+            // 
+            // BtnUsuarios
+            // 
+            this.BtnUsuarios.Caption = "Usuarios";
+            this.BtnUsuarios.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.Glyph")));
+            this.BtnUsuarios.Id = 42;
+            this.BtnUsuarios.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnUsuarios.LargeGlyph")));
+            this.BtnUsuarios.Name = "BtnUsuarios";
+            this.BtnUsuarios.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUsuarios_ItemClick);
+            // 
+            // BtnParametros
+            // 
+            this.BtnParametros.Caption = "Parametros";
+            this.BtnParametros.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnParametros.Glyph")));
+            this.BtnParametros.Id = 43;
+            this.BtnParametros.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnParametros.LargeGlyph")));
+            this.BtnParametros.Name = "BtnParametros";
+            this.BtnParametros.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnParametros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnParametros_ItemClick);
+            // 
+            // BtnTablaComision
+            // 
+            this.BtnTablaComision.Caption = "Tabla Comision";
+            this.BtnTablaComision.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTablaComision.Glyph")));
+            this.BtnTablaComision.Id = 44;
+            this.BtnTablaComision.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnTablaComision.LargeGlyph")));
+            this.BtnTablaComision.Name = "BtnTablaComision";
+            this.BtnTablaComision.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnTablaComision.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTablaComision_ItemClick);
+            // 
+            // BtnCambioClave
+            // 
+            this.BtnCambioClave.Caption = "Cambio Clave";
+            this.BtnCambioClave.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioClave.Glyph")));
+            this.BtnCambioClave.Id = 45;
+            this.BtnCambioClave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioClave.LargeGlyph")));
+            this.BtnCambioClave.Name = "BtnCambioClave";
+            this.BtnCambioClave.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnCambioClave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCambioClave_ItemClick);
+            // 
+            // BtnCambioConsecutivo
+            // 
+            this.BtnCambioConsecutivo.Caption = "Cambio Consecutivos";
+            this.BtnCambioConsecutivo.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioConsecutivo.Glyph")));
+            this.BtnCambioConsecutivo.Id = 46;
+            this.BtnCambioConsecutivo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnCambioConsecutivo.LargeGlyph")));
+            this.BtnCambioConsecutivo.Name = "BtnCambioConsecutivo";
+            this.BtnCambioConsecutivo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnCambioConsecutivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCambioConsecutivo_ItemClick);
+            // 
+            // BtnTrmAdd
+            // 
+            this.BtnTrmAdd.Caption = "Consulta TRM";
+            this.BtnTrmAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnTrmAdd.Glyph")));
+            this.BtnTrmAdd.Id = 47;
+            this.BtnTrmAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnTrmAdd.LargeGlyph")));
+            this.BtnTrmAdd.Name = "BtnTrmAdd";
+            this.BtnTrmAdd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnTrmAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTrmAdd_ItemClick);
+            // 
+            // barButtonItem30
+            // 
+            this.barButtonItem30.Caption = "Modificar Trm";
+            this.barButtonItem30.Id = 99;
+            this.barButtonItem30.Name = "barButtonItem30";
+            // 
+            // BtnAddLotesEnvio
+            // 
+            this.BtnAddLotesEnvio.Caption = "Adicionar Lotes Envio";
+            this.BtnAddLotesEnvio.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnAddLotesEnvio.Glyph")));
+            this.BtnAddLotesEnvio.Id = 49;
+            this.BtnAddLotesEnvio.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnAddLotesEnvio.LargeGlyph")));
+            this.BtnAddLotesEnvio.Name = "BtnAddLotesEnvio";
+            this.BtnAddLotesEnvio.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnAddLotesEnvio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddLotesEnvio_ItemClick);
+            // 
+            // BtnPagoComisionAlttum
+            // 
+            this.BtnPagoComisionAlttum.Caption = "Pago Comsiones Alttum";
+            this.BtnPagoComisionAlttum.Id = 18;
+            this.BtnPagoComisionAlttum.LargeGlyph = global::CarteraGeneral.RecursosIconos.pago_comisiones_Alttum;
+            this.BtnPagoComisionAlttum.Name = "BtnPagoComisionAlttum";
+            this.BtnPagoComisionAlttum.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.BtnPagoComisionAlttum.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPagoComisionAlttum_ItemClick);
             // 
             // TsmTerceros
             // 
@@ -739,7 +808,7 @@
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnClientes);
-            this.ribbonPageGroup1.ItemLinks.Add(this.BtnGestor1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnGestor);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Modulo de Terceros";
             // 
@@ -752,20 +821,22 @@
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.BtnInmuebles);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Semanas Compartidas";
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.reservas});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Reservas";
             // 
-            // ribbonPageGroup3
+            // reservas
             // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.reservas.ItemLinks.Add(this.BtnReservas);
+            this.reservas.Name = "reservas";
+            this.reservas.Text = "Reservas";
             // 
             // ribbonPage4
             // 
@@ -777,6 +848,8 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.AllowTextClipping = false;
+            this.ribbonPageGroup4.ItemLinks.Add(this.BtnModuloAdjudicacion);
+            this.ribbonPageGroup4.ItemLinks.Add(this.BtnAprobarVentas);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Modulo de Adjudicacion";
             // 
@@ -790,6 +863,7 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
+            this.ribbonPageGroup5.ItemLinks.Add(this.BtnRadicar);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Modulo de Radicacion";
             // 
@@ -804,12 +878,18 @@
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.AllowTextClipping = false;
+            this.ribbonPageGroup6.ItemLinks.Add(this.BtnRecaudos);
+            this.ribbonPageGroup6.ItemLinks.Add(this.BtnCondonar);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup6.ItemLinks.Add(this.BtnSeguimientoCarteraADmin);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Modulo de Cartera";
             // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.AllowTextClipping = false;
+            this.ribbonPageGroup7.ItemLinks.Add(this.BtnRecaudosPorFecha);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Consultas";
             // 
@@ -823,6 +903,7 @@
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.AllowTextClipping = false;
+            this.ribbonPageGroup8.ItemLinks.Add(this.BtnModuloOtrosi);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Modulo de Otrosi";
             // 
@@ -837,17 +918,23 @@
             // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.BtnPagoComisionAlttum);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnConsultaComisiones);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Comisiones Alttum";
             // 
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.AllowTextClipping = false;
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnPagoComisionMonterrey);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnConsultasMonterrey);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Comisiones Monterrey";
             // 
             // ribbonPageGroup11
             // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Comisiones PIV";
             // 
@@ -861,6 +948,7 @@
             // ribbonPageGroup12
             // 
             this.ribbonPageGroup12.AllowTextClipping = false;
+            this.ribbonPageGroup12.ItemLinks.Add(this.BtnCumplimientoPresupuesto);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Modulo Presupuesto";
             // 
@@ -873,6 +961,12 @@
             // 
             // ribbonPageGroup13
             // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnPagados);
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnTramiteEscritura);
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnEscriturados);
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnArchivados);
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnJuridicosVigentes);
+            this.ribbonPageGroup13.ItemLinks.Add(this.BtnJuridicosDesistidos);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Modulo Documentacion";
             // 
@@ -886,6 +980,8 @@
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.AllowTextClipping = false;
+            this.ribbonPageGroup14.ItemLinks.Add(this.BtnJuridico);
+            this.ribbonPageGroup14.ItemLinks.Add(this.BtnDesistidoJuridico);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Juridico";
             // 
@@ -899,6 +995,10 @@
             // ribbonPageGroup16
             // 
             this.ribbonPageGroup16.AllowTextClipping = false;
+            this.ribbonPageGroup16.ItemLinks.Add(this.BtnEnviosMonterey);
+            this.ribbonPageGroup16.ItemLinks.Add(this.BtnSaldosFondos);
+            this.ribbonPageGroup16.ItemLinks.Add(this.BtnEnviosMontereyAdmin);
+            this.ribbonPageGroup16.ItemLinks.Add(this.BtnEnviosDirecto);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "Monterey";
             // 
@@ -912,6 +1012,13 @@
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.AllowTextClipping = false;
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnUsuarios);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnParametros);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnTablaComision);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnCambioClave);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnCambioConsecutivo);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnTrmAdd);
+            this.ribbonPageGroup15.ItemLinks.Add(this.BtnAddLotesEnvio);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "Configuracion";
             // 
@@ -932,12 +1039,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // BtnGestor1
-            // 
-            this.BtnGestor1.Caption = "Asesores";
-            this.BtnGestor1.Id = 61;
-            this.BtnGestor1.Name = "BtnGestor1";
             // 
             // FrmMenuGeneralRbf
             // 
@@ -983,26 +1084,24 @@
         
         
         private DevExpress.XtraBars.BarButtonItem BtnSalir;
-        private DevExpress.XtraBars.BarButtonItem BtnInmuebles;
+        
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem BtnReservas;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem BtnModuloAdjudicacion;
-        private DevExpress.XtraBars.BarButtonItem BtnAprobarVentas;
+        
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup reservas;
+        
+        
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem BtnRadicar;
+        
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem BtnRecaudos;
-        private DevExpress.XtraBars.BarButtonItem BtnCondonar;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem BtnSeguimientoCarteraADmin;
+        
+        
+        
+        
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem BtnRecaudosPorFecha;
+        
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.BarButtonItem BtnModuloOtrosi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.BarButtonItem BtnPagoComisionAlttum;
         private DevExpress.XtraBars.BarButtonItem BtnPagoComisionTiempo;
         private DevExpress.XtraBars.BarButtonItem BtnPagoComisionEngache;
         private DevExpress.XtraBars.BarButtonItem BtnPagoAnticipo;
@@ -1019,40 +1118,56 @@
         private DevExpress.XtraBars.BarButtonItem BtnRptAntcipoFechas;
         private DevExpress.XtraBars.BarButtonItem BtnRptAnticipoAdjudicacion;
         private DevExpress.XtraBars.BarButtonItem BtnModComisionTabla;
-        private DevExpress.XtraBars.BarButtonItem BtnCumplimientoPresupuesto;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem BtnTrmMod;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.BarButtonItem BtnCnsPagos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem BtnClientes;
+        private DevExpress.XtraBars.BarButtonItem BtnGestor;
+        private DevExpress.XtraBars.BarButtonItem BtnInmuebles;
+        private DevExpress.XtraBars.BarButtonItem BtnReservas;
+        private DevExpress.XtraBars.BarButtonItem BtnModuloAdjudicacion;
+        private DevExpress.XtraBars.BarButtonItem BtnAprobarVentas;
+        private DevExpress.XtraBars.BarButtonItem BtnRadicar;
+        private DevExpress.XtraBars.BarButtonItem BtnRecaudos;
+        private DevExpress.XtraBars.BarButtonItem BtnCondonar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem BtnSeguimientoCarteraADmin;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem BtnRecaudosPorFecha;
+        private DevExpress.XtraBars.BarButtonItem BtnModuloOtrosi;
+        private DevExpress.XtraBars.BarButtonItem btnConsultaComisiones;
+        private DevExpress.XtraBars.BarButtonItem btnPagoComisionMonterrey;
+        private DevExpress.XtraBars.BarButtonItem btnConsultasMonterrey;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem BtnCumplimientoPresupuesto;
         private DevExpress.XtraBars.BarButtonItem BtnPagados;
         private DevExpress.XtraBars.BarButtonItem BtnTramiteEscritura;
         private DevExpress.XtraBars.BarButtonItem BtnEscriturados;
         private DevExpress.XtraBars.BarButtonItem BtnArchivados;
         private DevExpress.XtraBars.BarButtonItem BtnJuridicosVigentes;
         private DevExpress.XtraBars.BarButtonItem BtnJuridicosDesistidos;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarButtonItem BtnJuridico;
         private DevExpress.XtraBars.BarButtonItem BtnDesistidoJuridico;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem BtnEnviosMonterey;
+        private DevExpress.XtraBars.BarButtonItem BtnSaldosFondos;
+        private DevExpress.XtraBars.BarButtonItem BtnEnviosMontereyAdmin;
+        private DevExpress.XtraBars.BarButtonItem BtnEnviosDirecto;
         private DevExpress.XtraBars.BarButtonItem BtnUsuarios;
         private DevExpress.XtraBars.BarButtonItem BtnParametros;
         private DevExpress.XtraBars.BarButtonItem BtnTablaComision;
         private DevExpress.XtraBars.BarButtonItem BtnCambioClave;
         private DevExpress.XtraBars.BarButtonItem BtnCambioConsecutivo;
         private DevExpress.XtraBars.BarButtonItem BtnTrmAdd;
-        private DevExpress.XtraBars.BarButtonItem BtnTrmMod;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem30;
         private DevExpress.XtraBars.BarButtonItem BtnAddLotesEnvio;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
-        private DevExpress.XtraBars.BarButtonItem BtnEnviosMonterey;
-        private DevExpress.XtraBars.BarButtonItem BtnEnviosMontereyAdmin;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
-        private DevExpress.XtraBars.BarButtonItem BtnSaldosFondos;
-        private DevExpress.XtraBars.BarButtonItem BtnCnsPagos;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraBars.BarButtonItem BtnEnviosDirecto;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem btnPagoComisionMonterrey;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem btnConsultaComisiones;
-        private DevExpress.XtraBars.BarButtonItem btnConsultasMonterrey;
-        private DevExpress.XtraBars.BarButtonItem BtnClientes;
-        private DevExpress.XtraBars.BarButtonItem BtnGestor1;
+        private DevExpress.XtraBars.BarButtonItem BtnPagoComisionAlttum;
     }
 }

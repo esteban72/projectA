@@ -118,38 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1402296997_list-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402296997_list-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402297104_Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402297104_Plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402297460_Gnome-Edit-Delete-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402297460_Gnome-Edit-Delete-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402294180_Modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402294180_Modify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402294264_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402294264_trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402297290_Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402297290_Excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo del poblado-02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo del poblado-02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo P.R.C1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo P.R.C.S1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1402297405_Gnome-Application-Exit-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402297405_Gnome-Application-Exit-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="consultar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,20 +133,11 @@
   <data name="ALTUMBAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ALTUMBAI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ALTTM2.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ALTTM2.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AATT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AATT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="printer_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="medellin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medellin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,28 +145,61 @@
   <data name="search_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Alttum-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Alttum-01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AATT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AATT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1402297523_trashcan-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1402297523_trashcan-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ALTTM2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ALTTM2.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1340379317_Microsoft Office 2007 Excel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1340379317_Microsoft Office 2007 Excel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ALTUMBAI1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ALTUMBAI1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO - PNG-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO - PNG-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Imagen Alttum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Imagen_Alttum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen Alttum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo P.R.C.S" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Logo_Alttum_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Alttum-01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_Alttum_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Alttum-011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_del_poblado_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo del poblado-02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGO_PNG_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO-PNG-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_P_R_C_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo P.R.C.S.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Alttum-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Alttum-011.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo_P_R_C_S1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo P.R.C.S1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1340379317_Microsoft_Office_2007_Excel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1340379317_Microsoft Office 2007 Excel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402294180_Modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402294180_Modify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402294264_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402294264_trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402296997_list_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402296997_list-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402297104_Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402297104_Plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402297290_Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402297290_Excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402297405_Gnome_Application_Exit_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402297405_Gnome-Application-Exit-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402297460_Gnome_Edit_Delete_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402297460_Gnome-Edit-Delete-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1402297523_trashcan_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1402297523_trashcan-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

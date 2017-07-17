@@ -594,11 +594,6 @@
     <Compile Include="Presupuesto\FrmRptSegPresupuesto.Designer.cs">
       <DependentUpon>FrmRptSegPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo Rbf\Radicacion\FrmImpRptAdjudicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -639,6 +634,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>hotelalttumDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RecursosIconos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1138,9 +1138,6 @@
     <None Include="Resources\search_48.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo del poblado-02.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add_48.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1166,50 +1163,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1340379317_Microsoft Office 2007 Excel1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402294180_Modify.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402294264_trash.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402296997_list-add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402297104_Plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402297290_Excel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402297405_Gnome-Application-Exit-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402297523_trashcan-delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1402297460_Gnome-Edit-Delete-64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\14.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\consultar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\printer_48.png" />
     <None Include="Resources\Ok.png" />
     <None Include="Resources\medellin.png" />
-    <None Include="Resources\ALTUMBAI.png" />
     <None Include="Resources\ALTUMBAI1.png" />
     <None Include="Resources\ComisionesPorPagarGral.txt" />
     <None Include="Resources\ComisionesPorPagarPorAdj.txt" />
     <None Include="Resources\ComisionesPorPagarNetas.txt" />
     <None Include="Resources\ListaComisionesPorPagarNetas.txt" />
     <None Include="Resources\ConsultaPagoComisionPorAdj.txt" />
-    <None Include="Resources\ALTTM2.1.png" />
     <Content Include="empresa..ico" />
     <None Include="Resources\ComisionesMonterey.txt" />
     <None Include="Resources\ComsionesMontereyRsm.txt" />
@@ -1240,7 +1205,6 @@
     <None Include="Resources\NegocionsNoEnviadoNormal.txt" />
     <None Include="Resources\ModNegociosAltumMonterey.txt" />
     <None Include="Resources\CnsEnviosAltumMonterey.txt" />
-    <None Include="Resources\logo P.R.C.S1.jpg" />
     <None Include="Resources\CnsInmuebles.txt" />
     <None Include="Resources\ReservasPendientes.txt" />
     <None Include="Resources\CnsRadicaciones.txt" />
@@ -1257,8 +1221,6 @@
     <None Include="Resources\DatosAdjudicacionesTodas.txt" />
     <None Include="Resources\LOGO - PNG-01.png" />
     <None Include="Resources\Fondo.jpg" />
-    <None Include="Resources\Logo Alttum-01.jpg" />
-    <None Include="Resources\Logo Alttum-011.jpg" />
     <None Include="Resources\CnsReservas.txt" />
     <None Include="Resources\efectivo.png" />
     <None Include="Resources\comprobado.png" />
@@ -1271,14 +1233,30 @@
     <None Include="Resources\conseguir-dinero.png" />
     <None Include="Resources\adicionarRegistro %281%29.png" />
     <None Include="Resources\calcular.png" />
+    <None Include="Resources\1340379317_Microsoft Office 2007 Excel1.png" />
+    <None Include="Resources\14.jpg" />
+    <None Include="Resources\1402294180_Modify.png" />
+    <None Include="Resources\1402294264_trash.png" />
+    <None Include="Resources\1402296997_list-add.png" />
+    <None Include="Resources\1402297104_Plus.png" />
+    <None Include="Resources\1402297290_Excel.png" />
+    <None Include="Resources\1402297405_Gnome-Application-Exit-64.png" />
+    <None Include="Resources\1402297460_Gnome-Edit-Delete-64.png" />
+    <None Include="Resources\1402297523_trashcan-delete.png" />
+    <None Include="Resources\ALTTM2.1.png" />
+    <None Include="Resources\ALTUMBAI.png" />
     <Content Include="Resources\Imagotipo_LAND_01.jpg" />
     <Content Include="Resources\Imagotipo_LAND_01.png" />
     <Content Include="Resources\Imagotipo_LAND_011.jpg" />
     <Content Include="Resources\Imagotipo_LAND_02.png" />
     <Content Include="Resources\Imagotipo_LAND_03.jpg" />
     <Content Include="Resources\isotipo LAND - PNG-01_ICONO.png" />
-    <Content Include="Resources\logo P.R.C.S.jpg" />
-    <Content Include="Resources\LOGO-PNG-01.png" />
+    <None Include="Resources\Logo Alttum-01.jpg" />
+    <None Include="Resources\Logo Alttum-011.jpg" />
+    <None Include="Resources\Logo del poblado-02.jpg" />
+    <None Include="Resources\LOGO-PNG-01.png" />
+    <None Include="Resources\logo P.R.C.S.jpg" />
+    <None Include="Resources\logo P.R.C.S1.jpg" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\LogoAlttum.jpg" />
     <None Include="Resources\LogoAlttum.png" />
