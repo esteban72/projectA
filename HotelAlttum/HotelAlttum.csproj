@@ -1,0 +1,1607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87A595EA-7BCC-4C45-B40F-22B362F2339E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarteraGeneral</RootNamespace>
+    <AssemblyName>CarteraGeneral</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>C:\Users\Karen Paez\Desktop\Publicaciones\Cartera Alttum\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\192.168.0.200\ServidorFtp\CarteraAlttum\</InstallUrl>
+    <UpdateUrl>\\192.168.0.200\ServidorFtp\CarteraAlttum\</UpdateUrl>
+    <TargetCulture>es-CO</TargetCulture>
+    <ProductName>Sigci</ProductName>
+    <PublisherName>Smart Time</PublisherName>
+    <SuiteName>Hotel Alttum</SuiteName>
+    <MinimumRequiredVersion>7.0.0.1</MinimumRequiredVersion>
+    <ApplicationRevision>43</ApplicationRevision>
+    <ApplicationVersion>9.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>empresa..ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0D76B4B376A0C3E201776D4B70CB67F454E32E71</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HotelAlttum_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\..\..\001-LAND\SIGCI Fuentes\Fuentes\CARTERA LANDVILLE\Cartera Barranquilla  2016-06-017\NuevoSigci\bin\Debug\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ClsComision.cs" />
+    <Compile Include="Clases\ClsRadicacion.cs" />
+    <Compile Include="DtsConsultas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtsConsultas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdjudicacionMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdjudicacionMonterey.Designer.cs">
+      <DependentUpon>FrmAdjudicacionMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCnsPagoPorClientesRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCnsPagoPorClientesRbf.Designer.cs">
+      <DependentUpon>FrmCnsPagoPorClientesRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFuenteRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFuenteRecibo.Designer.cs">
+      <DependentUpon>FrmFuenteRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRecaudoNegociosNoRadicados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecaudoNegociosNoRadicados.Designer.cs">
+      <DependentUpon>FrmRecaudoNegociosNoRadicados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSmarTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSmarTime.Designer.cs">
+      <DependentUpon>FrmSmarTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmAdjudicacionPIV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmAdjudicacionPIV.Designer.cs">
+      <DependentUpon>FrmAdjudicacionPIV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisiones.Designer.cs">
+      <DependentUpon>FrmConsultarComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisionesMonterrey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisionesMonterrey.Designer.cs">
+      <DependentUpon>FrmConsultarComisionesMonterrey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComision.Designer.cs">
+      <DependentUpon>FrmPagoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComisionMonterrey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComisionMonterrey.Designer.cs">
+      <DependentUpon>FrmPagoComisionMonterrey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmRecaudoReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmRecaudoReserva.Designer.cs">
+      <DependentUpon>FrmRecaudoReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Frm_Recaudos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Frm_Recaudos.Designer.cs">
+      <DependentUpon>Frm_Recaudos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\ClsIdentificacion.cs" />
+    <Compile Include="Clases\ClsReservas.cs" />
+    <Compile Include="Clases\ClsTereros.cs" />
+    <Compile Include="Clases\ClsVentas.cs" />
+    <Compile Include="Clases\ClsNumaLetras.cs" />
+    <Compile Include="ClsComisionesMonterey.cs" />
+    <Compile Include="ClsRecaudos.cs" />
+    <Compile Include="FrmAprobarVentasRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAprobarVentasRbf.Designer.cs">
+      <DependentUpon>FrmAprobarVentasRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCumplimientoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCumplimientoPresupuesto.designer.cs">
+      <DependentUpon>FrmCumplimientoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloOtrosiRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloOtrosiRbf.Designer.cs">
+      <DependentUpon>FrmModuloOtrosiRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloUsuariosRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloUsuariosRbf.Designer.cs">
+      <DependentUpon>FrmModuloUsuariosRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmModuloRadicacionRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmModuloRadicacionRbf.Designer.cs">
+      <DependentUpon>FrmModuloRadicacionRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmModuloReservasRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmModuloReservasRbf.Designer.cs">
+      <DependentUpon>FrmModuloReservasRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmInmueblesRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmInmueblesRbf.Designer.cs">
+      <DependentUpon>FrmInmueblesRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Menu General\FrmMenuGeneralRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Menu General\FrmMenuGeneralRbf.Designer.cs">
+      <DependentUpon>FrmMenuGeneralRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloRecaudosRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloRecaudosRbf.Designer.cs">
+      <DependentUpon>FrmModuloRecaudosRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmCatalogoTercerosRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmCatalogoTercerosRbf.Designer.cs">
+      <DependentUpon>FrmCatalogoTercerosRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmModuloTercerosRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmModuloTercerosRbf.Designer.cs">
+      <DependentUpon>FrmModuloTercerosRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\RbfModuloAsesoresRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\RbfModuloAsesoresRbf.Designer.cs">
+      <DependentUpon>RbfModuloAsesoresRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmCnsSaldoFondo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmCnsSaldoFondo.Designer.cs">
+      <DependentUpon>FrmCnsSaldoFondo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmEnviosNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmEnviosNormal.designer.cs">
+      <DependentUpon>FrmEnviosNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmModuloAdjudicacionRbf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\FrmModuloAdjudicacionRbf.Designer.cs">
+      <DependentUpon>FrmModuloAdjudicacionRbf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmModuloEnviosAlttumMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmModuloEnviosAlttumMonterey.designer.cs">
+      <DependentUpon>FrmModuloEnviosAlttumMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmModuloEnviosMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmModuloEnviosMonterey.Designer.cs">
+      <DependentUpon>FrmModuloEnviosMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmEnviosMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmEnviosMonterey.Designer.cs">
+      <DependentUpon>FrmEnviosMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmLotesEnvio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmLotesEnvio.Designer.cs">
+      <DependentUpon>FrmLotesEnvio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmPagoComisionesMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmPagoComisionesMonterey.Designer.cs">
+      <DependentUpon>FrmPagoComisionesMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRsmPagoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRsmPagoComision.Designer.cs">
+      <DependentUpon>FrmRsmPagoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmModificarEnvios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmModificarEnvios.Designer.cs">
+      <DependentUpon>FrmModificarEnvios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmTRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmTRM.Designer.cs">
+      <DependentUpon>FrmTRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\FrmComisionesxPagarMonterey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\FrmComisionesxPagarMonterey.Designer.cs">
+      <DependentUpon>FrmComisionesxPagarMonterey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\ClsMonterrey.cs" />
+    <Compile Include="Modulo Rbf\Configuracion\FrmModuloTablaComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmModuloTablaComisiones.Designer.cs">
+      <DependentUpon>FrmModuloTablaComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRecaudoPorCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRecaudoPorCuotas.designer.cs">
+      <DependentUpon>FrmRecaudoPorCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Reporte\FrmRptRecibodeCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Reporte\FrmRptRecibodeCaja.Designer.cs">
+      <DependentUpon>FrmRptRecibodeCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsRcdFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsRcdFecha.designer.cs">
+      <DependentUpon>FrmCnsRcdFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsRecaudos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsRecaudos.designer.cs">
+      <DependentUpon>FrmCnsRecaudos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsGralCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCnsGralCredito.designer.cs">
+      <DependentUpon>FrmCnsGralCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Reporte\FrmExtracto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\Reporte\FrmExtracto.Designer.cs">
+      <DependentUpon>FrmExtracto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmModificarRecaudos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmModificarRecaudos.designer.cs">
+      <DependentUpon>FrmModificarRecaudos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagodeAnticipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagodeAnticipos.designer.cs">
+      <DependentUpon>FrmPagodeAnticipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagodeComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagodeComisiones.designer.cs">
+      <DependentUpon>FrmPagodeComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmCnsComisionxPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmCnsComisionxPagar.designer.cs">
+      <DependentUpon>FrmCnsComisionxPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptComisionesxPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptComisionesxPagar.Designer.cs">
+      <DependentUpon>FrmRptComisionesxPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptPagoCmsPorAsesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptPagoCmsPorAsesor.Designer.cs">
+      <DependentUpon>FrmRptPagoCmsPorAsesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptRsmPagoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptRsmPagoComision.Designer.cs">
+      <DependentUpon>FrmRptRsmPagoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmCambioClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmCambioClave.designer.cs">
+      <DependentUpon>FrmCambioClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompromisos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrmCompromisos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmSegCartera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmSegCartera.designer.cs">
+      <DependentUpon>FrmSegCartera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmSeguimiento.designer.cs">
+      <DependentUpon>FrmSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCondonacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmCondonacion.designer.cs">
+      <DependentUpon>FrmCondonacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmModificarComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmModificarComision.Designer.cs">
+      <DependentUpon>FrmModificarComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmModuloComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmModuloComision.Designer.cs">
+      <DependentUpon>FrmModuloComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmCambioConsecutivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmCambioConsecutivos.designer.cs">
+      <DependentUpon>FrmCambioConsecutivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmLiberarCan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmLiberarCan.designer.cs">
+      <DependentUpon>FrmLiberarCan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto.cs" />
+    <Compile Include="Modulo Rbf\Radicacion\FrmModDatosAdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmModDatosAdj.designer.cs">
+      <DependentUpon>FrmModDatosAdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmProyeccionDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmProyeccionDetalle.Designer.cs">
+      <DependentUpon>FrmProyeccionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRptCarteraVencida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRptCarteraVencida.Designer.cs">
+      <DependentUpon>FrmRptCarteraVencida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRptDetalleGeneralProyecccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmRptDetalleGeneralProyecccion.Designer.cs">
+      <DependentUpon>FrmRptDetalleGeneralProyecccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmSaldoCartera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmSaldoCartera.Designer.cs">
+      <DependentUpon>FrmSaldoCartera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu General\FrmDocumentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu General\FrmDocumentacion.Designer.cs">
+      <DependentUpon>FrmDocumentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu General\FrmEnvioEscrituracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu General\FrmEnvioEscrituracion.designer.cs">
+      <DependentUpon>FrmEnvioEscrituracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmImpRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monterrey\Cartera\FrmImpRecibo.Designer.cs">
+      <DependentUpon>FrmImpRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MisConsultas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MisConsultas.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\RbfAdjudicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Adjudicacion\RbfAdjudicacion.Designer.cs">
+      <DependentUpon>RbfAdjudicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptPresupuestoGral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptPresupuestoGral.designer.cs">
+      <DependentUpon>FrmRptPresupuestoGral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\FrmPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\FrmPresupuesto.designer.cs">
+      <DependentUpon>FrmPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptFueraPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptFueraPresupuesto.Designer.cs">
+      <DependentUpon>FrmRptFueraPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptSegPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\FrmRptSegPresupuesto.Designer.cs">
+      <DependentUpon>FrmRptSegPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmImpRptAdjudicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmImpRptAdjudicaciones.Designer.cs">
+      <DependentUpon>FrmImpRptAdjudicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptAnticipoFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptAnticipoFecha.Designer.cs">
+      <DependentUpon>FrmRptAnticipoFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptAnticipoporAdj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptAnticipoporAdj.Designer.cs">
+      <DependentUpon>FrmRptAnticipoporAdj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Otrosi\FrmOtrosi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Otrosi\FrmOtrosi.Designer.cs">
+      <DependentUpon>FrmOtrosi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptCnsPagoCmsPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmRptCnsPagoCmsPorCliente.Designer.cs">
+      <DependentUpon>FrmRptCnsPagoCmsPorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmProyeccionComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmProyeccionComision.designer.cs">
+      <DependentUpon>FrmProyeccionComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hotelalttumDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotelalttumDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosIconos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosIconos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RscAdjudicacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RscAdjudicacion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RscComisiones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RscComisiones.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RscPresupuesto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RscPresupuesto.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RscRecaudos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RscRecaudos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmGestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmGestor.designer.cs">
+      <DependentUpon>FrmGestor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmInmuebles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmInmuebles.Designer.cs">
+      <DependentUpon>FrmInmuebles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmTerceros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmTerceros.designer.cs">
+      <DependentUpon>FrmTerceros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmRadicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmRadicacion.Designer.cs">
+      <DependentUpon>FrmRadicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmTablaComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmTablaComisiones.Designer.cs">
+      <DependentUpon>FrmTablaComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmCatalogoReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmCatalogoReservas.Designer.cs">
+      <DependentUpon>FrmCatalogoReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\FrmParametros.Designer.cs">
+      <DependentUpon>FrmParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmAdjudicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmAdjudicacion.Designer.cs">
+      <DependentUpon>FrmAdjudicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmCatalogoInmuebles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Inmuebles\FrmCatalogoInmuebles.Designer.cs">
+      <DependentUpon>FrmCatalogoInmuebles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Configuracion\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Simulador.cs" />
+    <Compile Include="Clases\Terceros.cs" />
+    <Compile Include="Modulo Rbf\Terceros\FrmCatalogoTerceros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Terceros\FrmCatalogoTerceros.designer.cs">
+      <DependentUpon>FrmCatalogoTerceros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu General\FrmLogeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu General\FrmLogeo.designer.cs">
+      <DependentUpon>FrmLogeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu General\FrmMensajeError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu General\FrmMensajeError.designer.cs">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu General\FrmMenuGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu General\FrmMenuGeneral.Designer.cs">
+      <DependentUpon>FrmMenuGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmReservasPreferentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Reservas\FrmReservasPreferentes.designer.cs">
+      <DependentUpon>FrmReservasPreferentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WebServiceTRMColombia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAdjudicacionMonterey.resx">
+      <DependentUpon>FrmAdjudicacionMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCnsPagoPorClientesRbf.resx">
+      <DependentUpon>FrmCnsPagoPorClientesRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFuenteRecibo.resx">
+      <DependentUpon>FrmFuenteRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecaudoNegociosNoRadicados.resx">
+      <DependentUpon>FrmRecaudoNegociosNoRadicados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSmarTime.resx">
+      <DependentUpon>FrmSmarTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Adjudicacion\FrmAdjudicacionPIV.resx">
+      <DependentUpon>FrmAdjudicacionPIV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmConsultarComisiones.resx">
+      <DependentUpon>FrmConsultarComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmConsultarComisionesMonterrey.resx">
+      <DependentUpon>FrmConsultarComisionesMonterrey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComision.resx">
+      <DependentUpon>FrmPagoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComisionMonterrey.resx">
+      <DependentUpon>FrmPagoComisionMonterrey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Reservas\FrmRecaudoReserva.resx">
+      <DependentUpon>FrmRecaudoReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\Frm_Recaudos.resx">
+      <DependentUpon>Frm_Recaudos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\FrmModuloTablaComisiones.resx">
+      <DependentUpon>FrmModuloTablaComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmRecaudoPorCuotas.resx">
+      <DependentUpon>FrmRecaudoPorCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\Reporte\FrmRptRecibodeCaja.resx">
+      <DependentUpon>FrmRptRecibodeCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\Reporte\RptRecibodeCaja.rdlc" />
+    <EmbeddedResource Include="Monterrey\Cartera\FrmCnsRcdFecha.resx">
+      <DependentUpon>FrmCnsRcdFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmCnsRecaudos.resx">
+      <DependentUpon>FrmCnsRecaudos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmCnsGralCredito.resx">
+      <DependentUpon>FrmCnsGralCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\Reporte\FrmExtracto.resx">
+      <DependentUpon>FrmExtracto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmModificarRecaudos.resx">
+      <DependentUpon>FrmModificarRecaudos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagodeAnticipos.resx">
+      <DependentUpon>FrmPagodeAnticipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagodeComisiones.resx">
+      <DependentUpon>FrmPagodeComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmCnsComisionxPagar.resx">
+      <DependentUpon>FrmCnsComisionxPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptComisionesxPagar.resx">
+      <DependentUpon>FrmRptComisionesxPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptPagoCmsPorAsesor.resx">
+      <DependentUpon>FrmRptPagoCmsPorAsesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptRsmPagoComision.resx">
+      <DependentUpon>FrmRptRsmPagoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\FrmCambioClave.resx">
+      <DependentUpon>FrmCambioClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAprobarVentasRbf.resx">
+      <DependentUpon>FrmAprobarVentasRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCumplimientoPresupuesto.resx">
+      <DependentUpon>FrmCumplimientoPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloOtrosiRbf.resx">
+      <DependentUpon>FrmModuloOtrosiRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloUsuariosRbf.resx">
+      <DependentUpon>FrmModuloUsuariosRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Adjudicacion\FrmModuloRadicacionRbf.resx">
+      <DependentUpon>FrmModuloRadicacionRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Reservas\FrmModuloReservasRbf.resx">
+      <DependentUpon>FrmModuloReservasRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Inmuebles\FrmInmueblesRbf.resx">
+      <DependentUpon>FrmInmueblesRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Menu General\FrmMenuGeneralRbf.resx">
+      <DependentUpon>FrmMenuGeneralRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloRecaudosRbf.resx">
+      <DependentUpon>FrmModuloRecaudosRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\FrmCatalogoTercerosRbf.resx">
+      <DependentUpon>FrmCatalogoTercerosRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\FrmModuloTercerosRbf.resx">
+      <DependentUpon>FrmModuloTercerosRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\RbfModuloAsesoresRbf.resx">
+      <DependentUpon>RbfModuloAsesoresRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmCnsSaldoFondo.resx">
+      <DependentUpon>FrmCnsSaldoFondo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmEnviosNormal.resx">
+      <DependentUpon>FrmEnviosNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Adjudicacion\FrmModuloAdjudicacionRbf.resx">
+      <DependentUpon>FrmModuloAdjudicacionRbf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmModuloEnviosAlttumMonterey.resx">
+      <DependentUpon>FrmModuloEnviosAlttumMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmModuloEnviosMonterey.resx">
+      <DependentUpon>FrmModuloEnviosMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmEnviosMonterey.resx">
+      <DependentUpon>FrmEnviosMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmLotesEnvio.resx">
+      <DependentUpon>FrmLotesEnvio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmPagoComisionesMonterey.resx">
+      <DependentUpon>FrmPagoComisionesMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRsmPagoComision.resx">
+      <DependentUpon>FrmRsmPagoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmModificarEnvios.resx">
+      <DependentUpon>FrmModificarEnvios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmTRM.resx">
+      <DependentUpon>FrmTRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\FrmComisionesxPagarMonterey.resx">
+      <DependentUpon>FrmComisionesxPagarMonterey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompromisos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrmCompromisos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmSegCartera.resx">
+      <DependentUpon>FrmSegCartera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmSeguimiento.resx">
+      <DependentUpon>FrmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmCondonacion.resx">
+      <DependentUpon>FrmCondonacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmModificarComision.resx">
+      <DependentUpon>FrmModificarComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmModuloComision.resx">
+      <DependentUpon>FrmModuloComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\FrmCambioConsecutivos.resx">
+      <DependentUpon>FrmCambioConsecutivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmLiberarCan.resx">
+      <DependentUpon>FrmLiberarCan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Radicacion\FrmModDatosAdj.resx">
+      <DependentUpon>FrmModDatosAdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmProyeccionDetalle.resx">
+      <DependentUpon>FrmProyeccionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmRptCarteraVencida.resx">
+      <DependentUpon>FrmRptCarteraVencida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmRptDetalleGeneralProyecccion.resx">
+      <DependentUpon>FrmRptDetalleGeneralProyecccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmSaldoCartera.resx">
+      <DependentUpon>FrmSaldoCartera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfCarteraVencida.rdlc" />
+    <EmbeddedResource Include="InfDetalleProyeccion.rdlc" />
+    <EmbeddedResource Include="InfProyecionDetallada.rdlc" />
+    <EmbeddedResource Include="InfSaldoCartera.rdlc" />
+    <EmbeddedResource Include="Menu General\FrmDocumentacion.resx">
+      <DependentUpon>FrmDocumentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu General\FrmEnvioEscrituracion.resx">
+      <DependentUpon>FrmEnvioEscrituracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monterrey\Cartera\FrmImpRecibo.resx">
+      <DependentUpon>FrmImpRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MisConsultas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MisConsultas.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Adjudicacion\RbfAdjudicacion.resx">
+      <DependentUpon>RbfAdjudicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\FrmRptPresupuestoGral.resx">
+      <DependentUpon>FrmRptPresupuestoGral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\FrmPresupuesto.resx">
+      <DependentUpon>FrmPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\FrmRptFueraPresupuesto.resx">
+      <DependentUpon>FrmRptFueraPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\FrmRptSegPresupuesto.resx">
+      <DependentUpon>FrmRptSegPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfPresupuestoGeneral.rdlc" />
+    <EmbeddedResource Include="InfRcdFueraPresupuesto.rdlc" />
+    <EmbeddedResource Include="InfSegPresupuesto.rdlc" />
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Modulo Rbf\Radicacion\FrmImpRptAdjudicaciones.resx">
+      <DependentUpon>FrmImpRptAdjudicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptAnticipoFecha.resx">
+      <DependentUpon>FrmRptAnticipoFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptAnticipoporAdj.resx">
+      <DependentUpon>FrmRptAnticipoporAdj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Otrosi\FrmOtrosi.resx">
+      <DependentUpon>FrmOtrosi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmRptCnsPagoCmsPorCliente.resx">
+      <DependentUpon>FrmRptCnsPagoCmsPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmProyeccionComision.resx">
+      <DependentUpon>FrmProyeccionComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfExtracto.rdlc" />
+    <EmbeddedResource Include="ReciboCajaRio.rdlc" />
+    <EmbeddedResource Include="RecursosIconos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosIconos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptAdjudicacion.rdlc" />
+    <EmbeddedResource Include="RptAnticipoporAdjudicacion.rdlc" />
+    <EmbeddedResource Include="RptAnticiposporfecha.rdlc" />
+    <EmbeddedResource Include="RptComisionesPorAsesor.rdlc" />
+    <EmbeddedResource Include="RptComisionesxPagar.rdlc" />
+    <EmbeddedResource Include="RptComisionPagadaporCliente.rdlc" />
+    <EmbeddedResource Include="RptPagoComisionResumida.rdlc" />
+    <EmbeddedResource Include="RscAdjudicacion.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RscAdjudicacion.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RscComisiones.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RscComisiones.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RscPresupuesto.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RscPresupuesto.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RscRecaudos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RscRecaudos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\FrmGestor.resx">
+      <DependentUpon>FrmGestor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Inmuebles\FrmInmuebles.resx">
+      <DependentUpon>FrmInmuebles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\FrmTerceros.resx">
+      <DependentUpon>FrmTerceros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Radicacion\FrmRadicacion.resx">
+      <DependentUpon>FrmRadicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\FrmTablaComisiones.resx">
+      <DependentUpon>FrmTablaComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Reservas\FrmCatalogoReservas.resx">
+      <DependentUpon>FrmCatalogoReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\FrmParametros.resx">
+      <DependentUpon>FrmParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Radicacion\FrmAdjudicacion.resx">
+      <DependentUpon>FrmAdjudicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Inmuebles\FrmCatalogoInmuebles.resx">
+      <DependentUpon>FrmCatalogoInmuebles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Configuracion\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Terceros\FrmCatalogoTerceros.resx">
+      <DependentUpon>FrmCatalogoTerceros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu General\FrmLogeo.resx">
+      <DependentUpon>FrmLogeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu General\FrmMensajeError.resx">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu General\FrmMenuGeneral.resx">
+      <DependentUpon>FrmMenuGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Reservas\FrmReservasPreferentes.resx">
+      <DependentUpon>FrmReservasPreferentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DtsConsultas.xsc">
+      <DependentUpon>DtsConsultas.xsd</DependentUpon>
+    </None>
+    <None Include="DtsConsultas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtsConsultas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DtsConsultas.xss">
+      <DependentUpon>DtsConsultas.xsd</DependentUpon>
+    </None>
+    <None Include="Entries" />
+    <None Include="hotelalttumDataSet.xsc">
+      <DependentUpon>hotelalttumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hotelalttumDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotelalttumDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotelalttumDataSet.xss">
+      <DependentUpon>hotelalttumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Repository" />
+    <None Include="Root" />
+    <None Include="Service References\WebServiceTRMColombia\CarteraGeneral.WebServiceTRMColombia.tcrmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceTRMColombia\TCRMServicesWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo del poblado-02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1340379317_Microsoft Office 2007 Excel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402294180_Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402294264_trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402296997_list-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402297104_Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402297290_Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402297405_Gnome-Application-Exit-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402297523_trashcan-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1402297460_Gnome-Edit-Delete-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer_48.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\medellin.png" />
+    <None Include="Resources\ALTUMBAI.png" />
+    <None Include="Resources\ALTUMBAI1.png" />
+    <None Include="Resources\ComisionesPorPagarGral.txt" />
+    <None Include="Resources\ComisionesPorPagarPorAdj.txt" />
+    <None Include="Resources\ComisionesPorPagarNetas.txt" />
+    <None Include="Resources\ListaComisionesPorPagarNetas.txt" />
+    <None Include="Resources\ConsultaPagoComisionPorAdj.txt" />
+    <None Include="Resources\ALTTM2.1.png" />
+    <Content Include="empresa..ico" />
+    <None Include="Resources\ComisionesMonterey.txt" />
+    <None Include="Resources\ComsionesMontereyRsm.txt" />
+    <None Include="Resources\ComisionesMontereyxAdj.txt" />
+    <None Include="Resources\ComisionesMonterreyTiempo.txt" />
+    <None Include="Resources\ComisionesMontererTiempoRsm.txt" />
+    <None Include="Resources\ComisionesMontereyTimpoAdj.txt" />
+    <None Include="Resources\RsmComisiones.txt" />
+    <None Include="Resources\ConsecutivoLotesEnvio.txt" />
+    <None Include="Resources\negociosnoenviadomonterey.txt" />
+    <None Include="Resources\NegociosNoenviadovacio.txt" />
+    <None Include="Resources\DatosGeneral.txt" />
+    <None Include="Resources\SaldoCuota.txt" />
+    <None Include="Resources\Imagen Alttum.png" />
+    <None Include="Resources\AATT.png" />
+    <None Include="Resources\CuentasComisiones.txt" />
+    <None Include="Resources\CnsEnviosMonterey.txt" />
+    <None Include="Resources\CnsEnviosxIdLote.txt" />
+    <None Include="Resources\CnsModNegocionsNoEnviadoMonterey.txt" />
+    <None Include="Resources\CnsMovimientoFondosxIdGestor.txt" />
+    <None Include="Resources\SaldoFondosMonterey.txt" />
+    <None Include="Resources\CnsCuotaIniciaxIdAdj.txt" />
+    <None Include="Resources\CnsDatosCuotaInicialxAdj.txt" />
+    <None Include="Resources\CnsDatosFncMontereyxAdj.txt" />
+    <None Include="Resources\CnsDatosFncPobladoxAdj.txt" />
+    <None Include="Resources\CnsDatosFinanciacionxAdj.txt" />
+    <None Include="Resources\CnsDatosAdjudicacionxAdj.txt" />
+    <None Include="Resources\NegocionsNoEnviadoNormal.txt" />
+    <None Include="Resources\ModNegociosAltumMonterey.txt" />
+    <None Include="Resources\CnsEnviosAltumMonterey.txt" />
+    <None Include="Resources\logo P.R.C.S1.jpg" />
+    <None Include="Resources\CnsInmuebles.txt" />
+    <None Include="Resources\ReservasPendientes.txt" />
+    <None Include="Resources\CnsRadicaciones.txt" />
+    <None Include="Resources\OtrsisPendientes.txt" />
+    <None Include="Resources\CumplimientoPresupuesto.txt" />
+    <None Include="Resources\PresupuestoGral.txt" />
+    <None Include="Resources\CumplimientoPresupustoMetas.txt" />
+    <None Include="Resources\SegPresupuesto.txt" />
+    <None Include="Resources\CnsDatosComisionxAdj.txt" />
+    <None Include="Resources\DatosAdjudicacion.txt" />
+    <None Include="Resources\ComisionesNetasporAdj.txt" />
+    <None Include="Resources\003CnsAdjudica.txt" />
+    <None Include="Resources\CnsAdjudica003.txt" />
+    <None Include="Resources\DatosAdjudicacionesTodas.txt" />
+    <None Include="Resources\LOGO - PNG-01.png" />
+    <None Include="Resources\Fondo.jpg" />
+    <None Include="Resources\Logo Alttum-01.jpg" />
+    <None Include="Resources\Logo Alttum-011.jpg" />
+    <None Include="Resources\CnsReservas.txt" />
+    <None Include="Resources\efectivo.png" />
+    <None Include="Resources\comprobado.png" />
+    <None Include="Resources\Agregar_Usuario.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\actualizar.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\crecimiento.png" />
+    <None Include="Resources\bancos.png" />
+    <None Include="Resources\conseguir-dinero.png" />
+    <None Include="Resources\adicionarRegistro %281%29.png" />
+    <None Include="Resources\calcular.png" />
+    <Content Include="Resources\Imagotipo_LAND_01.jpg" />
+    <Content Include="Resources\Imagotipo_LAND_01.png" />
+    <Content Include="Resources\Imagotipo_LAND_011.jpg" />
+    <Content Include="Resources\Imagotipo_LAND_02.png" />
+    <Content Include="Resources\Imagotipo_LAND_03.jpg" />
+    <Content Include="Resources\isotipo LAND - PNG-01_ICONO.png" />
+    <Content Include="Resources\logo P.R.C.S.jpg" />
+    <Content Include="Resources\LOGO-PNG-01.png" />
+    <Content Include="Resources\logo.png" />
+    <None Include="Resources\LogoAlttum.jpg" />
+    <None Include="Resources\LogoAlttum.png" />
+    <Content Include="Resources\LogoPgnSinFondo.png" />
+    <None Include="Resources\pago_comisiones_Alttum.png" />
+    <None Include="Resources\Monterrey.png" />
+    <None Include="Service References\WebServiceTRMColombia\configuration91.svcinfo" />
+    <None Include="Service References\WebServiceTRMColombia\configuration.svcinfo" />
+    <None Include="Service References\WebServiceTRMColombia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\reporte_pagoComisiones.png" />
+    <None Include="Resources\Reports-icon.png" />
+    <Content Include="SMTI.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevExpress.Office.v15.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Pdf.v15.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Pdf.v15.2.Drawing">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.RichEdit.v15.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Sparkline.v15.2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraLayout.v15.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraTreeList.v15.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="empresa..ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Data.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Office.v15.2.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Printing.v15.2.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.RichEdit.v15.2.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Sparkline.v15.2.Core.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Utils.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Xpf.Core.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.Xpf.Ribbon.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraBars.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraEditors.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraGrid.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraLayout.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraPrinting.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraTreeList.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="es\DevExpress.XtraVerticalGrid.v15.2.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MySql.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="SMTI.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Terceros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WebServiceTRMColombia\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
