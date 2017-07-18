@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>C:\Users\Karen Paez\Desktop\Publicaciones\Cartera Alttum\|C:\Users\Karen Paez\Desktop\Publicaciones\\\app-server\ServidorFtp\Cartera\\|C:\Users\Karen Paez\Desktop\Cartera Alttum\|C:\Users\Karen Paez\Desktop\CarteraAlttum\|C:\Users\Karen Paez\Desktop\CarteraAlttum-medellin\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Desarrollador\Desktop\Publicaciones\CarteraAlttum\|C:\Users\Karen Paez\Desktop\Publicaciones\CarteraAlttum\|C:\Users\Karen Paez\Desktop\Publicaciones\Cartera Alttum\|C:\Users\Karen Paez\Desktop\Publicaciones\\\app-server\ServidorFtp\Cartera\\|C:\Users\Karen Paez\Desktop\Cartera Alttum\</PublishUrlHistory>
     <InstallUrlHistory>\\192.168.0.200\ServidorFtp\CarteraAlttum\|\\192.168.0.200\ServidorFtp\Cartera Alttum\|\\192.168.1.200\Users\Public\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera\</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>\\192.168.1.200\Users\Public\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera\|\\192.168.0.200\Users\Public\ServidorFTP\CarteraAlttum\|\\192.168.10.51\ftp\Smarttime\Cartera\</UpdateUrlHistory>
+    <UpdateUrlHistory>\\192.168.0.200\ServidorFtp\CarteraAlttum\|\\192.168.1.200\Users\Public\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera Alttum\|\\app-server\ServidorFtp\Cartera\|\\192.168.0.200\Users\Public\ServidorFTP\CarteraAlttum\</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>es-ES</FallbackCulture>

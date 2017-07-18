@@ -300,9 +300,9 @@
             // 
             // pictureBoxVerificar
             // 
-            this.pictureBoxVerificar.Location = new System.Drawing.Point(253, 171);
+            this.pictureBoxVerificar.Location = new System.Drawing.Point(254, 170);
             this.pictureBoxVerificar.Name = "pictureBoxVerificar";
-            this.pictureBoxVerificar.Size = new System.Drawing.Size(21, 21);
+            this.pictureBoxVerificar.Size = new System.Drawing.Size(15, 15);
             this.pictureBoxVerificar.TabIndex = 31;
             this.pictureBoxVerificar.TabStop = false;
             // 

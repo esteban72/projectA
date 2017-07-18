@@ -557,7 +557,7 @@
             // 
             // barButtonItem9
             // 
-            this.barButtonItem9.Caption = "Pago Comision PIV";
+            this.barButtonItem9.Caption = "Pago Comisiones P I V";
             this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
             this.barButtonItem9.Id = 78;
             this.barButtonItem9.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.LargeGlyph")));
