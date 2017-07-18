@@ -1022,7 +1022,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 int dia;
                 int mes;
                 int año;
-                if ((DgvCtaInicial.Rows.Count - 1) > 1 && (DgvCtaInicial.Rows.Count - 1) < 25)
+                if (numCuotasGridView >= 1 && numCuotasGridView < 25)
                 {
                     dia = Convert.ToInt32(DgvCtaInicial.Rows[DgvCtaInicial.Rows.Count - 2].Cells[0].Value);
                     mes = Convert.ToInt32(DgvCtaInicial.Rows[DgvCtaInicial.Rows.Count - 2].Cells[1].Value);
