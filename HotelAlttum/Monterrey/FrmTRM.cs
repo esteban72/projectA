@@ -75,11 +75,11 @@ namespace CarteraGeneral
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            float valorConvertido = float.Parse(txtValorCalcular.Text, CultureInfo.InvariantCulture);
             if (chkFechaActual.Checked)
             {
                 if (txtValorCalcular.Text != "")
                 {
-                    float valorConvertido = float.Parse(txtValorCalcular.Text, CultureInfo.InvariantCulture);
                     if (rbtnDolares.Checked == true)
                     {
                         txtResultado.Text = (valorConvertido / response.value).ToString("###,###.###");
@@ -99,8 +99,14 @@ namespace CarteraGeneral
             {
                 if (txtValorCalcular.Text != "")
                 {
-                    float valorConvertido = float.Parse(txtValorCalcular.Text, CultureInfo.InvariantCulture);
-                    txtResultado.Text = (valorConvertido * response.value).ToString("###,###.###");
+                    if (rbtnDolares.Checked == true)
+                    {
+                        txtResultado.Text = (valorConvertido / response.value).ToString("###,###.###");
+                    }
+                    else
+                    {
+                        txtResultado.Text = (valorConvertido * response.value).ToString("###,###.###");
+                    }
                 }
                 else
                 {

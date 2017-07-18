@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CarteraGeneral.Modulo_Rbf.Adjudicacion;
 
 
 namespace CarteraGeneral
@@ -18,6 +19,7 @@ namespace CarteraGeneral
 
         public string VarTipoSemana, VarIdReserva,VarIdInmueble;
         public int EntradaReserva;
+        public double valorContrato = 0;
         
         decimal CuentaErrores;
         int consecutivo = 0;
@@ -623,7 +625,7 @@ namespace CarteraGeneral
       
         private void BtnOk_Click(object sender, EventArgs e)
         {
-
+            valorContrato = Convert.ToDouble(TxtValor.Text);
             if (EntradaReserva == 2)
             {
                 MtdAddReserva();

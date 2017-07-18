@@ -1306,6 +1306,38 @@ namespace CarteraGeneral
            }
        }
 
+       public string valorContrato(string Sentencia)
+       {
+           string valContrato;
+           MySqlCommand Query = new MySqlCommand();
+           MySqlDataReader consultar;
+           try
+           {
+               MysqlConexion.Open();
+               Query.CommandText = Sentencia;
+
+               Query.Connection = MysqlConexion;
+               consultar = Query.ExecuteReader();
+               if (consultar.Read())
+               {
+                   return valContrato = consultar.GetString(0);
+               }
+               else
+               {
+                   return "";
+               }
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("Ups! Hubo un inconveniente: " + ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               return "";
+           }
+           finally
+           {
+               MysqlConexion.Close();
+           }
+       }
+
 
     }
 }
