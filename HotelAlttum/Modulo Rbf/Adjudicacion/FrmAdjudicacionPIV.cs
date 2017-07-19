@@ -136,7 +136,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             sumaValoresDvg1();
             sumaValoresDvg2();
             MtdValidarAdd();
-            if (validarFilas(DgvCtaInicial) && validarFilas(DgvCtaInicialSinPagar))
+            if (validarFilas(DgvCtaInicial))
             {
                 if (CuentaErrores == 0)
                 {
@@ -223,6 +223,12 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 TxtValorIni.Text = SumValorInicial.ToString("###,###.###");
                 DgvCtaInicial.Rows.RemoveAt(DgvCtaInicial.CurrentRow.Index);
                 numCuotasGridView--;
+                mesCtaInicial--;
+                if (mesCtaInicial == 0)
+                {
+                    añoCtaInicial--;
+                }
+
                 if ((DgvCtaInicial.Rows.Count - 1) > 1)
                 {
                     CalcularNumCuotas();
@@ -343,7 +349,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     }
                 }
 
-                if ((DgvCtaInicial.Rows.Count - 1) < 24 && (DgvCtaInicialSinPagar.Rows.Count - 1) <= 1)
+                if ((DgvCtaInicialSinPagar.Rows.Count - 1) < Convert.ToInt32(txtNumCuotas.Text))
                 {
                     lblErrorCtaInicialSinPagar.Text = "Tienen que haber cuotas en este formulario.";
                     CuentaErrores++;
@@ -356,9 +362,9 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 }
 
 
-                if (Convert.ToInt32(txtNumCuotas.Text) > 120)
+                if (Convert.ToInt32(txtNumCuotas.Text) > 24)
                 {
-                    lblMensajeCuotas.Text = "No se pueden ingresar\nmás de 120 cuotas.";
+                    lblMensajeCuotas.Text = "No se pueden ingresar\nmás de 24 cuotas.";
                     CuentaErrores++;
                 }
 
@@ -415,7 +421,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             lblMensajeNumCuotas2.Text = "";
             lblErrorCtaInicialPagada.Text = "";
             lblErrorCtaInicialSinPagar.Text = "";
-            lblMensajeCalculoCuotas.Text = "";
             txtValorSinPagar.Text = "0";
             txtCtasFnc.Text = "0";
             txtTotalFinanciacion.Text = "0";
@@ -425,10 +430,12 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             lblValorCuota.Text = "";
             txtDolarTope.Text = "0";
             txtValorCuota.Text = "0";
+            lblErrorCuotasFnc.Text = "";
             DgvCtaInicial.Rows.Clear();
             DgvCtaInicialSinPagar.Rows.Clear();
             DgvCuotas.Rows.Clear();
             btnAdicionarAdj.Enabled = false;
+            btnCalcularCuotasSinPagar.Enabled = false;
             PnlCtaInicialSinPagar.Enabled = false;
         }
 
@@ -460,7 +467,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 }
                 else
                 {
-                    PnlCtaInicialSinPagar.Enabled = true;
                     TxtValorFnc.Enabled = true;
                     txtCtasFnc.Enabled = true;
                 }
@@ -514,29 +520,14 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             if (contCuotaInicial > 0 && contCuotasSinPago > 0)
             {
                 int siguiente = 0;
-                for (int i = 0; i < contCuotaInicial; i++)
-                {
-                    NumCuota++;
-                    if (double.Parse(DgvCtaInicial.Rows[i].Cells[3].Value.ToString(), CultureInfo.InvariantCulture) < Convert.ToDouble(txtValorCuota.Text))
-                    {
-                        FechaIni = Convert.ToDateTime(Convert.ToString(DgvCtaInicial.Rows[i].Cells[0].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[1].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[2].Value));
-                        CapitalIni = Math.Round(double.Parse(DgvCtaInicial.Rows[i].Cells[3].Value.ToString(), CultureInfo.InvariantCulture), 2);
-                        valorRestoCuotas = Convert.ToDouble(txtValorCuota.Text) - Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value.ToString());
-                        DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, (CapitalIni * valorDolar), 0, valorRestoCuotas * valorDolar, 2);
-                        siguiente++;
-                    }
-                    else
-                    {
-                        FechaIni = Convert.ToDateTime(Convert.ToString(DgvCtaInicial.Rows[i].Cells[0].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[1].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[2].Value));
-                        CapitalIni = Math.Round(double.Parse(DgvCtaInicial.Rows[i].Cells[3].Value.ToString(), CultureInfo.InvariantCulture), 2);
-                        DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, (CapitalIni * valorDolar), 0, 0);
-                    }
-                }
-                for (int i = siguiente; i < contCuotasSinPago; i++)
+                for (int i = 0; i < contCuotasSinPago; i++)
                 {
                     NumCuota++;
                     FechaIni = Convert.ToDateTime(Convert.ToString(DgvCtaInicialSinPagar.Rows[i].Cells[0].Value) + "-" + Convert.ToString(DgvCtaInicialSinPagar.Rows[i].Cells[1].Value) + "-" + Convert.ToString(DgvCtaInicialSinPagar.Rows[i].Cells[2].Value));
-                    DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, 0, 0, Math.Round(Convert.ToDouble(DgvCtaInicialSinPagar.Rows[i].Cells[3].Value) * valorDolar, 2));
+                    CapitalIni = Math.Round(double.Parse(DgvCtaInicialSinPagar.Rows[i].Cells[3].Value.ToString(), CultureInfo.InvariantCulture), 2);
+                    valorRestoCuotas = Convert.ToDouble(DgvCtaInicialSinPagar.Rows[i].Cells[4].Value.ToString());
+                    DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, (CapitalIni * valorDolar), 0, (valorRestoCuotas * valorDolar));
+                    siguiente++;
                 }
 
                 if (ctasFnc > 0)
@@ -745,13 +736,13 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             int filas = DgvCtaInicialSinPagar.Rows.Count - 1;
             for (int i = 0; i < filas; i++)
             {
-                if ((Convert.ToString(DgvCtaInicialSinPagar.Rows[i].Cells[3].Value)) == "")
+                if ((Convert.ToString(DgvCtaInicialSinPagar.Rows[i].Cells[4].Value)) == "")
                 {
-                    DgvCtaInicialSinPagar.Rows[i].Cells[3].Value = 0;
+                    DgvCtaInicialSinPagar.Rows[i].Cells[4].Value = 0;
                 }
                 else
                 {
-                    SumValorInicial += Convert.ToDouble(DgvCtaInicialSinPagar.Rows[i].Cells[3].Value);
+                    SumValorInicial += Convert.ToDouble(DgvCtaInicialSinPagar.Rows[i].Cells[4].Value);
                 }
             }
             SumValorInicial = Math.Round(SumValorInicial, 3);
@@ -841,7 +832,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             CmdAddPrm.Parameters.Add("@Cuota", MySql.Data.MySqlClient.MySqlDbType.Decimal);
                             CmdAddPrm.Parameters.Add("@NumCuota", MySql.Data.MySqlClient.MySqlDbType.Int16);
                             CmdAddPrm.Parameters.Add("@Trm", MySql.Data.MySqlClient.MySqlDbType.Double);
-                            
+
 
 
                             CmdAddPrm.Parameters["@IdAdjudicacion"].Value = Consecutivo;
@@ -870,12 +861,12 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             {
                                 CmdAddPrm.Parameters["@IdTercero3"].Value = TxtTitular3.Text;
                             }
-
+                            int indexCuotas = Convert.ToInt32(DgvCuotas.Rows.Count - 1);
                             CmdAddPrm.Parameters["@FormaPago"].Value = CmbFormaPago.Text;
-                            CmdAddPrm.Parameters["@Valor"].Value = Convert.ToDouble(TxtValorContrato.Text) * valorDolar;
-                            CmdAddPrm.Parameters["@CuotaInicial"].Value = Convert.ToDouble(TxtValorIni.Text) * valorDolar;
+                            CmdAddPrm.Parameters["@Valor"].Value = Convert.ToDouble(txtValContratoPesos.Text);
+                            CmdAddPrm.Parameters["@CuotaInicial"].Value = Math.Ceiling(Convert.ToDouble(DgvCuotas.Rows[indexCuotas].Cells[3].Value));
                             CmdAddPrm.Parameters["@Financiacion"].Value = Convert.ToDouble(txtTotalFinanciacion.Text) * valorDolar;
-                            CmdAddPrm.Parameters["@PlazoFnc"].Value = Convert.ToInt16(txtNumCuotas.Text);
+                            CmdAddPrm.Parameters["@PlazoFnc"].Value = Convert.ToInt16(txtCtasFnc.Text);
                             CmdAddPrm.Parameters["@CuotaFnc"].Value = Convert.ToDouble(TxtValorFnc.Text) * valorDolar;
                             CmdAddPrm.Parameters["@InicioFnc"].Value = DtpInicioFnc.Value;
                             CmdAddPrm.Parameters["@Estado"].Value = "Pendiente";
@@ -917,7 +908,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             }
                             myTrans.Commit();
                             MessageBox.Show("Registro Adicionado.\nEsta adjudicación queda con la número: " + Consecutivo.ToString(), "Adicionar Adjudicacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            btnValidarInformacion.Enabled = false;
                             btnCalcularCuotasSinPagar.Enabled = false;
                             btnAdicionarAdj.Enabled = false;
                             MtdLimpiar();
@@ -958,7 +948,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         {
             try
             {
-                btnCalcularCuotasSinPagar.Enabled = true;
                 int indexFila = DgvCtaInicial.Rows.Count - 2;
                 if (Convert.ToDouble(DgvCtaInicial.CurrentRow.Cells[3].Value) == 0)
                 {
@@ -983,8 +972,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     }
                     else
                     {
-                        btnCalcularCuotasSinPagar.Enabled = true;
-                        PnlCtaInicialSinPagar.Enabled = true;
                         lblErrorCtaInicialPagada.Text = "";
                     }
 
@@ -994,6 +981,20 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                         if (chkFechaConsecutiva.Checked == true)
                         {
                             mesCtaInicial++;
+                            if (diaCtaInicial > 29 && mesCtaInicial == 2)
+                            {
+                                diaCtaInicial = 28;
+                            }
+                            else
+                            {
+                                diaCtaInicial = fechaCuotaInicial.Day;
+                            }
+
+                            if (mesCtaInicial > 12)
+                            {
+                                mesCtaInicial = 1;
+                                añoCtaInicial++;
+                            }
                             DgvCtaInicial.Rows.Add(diaCtaInicial, mesCtaInicial, añoCtaInicial, 0);
                         }
                     }
@@ -1009,28 +1010,21 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         {
             try
             {
+                lblMensajeValor.Text = "";
                 int CuotasPagoContrato = Convert.ToInt32(txtNumCuotas.Text);
                 double valorContrato = Convert.ToDouble(TxtValorContrato.Text);
                 double valorCuotas = Convert.ToDouble(txtValorCuota.Text);
-                if (TxtValorContrato.Text == "0" || TxtValorContrato.Text == "")
-                {
-                    lblValorCuota.Text = "Debe ingresar el valor\ncorrecto.";
-                }
 
-                if (CuotasPagoContrato > 23 && valorContrato > 0 && valorCuotas > 0)
+                if ((CuotasPagoContrato > 0 && CuotasPagoContrato < 25) && valorContrato > 0 && valorCuotas > 0)
                 {
                     lblMensajeCuotas.Text = "";
                     PnlCtaInicialPagada.Enabled = true;
-                    PnlCtaInicialSinPagar.Enabled = true;
                     PnlDatosFnc.Enabled = true;
-                    btnCalcularCuotasSinPagar.Enabled = true;
                 }
                 else
                 {
                     PnlCtaInicialPagada.Enabled = false;
-                    PnlCtaInicialSinPagar.Enabled = false;
                     PnlDatosFnc.Enabled = false;
-                    btnCalcularCuotasSinPagar.Enabled = false;
                 }
             }
             catch (Exception)
@@ -1044,6 +1038,22 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             try
             {
                 double valorFinanciacion = Convert.ToDouble(TxtValorFnc.Text);
+                double numCuotasFnc = Convert.ToDouble(txtCtasFnc.Text);
+                double totalFnc = 0;
+                if (valorFinanciacion > 0 && numCuotasFnc > 0)
+                {
+                    lblErrorValorFnc.Text = "";
+                    totalFnc = valorFinanciacion * numCuotasFnc;
+                    lblValorTotalFnc.Text = Convert.ToString(totalFnc);
+                    btnCalcularCuotasSinPagar.Enabled = true;
+                    PnlCtaInicialSinPagar.Enabled = true;
+                }
+                else
+                {
+                    btnCalcularCuotasSinPagar.Enabled = false;
+                    PnlCtaInicialSinPagar.Enabled = false;
+                }
+
                 if (valorFinanciacion > 0)
                 {
                     lblErrorValorFnc.Text = "";
@@ -1051,7 +1061,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             }
             catch (Exception)
             {
-                lblErrorValorFnc.Text = "Este campo no puede\ntener valores negativos ni en 0.";
+                lblErrorValorFnc.Text = "Revisar que no hayan\ncampos en blanco.";
             }
         }
 
@@ -1066,25 +1076,22 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 double valorCuotas = Convert.ToDouble(txtValorCuota.Text);
 
 
-                if (CuotasPagoContrato > 23 && valorContrato > 0 && valorCuotas > 0)
+                if ((CuotasPagoContrato > 0 && CuotasPagoContrato < 25) && valorContrato > 0 && valorCuotas > 0)
                 {
                     lblMensajeCuotas.Text = "";
                     PnlCtaInicialPagada.Enabled = true;
-                    PnlCtaInicialSinPagar.Enabled = true;
                     PnlDatosFnc.Enabled = true;
-                    btnCalcularCuotasSinPagar.Enabled = true;
                 }
                 else
                 {
-                    PnlCtaInicialPagada.Enabled = false;
                     PnlCtaInicialSinPagar.Enabled = false;
+                    PnlCtaInicialPagada.Enabled = false;
                     PnlDatosFnc.Enabled = false;
-                    btnCalcularCuotasSinPagar.Enabled = false;
                 }
 
-                if (txtNumCuotas.Text == "0" || CuotasPagoContrato < 24 || CuotasPagoContrato > 120 || txtNumCuotas.Text == "")
+                if (txtNumCuotas.Text == "0" || CuotasPagoContrato > 24 || CuotasPagoContrato < 0 || txtNumCuotas.Text == "")
                 {
-                    lblMensajeCuotas.Text = "Verifique que las cuotas\nesten entre 24 y 120.\nY que no hayan espacios en blanco o 0.";
+                    lblMensajeCuotas.Text = "Verifique que las cuotas\nesten entre 0 y 24.\nY que no hayan espacios en blanco o 0.";
                 }
                 else
                 {
@@ -1125,11 +1132,11 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 DgvCtaInicialSinPagar.Rows.Clear();
                 int CuotasPagoContrato = Convert.ToInt32(txtNumCuotas.Text);
                 int indexCuotasIniciales = 0;
-                int restoCuotas = 24 - numCuotasGridView;
-                int restoPagoCuotas = CuotasPagoContrato - numCuotasGridView;
-                int ctsFnc = CuotasPagoContrato - 24;
-                double valorCuotas = 0;
-                double diferencia = 0;
+                int restoCuotas = CuotasPagoContrato - numCuotasGridView;
+                //int restoPagoCuotas = CuotasPagoContrato - numCuotasGridView;
+                int ctsFnc = Convert.ToInt32(txtCtasFnc.Text);
+                double valorCuotas = 0, ctasPuedePagar = 0;
+                double diferencia = 0, valorPagado = 0;
                 double valorContrato = double.Parse(TxtValorContrato.Text, CultureInfo.InvariantCulture);
                 txtCtasFnc.Enabled = true;
                 int salir = 0;
@@ -1137,12 +1144,11 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 int mes;
                 int año;
                 int totalCuotas = 0, filasInicial = 0;
-                if (numCuotasGridView >= 1 && numCuotasGridView < 25)
+                if (numCuotasGridView > 0 && numCuotasGridView < CuotasPagoContrato)
                 {
                     dia = Convert.ToInt32(DgvCtaInicial.Rows[DgvCtaInicial.Rows.Count - 2].Cells[0].Value);
                     mes = Convert.ToInt32(DgvCtaInicial.Rows[DgvCtaInicial.Rows.Count - 2].Cells[1].Value);
                     año = Convert.ToInt32(DgvCtaInicial.Rows[DgvCtaInicial.Rows.Count - 2].Cells[2].Value);
-                    mes++;
                     dtpFechaCtaSinPagar.Value = new DateTime(año, mes, dia);
 
                     sumaValoresDvg1();
@@ -1157,35 +1163,102 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                         indexCuotasIniciales = DgvCtaInicial.Rows.Count - 2; //indice para grid DgvCtaInicial
                         valorCuotas = double.Parse(txtValorCuota.Text, CultureInfo.InvariantCulture);
                         //valorCuotas = Math.Round((valorContrato - double.Parse(TxtValorIni.Text, CultureInfo.InvariantCulture)) / restoPagoCuotas, 3);
-                        dia = fechaInicioCtaSinPagar.Day;
+                        if (fechaInicioCtaSinPagar.Day > 29 && fechaInicioCtaSinPagar.Month == 2)
+                        {
+                            dia = 28;
+                        }
+                        else
+                        {
+                            dia = fechaInicioCtaSinPagar.Day;
+                        }
+
                         mes = fechaInicioCtaSinPagar.Month;
                         año = fechaInicioCtaSinPagar.Year;
                         lblErrorCtaInicialSinPagar.Text = "";
 
                         for (int i = 0; i < numCuotasGridView; i++)
                         {
+
                             if (Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) < Convert.ToDouble(txtValorCuota.Text))
                             {
+                                if (dia > 29 && mes == 2)
+                                {
+                                    dia = 28;
+                                }
+                                else
+                                {
+                                    dia = fechaInicioCtaSinPagar.Day;
+                                }
+                                if (mes > 12)
+                                {
+                                    mes = 1;
+                                    año++;
+                                }
                                 diferencia = Convert.ToDouble(txtValorCuota.Text) - Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value);
-                                DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, diferencia);
+                                DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, Math.Round(Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value), 2), diferencia);
+                                filasInicial++;
+                                mes++;
+                            }
+                            else if (Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) > Convert.ToDouble(txtValorCuota.Text))
+                            {
+
+                                ctasPuedePagar = Math.Floor(Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) / Convert.ToDouble(txtValorCuota.Text));
+                                double pago = Convert.ToDouble(txtValorCuota.Text) * ctasPuedePagar;
+                                if (ctasPuedePagar > 0)
+                                {
+                                    for (int j = 0; j < ctasPuedePagar; j++)
+                                    {
+                                        if (dia > 29 && mes == 2)
+                                        {
+                                            dia = 28;
+                                        }
+                                        else
+                                        {
+                                            dia = fechaInicioCtaSinPagar.Day;
+                                        }
+                                        if (mes > 12)
+                                        {
+                                            mes = 1;
+                                            año++;
+                                        }
+                                        DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, Math.Round(Convert.ToDouble(txtValorCuota.Text), 2), 0);
+                                        filasInicial++;
+                                        mes++;
+                                    }
+                                }
+
+                                valorPagado = Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) - pago;
+                                diferencia = Convert.ToDouble(txtValorCuota.Text) - valorPagado;
+                                if (diferencia > 0)
+                                {
+                                    DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, Math.Round(valorPagado, 2), diferencia);
+                                }
                                 filasInicial++;
                                 mes++;
                             }
                         }
-
+                        restoCuotas = (CuotasPagoContrato - filasInicial);
                         for (int i = 0; i < restoCuotas; i++)
                         {
                             //if (salir > 0)
                             //{
                             //    break;
                             //}
+                            if (dia >= 29 && mes == 2)
+                            {
+                                dia = 28;
+                            }
+                            else
+                            {
+                                dia = fechaInicioCtaSinPagar.Day;
+                            }
                             if (mes > 12)
                             {
                                 año++;
                                 mes = 1;
                             }
 
-                            DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, valorCuotas);
+                            DgvCtaInicialSinPagar.Rows.Add(dia, mes, año, 0, valorCuotas);
 
 
 
@@ -1207,32 +1280,31 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             //}
                             mes++;
                         }
-                        int indexCuotasSinPagar = DgvCtaInicialSinPagar.Rows.Count - 2;
-                        dia = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[0].Value);
-                        mes = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[1].Value);
-                        mes++;
-                        año = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[2].Value);
-                        DateTime fechaFnc = new DateTime(año, mes, dia);
-                        DtpInicioFnc.Value = fechaFnc;
+                        //int indexCuotasSinPagar = DgvCtaInicialSinPagar.Rows.Count - 2;
+                        //dia = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[0].Value);
+                        //mes = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[1].Value);
+                        //mes++;
+                        //año = Convert.ToInt32(DgvCtaInicialSinPagar.Rows[indexCuotasSinPagar].Cells[2].Value);
+                        //DateTime fechaFnc = new DateTime(año, mes, dia);
+                        //DtpInicioFnc.Value = fechaFnc;
                         sumaValoresDvg2();
 
-                        if (ctsFnc > 0 && numCuotasGridView == 24)
-                        {
-                            PnlDatosFnc.Enabled = true;
-                        }
-                        else if (ctsFnc > 0 && (DgvCtaInicialSinPagar.Rows.Count - 1) > 1)
-                        {
-                            PnlDatosFnc.Enabled = true;
-                            double valorFnc = Convert.ToDouble(DgvCtaInicialSinPagar.Rows[DgvCtaInicial.Rows.Count - 1].Cells[3].Value);
-                            TxtValorFnc.Text = Convert.ToString(valorFnc);
-                            txtCtasFnc.Text = Convert.ToString(ctsFnc);
-                            lblValorTotalFnc.Text = (valorFnc * ctsFnc).ToString("###,###.###");
-                            txtCtasFnc.Enabled = false;
-                        }
-                        else
-                        {
-                            PnlDatosFnc.Enabled = false;
-                        }
+                        //if (ctsFnc > 0 && numCuotasGridView == 24)
+                        //{
+                        //    PnlDatosFnc.Enabled = true;
+                        //}
+                        //else if (ctsFnc > 0 && (DgvCtaInicialSinPagar.Rows.Count - 1) > 1)
+                        //{
+
+                        //    double valorFnc = Convert.ToDouble(DgvCtaInicialSinPagar.Rows[DgvCtaInicial.Rows.Count - 1].Cells[3].Value);
+                        //    TxtValorFnc.Text = Convert.ToString(valorFnc);
+                        //    txtCtasFnc.Text = Convert.ToString(ctsFnc);
+                        //    lblValorTotalFnc.Text = (valorFnc * ctsFnc).ToString("###,###.###");
+                        //}
+                        //else
+                        //{
+                        //    PnlDatosFnc.Enabled = false;
+                        //}
                     }
                 }
                 if (validarFilas(DgvCtaInicial))
@@ -1370,23 +1442,19 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 double valorCuotas = Convert.ToDouble(txtValorCuota.Text);
 
 
-                if (CuotasPagoContrato > 23 && valorContrato > 0 && valorCuotas > 0)
+                if ((CuotasPagoContrato > 0 && CuotasPagoContrato < 25) && valorContrato > 0 && valorCuotas > 0)
                 {
                     lblMensajeCuotas.Text = "";
                     PnlCtaInicialPagada.Enabled = true;
-                    PnlCtaInicialSinPagar.Enabled = true;
                     PnlDatosFnc.Enabled = true;
-                    btnCalcularCuotasSinPagar.Enabled = true;
                 }
                 else
                 {
                     PnlCtaInicialPagada.Enabled = false;
-                    PnlCtaInicialSinPagar.Enabled = false;
                     PnlDatosFnc.Enabled = false;
-                    btnCalcularCuotasSinPagar.Enabled = false;
                 }
 
-                if (txtValorCuota.Text == "0" || txtValorCuota.Text == "")
+                if (txtValorCuota.Text == "0")
                 {
                     lblValorCuota.Text = "Debe ingresar\nel valor\nde la cuota.";
                 }
@@ -1400,6 +1468,44 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 lblValorCuota.Text = "Debe ingresar\nel valor\nde la cuota.";
             }
         }
+
+        private void txtCtasFnc_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double valorFinanciacion = Convert.ToDouble(TxtValorFnc.Text);
+                int numCuotasFnc = Convert.ToInt32(txtCtasFnc.Text);
+                double totalFnc = 0;
+                if (valorFinanciacion > 0 && numCuotasFnc > 0)
+                {
+                    lblErrorCuotasFnc.Text = "";
+                    totalFnc = valorFinanciacion * numCuotasFnc;
+                    lblValorTotalFnc.Text = Convert.ToString(totalFnc);
+                    btnCalcularCuotasSinPagar.Enabled = true;
+                    PnlCtaInicialSinPagar.Enabled = true;
+                }
+                else
+                {
+                    btnCalcularCuotasSinPagar.Enabled = false;
+                    PnlCtaInicialSinPagar.Enabled = false;
+                }
+                if (numCuotasFnc > 0)
+                {
+                    lblErrorCuotasFnc.Text = "";
+                    lblErrorValorFnc.Text = "";
+                }
+                else
+                {
+                    lblErrorCuotasFnc.Text = "Ingrese el número de cuotas correcto.";
+                }
+
+            }
+            catch (Exception)
+            {
+                lblErrorCuotasFnc.Text = "Ingrese el número de cuotas correcto.";
+            }
+        }
+
 
     }
 }

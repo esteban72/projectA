@@ -29,6 +29,7 @@ namespace CarteraGeneral.Clases
         private double dPorcentajeComisionado;
         private double dTotalPagoComision;
         private double dvalTRMcontrato;
+        private double valorGenerico;
         
         //Demas operaciones
         private DateTime? dFecha1Comision;
@@ -691,7 +692,7 @@ namespace CarteraGeneral.Clases
             CmdListaContratos.Parameters.AddWithValue("_IdAdjudicacion", IdAdjudicacion);
             CmdListaContratos.CommandType = CommandType.StoredProcedure;
             MySqlDataReader DrdListaComisiones;
-
+            Consultar("Select trm from adjudicacion where idadjudicacion = '"+IdAdjudicacion+"'");
             MysqlConexion.Open();
             DrdListaComisiones = CmdListaContratos.ExecuteReader();
             try
@@ -706,11 +707,12 @@ namespace CarteraGeneral.Clases
                     MySqlCommand cmdValoresComisiones = new MySqlCommand();
                     cmdValoresComisiones.CommandType = CommandType.StoredProcedure;
                     cmdValoresComisiones.Connection = new MySqlConnection(FrmLogeo.StrConexion);
-                    cmdValoresComisiones.CommandText = "sp_Alttum_AgregarValoresComisiones";
+                    cmdValoresComisiones.CommandText = "sp_PIV_AgregarValoresComisiones";
 
                     cmdValoresComisiones.Parameters.AddWithValue("_IdTercero", IdTercero);
                     cmdValoresComisiones.Parameters.AddWithValue("_IdAdjudicacion", IdAdjudicacion);
                     cmdValoresComisiones.Parameters.AddWithValue("_IdCargo", cargo);
+                    cmdValoresComisiones.Parameters.AddWithValue("_trmContrato", valorGenerico);
                     cmdValoresComisiones.Connection.Open();
                     cmdValoresComisiones.ExecuteNonQuery();
                     cmdValoresComisiones.Connection.Close();
@@ -728,6 +730,32 @@ namespace CarteraGeneral.Clases
         }
 
         #endregion
+        public void Consultar(string Sentencia)
+        {
+            
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consultar;
+            try
+            {
+                MysqlConexion.Open();
+                Query.CommandText = Sentencia;
+
+                Query.Connection = MysqlConexion;
+                consultar = Query.ExecuteReader();
+                if (consultar.Read())
+                {
+                    valorGenerico = consultar.GetDouble(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ups! Hubo un inconveniente: " + ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                MysqlConexion.Close();
+            }
+        }
 
         #region "Metodos para consultas comisiones pagadas"
 

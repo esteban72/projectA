@@ -28,10 +28,10 @@ namespace CarteraGeneral
         ClsIdentificacion NuevoClsIdentificacion = new ClsIdentificacion();
         DataTable DtListado = new DataTable();
         //Panama 
-        public static string StrConexion = "server=192.168.0.200;User Id=root;password=elpobladosa;Persist Security Info=True;database=hotelalttum";
+        //public static string StrConexion = "server=192.168.0.200;User Id=root;password=elpobladosa;Persist Security Info=True;database=hotelalttum";
        //Medellin
        //public static string StrConexion = "server=app-server;User Id=root;password=elpobladosa;Persist Security Info=True;database=HotelAlttum";
-        //public static string StrConexion = "server=127.0.0.1;User Id=root;password=D3sarrollador.;Persist Security Info=True;database=hotelalttum";
+        public static string StrConexion = "server=127.0.0.1;User Id=root;password=D3sarrollador.;Persist Security Info=True;database=hotelalttum";
         
         public static string FrmUsuarioIdUsr;
         public static string FrmUsuarioClave;

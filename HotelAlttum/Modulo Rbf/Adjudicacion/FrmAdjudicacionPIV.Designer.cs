@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdjudicacionPIV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAdicionarAdj = new DevExpress.XtraBars.BarButtonItem();
             this.btnValidarInformacion = new DevExpress.XtraBars.BarButtonItem();
@@ -144,6 +145,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -151,7 +153,6 @@
             this.lblErrorCtaInicialSinPagar = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblMensajeCalculoCuotas = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -162,6 +163,7 @@
             this.chkDolarTope = new System.Windows.Forms.CheckBox();
             this.lblDolarTope = new System.Windows.Forms.Label();
             this.lblValorCuota = new System.Windows.Forms.Label();
+            this.lblErrorCuotasFnc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.PnlCtaInicialPagada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicial)).BeginInit();
@@ -741,8 +743,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle9.Format = "d";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Format = "d";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column1.HeaderText = "Dia";
             this.Column1.MaxInputLength = 2;
             this.Column1.Name = "Column1";
@@ -767,10 +769,10 @@
             // 
             // Valor
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle20;
             this.Valor.HeaderText = "Valor";
             this.Valor.MaxInputLength = 18;
             this.Valor.Name = "Valor";
@@ -908,7 +910,7 @@
             this.PnlDatosFnc.Controls.Add(this.TxtValorFnc);
             this.PnlDatosFnc.Controls.Add(this.label16);
             this.PnlDatosFnc.Enabled = false;
-            this.PnlDatosFnc.Location = new System.Drawing.Point(643, 428);
+            this.PnlDatosFnc.Location = new System.Drawing.Point(648, 428);
             this.PnlDatosFnc.Name = "PnlDatosFnc";
             this.PnlDatosFnc.Size = new System.Drawing.Size(265, 176);
             this.PnlDatosFnc.TabIndex = 321;
@@ -932,9 +934,10 @@
             this.txtCtasFnc.Location = new System.Drawing.Point(31, 101);
             this.txtCtasFnc.Name = "txtCtasFnc";
             this.txtCtasFnc.Size = new System.Drawing.Size(81, 20);
-            this.txtCtasFnc.TabIndex = 358;
+            this.txtCtasFnc.TabIndex = 13;
             this.txtCtasFnc.Text = "0";
             this.txtCtasFnc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCtasFnc.TextChanged += new System.EventHandler(this.txtCtasFnc_TextChanged);
             // 
             // lblErrorValorFnc
             // 
@@ -995,7 +998,7 @@
             this.CmbPeriodoFnc.Location = new System.Drawing.Point(176, 101);
             this.CmbPeriodoFnc.Name = "CmbPeriodoFnc";
             this.CmbPeriodoFnc.Size = new System.Drawing.Size(44, 21);
-            this.CmbPeriodoFnc.TabIndex = 13;
+            this.CmbPeriodoFnc.TabIndex = 14;
             this.CmbPeriodoFnc.Text = "30";
             // 
             // DtpInicioFnc
@@ -1005,7 +1008,7 @@
             this.DtpInicioFnc.Location = new System.Drawing.Point(31, 143);
             this.DtpInicioFnc.Name = "DtpInicioFnc";
             this.DtpInicioFnc.Size = new System.Drawing.Size(83, 20);
-            this.DtpInicioFnc.TabIndex = 14;
+            this.DtpInicioFnc.TabIndex = 15;
             // 
             // label7
             // 
@@ -1083,9 +1086,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(425, 342);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 202;
-            this.label8.Text = "N° cuotas:";
+            this.label8.Text = "N° cuotas iniciales:";
             // 
             // DgvCuotas
             // 
@@ -1121,9 +1124,9 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle11.Format = "d";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle21.Format = "d";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle21;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -1131,20 +1134,20 @@
             // 
             // Capital
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Capital.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.Capital.DefaultCellStyle = dataGridViewCellStyle22;
             this.Capital.HeaderText = "Capital";
             this.Capital.Name = "Capital";
             this.Capital.ReadOnly = true;
             // 
             // Interes
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.Interes.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.Interes.DefaultCellStyle = dataGridViewCellStyle23;
             this.Interes.HeaderText = "Interes";
             this.Interes.Name = "Interes";
             this.Interes.ReadOnly = true;
@@ -1152,10 +1155,10 @@
             // 
             // Cuota
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Cuota.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.Cuota.DefaultCellStyle = dataGridViewCellStyle24;
             this.Cuota.HeaderText = "Cuota";
             this.Cuota.Name = "Cuota";
             this.Cuota.ReadOnly = true;
@@ -1296,7 +1299,7 @@
             this.PnlCtaInicialSinPagar.Enabled = false;
             this.PnlCtaInicialSinPagar.Location = new System.Drawing.Point(329, 428);
             this.PnlCtaInicialSinPagar.Name = "PnlCtaInicialSinPagar";
-            this.PnlCtaInicialSinPagar.Size = new System.Drawing.Size(305, 235);
+            this.PnlCtaInicialSinPagar.Size = new System.Drawing.Size(313, 272);
             this.PnlCtaInicialSinPagar.TabIndex = 365;
             // 
             // lblFechaInicioCtaInicial
@@ -1324,7 +1327,7 @@
             this.lblMensajeNumCuotas2.AutoSize = true;
             this.lblMensajeNumCuotas2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblMensajeNumCuotas2.ForeColor = System.Drawing.Color.Blue;
-            this.lblMensajeNumCuotas2.Location = new System.Drawing.Point(11, 204);
+            this.lblMensajeNumCuotas2.Location = new System.Drawing.Point(11, 248);
             this.lblMensajeNumCuotas2.Name = "lblMensajeNumCuotas2";
             this.lblMensajeNumCuotas2.Size = new System.Drawing.Size(10, 13);
             this.lblMensajeNumCuotas2.TabIndex = 364;
@@ -1339,19 +1342,20 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.Pagado,
             this.dataGridViewTextBoxColumn4});
             this.DgvCtaInicialSinPagar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.DgvCtaInicialSinPagar.Location = new System.Drawing.Point(22, 75);
+            this.DgvCtaInicialSinPagar.Location = new System.Drawing.Point(6, 75);
             this.DgvCtaInicialSinPagar.Name = "DgvCtaInicialSinPagar";
             this.DgvCtaInicialSinPagar.RowHeadersVisible = false;
-            this.DgvCtaInicialSinPagar.Size = new System.Drawing.Size(265, 126);
+            this.DgvCtaInicialSinPagar.Size = new System.Drawing.Size(299, 170);
             this.DgvCtaInicialSinPagar.TabIndex = 11;
             this.DgvCtaInicialSinPagar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicialSinPagar_CellEndEdit);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle15.Format = "d";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle25.Format = "d";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewTextBoxColumn1.HeaderText = "Dia";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -1374,16 +1378,24 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.Width = 40;
             // 
+            // Pagado
+            // 
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Pagado.DefaultCellStyle = dataGridViewCellStyle26;
+            this.Pagado.HeaderText = "Pagado";
+            this.Pagado.Name = "Pagado";
+            this.Pagado.Width = 70;
+            // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle16.Format = "N2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle27.Format = "N2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Pendiente pago";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 18;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 140;
+            this.dataGridViewTextBoxColumn4.Width = 105;
             // 
             // label3
             // 
@@ -1394,7 +1406,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 23);
+            this.label3.Size = new System.Drawing.Size(309, 23);
             this.label3.TabIndex = 211;
             this.label3.Text = "CUOTA INICIAL AUN SIN PAGAR";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1451,17 +1463,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Ingrese el número\nde cuotas para que\nse habiliten los\nformularios de abajo.";
             // 
-            // lblMensajeCalculoCuotas
-            // 
-            this.lblMensajeCalculoCuotas.AutoSize = true;
-            this.lblMensajeCalculoCuotas.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblMensajeCalculoCuotas.ForeColor = System.Drawing.Color.Blue;
-            this.lblMensajeCalculoCuotas.Location = new System.Drawing.Point(332, 666);
-            this.lblMensajeCalculoCuotas.Name = "lblMensajeCalculoCuotas";
-            this.lblMensajeCalculoCuotas.Size = new System.Drawing.Size(10, 13);
-            this.lblMensajeCalculoCuotas.TabIndex = 377;
-            this.lblMensajeCalculoCuotas.Text = "l";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -1469,7 +1470,7 @@
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.txtTotalFinanciacion);
-            this.panel1.Location = new System.Drawing.Point(643, 616);
+            this.panel1.Location = new System.Drawing.Point(648, 616);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 84);
             this.panel1.TabIndex = 360;
@@ -1516,21 +1517,21 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(784, 343);
+            this.label11.Location = new System.Drawing.Point(678, 342);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.Size = new System.Drawing.Size(93, 13);
             this.label11.TabIndex = 378;
-            this.label11.Text = "Valor Cuota:";
+            this.label11.Text = "Valor cuota inicial:";
             // 
             // txtValorCuota
             // 
             this.txtValorCuota.AcceptsReturn = true;
             this.txtValorCuota.BackColor = System.Drawing.Color.Gainsboro;
             this.txtValorCuota.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorCuota.Location = new System.Drawing.Point(784, 358);
+            this.txtValorCuota.Location = new System.Drawing.Point(681, 359);
             this.txtValorCuota.Name = "txtValorCuota";
             this.txtValorCuota.Size = new System.Drawing.Size(83, 20);
-            this.txtValorCuota.TabIndex = 12;
+            this.txtValorCuota.TabIndex = 10;
             this.txtValorCuota.Text = "0";
             this.txtValorCuota.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValorCuota.TextChanged += new System.EventHandler(this.txtValorCuota_TextChanged);
@@ -1540,20 +1541,20 @@
             this.txtDolarTope.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDolarTope.Enabled = false;
             this.txtDolarTope.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolarTope.Location = new System.Drawing.Point(685, 358);
+            this.txtDolarTope.Location = new System.Drawing.Point(784, 358);
             this.txtDolarTope.Name = "txtDolarTope";
             this.txtDolarTope.Size = new System.Drawing.Size(83, 20);
-            this.txtDolarTope.TabIndex = 11;
+            this.txtDolarTope.TabIndex = 12;
             this.txtDolarTope.Text = "0";
             this.txtDolarTope.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chkDolarTope
             // 
             this.chkDolarTope.AutoSize = true;
-            this.chkDolarTope.Location = new System.Drawing.Point(685, 340);
+            this.chkDolarTope.Location = new System.Drawing.Point(784, 340);
             this.chkDolarTope.Name = "chkDolarTope";
             this.chkDolarTope.Size = new System.Drawing.Size(88, 17);
-            this.chkDolarTope.TabIndex = 10;
+            this.chkDolarTope.TabIndex = 11;
             this.chkDolarTope.Text = "Dolar Techo?";
             this.chkDolarTope.UseVisualStyleBackColor = true;
             this.chkDolarTope.CheckedChanged += new System.EventHandler(this.chkDolarTope_CheckedChanged);
@@ -1563,7 +1564,7 @@
             this.lblDolarTope.AutoSize = true;
             this.lblDolarTope.BackColor = System.Drawing.Color.Transparent;
             this.lblDolarTope.ForeColor = System.Drawing.Color.Red;
-            this.lblDolarTope.Location = new System.Drawing.Point(682, 381);
+            this.lblDolarTope.Location = new System.Drawing.Point(781, 381);
             this.lblDolarTope.Name = "lblDolarTope";
             this.lblDolarTope.Size = new System.Drawing.Size(9, 13);
             this.lblDolarTope.TabIndex = 382;
@@ -1574,17 +1575,29 @@
             this.lblValorCuota.AutoSize = true;
             this.lblValorCuota.BackColor = System.Drawing.Color.Transparent;
             this.lblValorCuota.ForeColor = System.Drawing.Color.Red;
-            this.lblValorCuota.Location = new System.Drawing.Point(784, 381);
+            this.lblValorCuota.Location = new System.Drawing.Point(681, 382);
             this.lblValorCuota.Name = "lblValorCuota";
             this.lblValorCuota.Size = new System.Drawing.Size(9, 13);
             this.lblValorCuota.TabIndex = 383;
             this.lblValorCuota.Text = "l";
+            // 
+            // lblErrorCuotasFnc
+            // 
+            this.lblErrorCuotasFnc.AutoSize = true;
+            this.lblErrorCuotasFnc.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCuotasFnc.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCuotasFnc.Location = new System.Drawing.Point(648, 412);
+            this.lblErrorCuotasFnc.Name = "lblErrorCuotasFnc";
+            this.lblErrorCuotasFnc.Size = new System.Drawing.Size(9, 13);
+            this.lblErrorCuotasFnc.TabIndex = 360;
+            this.lblErrorCuotasFnc.Text = "l";
             // 
             // FrmAdjudicacionPIV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 737);
+            this.Controls.Add(this.lblErrorCuotasFnc);
             this.Controls.Add(this.lblValorCuota);
             this.Controls.Add(this.txtValorCuota);
             this.Controls.Add(this.lblDolarTope);
@@ -1592,7 +1605,6 @@
             this.Controls.Add(this.chkDolarTope);
             this.Controls.Add(this.txtDolarTope);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblMensajeCalculoCuotas);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.lblErrorCtaInicialSinPagar);
             this.Controls.Add(this.lblMensajeCuotas);
@@ -1774,10 +1786,6 @@
         private System.Windows.Forms.Panel PnlCtaInicialSinPagar;
         private System.Windows.Forms.Label lblMensajeNumCuotas2;
         private System.Windows.Forms.DataGridView DgvCtaInicialSinPagar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtValorSinPagar;
@@ -1789,7 +1797,6 @@
         private DevExpress.XtraBars.BarButtonItem btnCalcularCuotasSinPagar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCtasFnc;
-        private System.Windows.Forms.Label lblMensajeCalculoCuotas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumCta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
@@ -1810,5 +1817,11 @@
         private System.Windows.Forms.CheckBox chkDolarTope;
         private System.Windows.Forms.Label lblDolarTope;
         private System.Windows.Forms.Label lblValorCuota;
+        private System.Windows.Forms.Label lblErrorCuotasFnc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
