@@ -1261,7 +1261,7 @@ namespace CarteraGeneral
 
                 Sentencia2 = NuevoClsIdentificacion.MtdNuevoScripRecaudo(TxtAdjudicacion.Text, Convert.ToDecimal(StrInteresMora), Convert.ToInt16(StrDecimales)); 
             MtdDatosGrl();
-            DtGrilla = NuevoClsIdentificacion.MtdBuscarDataset(Sentencia2 + "order by car.Fecha");
+            DtGrilla = NuevoClsIdentificacion.MtdBuscarDataset(Sentencia2 );
             MtdDatosGrilla();
             }
             switch (EntradaRecaudos)

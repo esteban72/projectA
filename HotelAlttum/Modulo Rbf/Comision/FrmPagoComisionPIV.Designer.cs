@@ -1,6 +1,6 @@
 ﻿namespace CarteraGeneral.Modulo_Rbf.Comision
 {
-    partial class FrmPagoComision
+    partial class FrmPagoComisionPIV
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPagoComision));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnPagar = new DevExpress.XtraBars.BarButtonItem();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
@@ -133,7 +132,7 @@
             this.SeccionComisiones.ItemLinks.Add(this.btnPagar);
             this.SeccionComisiones.ItemLinks.Add(this.btnActualizar);
             this.SeccionComisiones.Name = "SeccionComisiones";
-            this.SeccionComisiones.Text = "Comisiones";
+            this.SeccionComisiones.Text = "Comisiones PIV";
             // 
             // ribbonStatusBar
             // 
@@ -279,7 +278,7 @@
             // 
             // imgAlttum
             // 
-            this.imgAlttum.EditValue = ((object)(resources.GetObject("imgAlttum.EditValue")));
+            this.imgAlttum.EditValue = global::CarteraGeneral.RecursosIconos.LogoAlttum;
             this.imgAlttum.Location = new System.Drawing.Point(1004, 171);
             this.imgAlttum.MenuManager = this.ribbon;
             this.imgAlttum.Name = "imgAlttum";
@@ -301,7 +300,7 @@
             // 
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(305, 172);
+            this.lblMensaje.Location = new System.Drawing.Point(305, 171);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(11, 13);
             this.lblMensaje.TabIndex = 30;
@@ -343,7 +342,6 @@
             this.cmbVecesPagoComision.Size = new System.Drawing.Size(44, 21);
             this.cmbVecesPagoComision.TabIndex = 1;
             this.cmbVecesPagoComision.SelectedIndexChanged += new System.EventHandler(this.cmbVecesPagoComision_SelectedIndexChanged);
-            this.cmbVecesPagoComision.TextChanged += new System.EventHandler(this.cmbVecesPagoComision_SelectedIndexChanged);
             // 
             // lblVecesComision
             // 
@@ -402,7 +400,7 @@
             this.lblTotalPagarComision.TabIndex = 46;
             this.lblTotalPagarComision.Text = "Total necesario para \npagar la comisión:";
             // 
-            // FrmPagoComision
+            // FrmPagoComisionPIV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,13 +435,13 @@
             this.Controls.Add(this.txtFechaContrato);
             this.Controls.Add(this.ribbon);
             this.MaximizeBox = false;
-            this.Name = "FrmPagoComision";
+            this.Name = "FrmPagoComisionPIV";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Comisiones";
+            this.Text = "Comisiones PIV (Plan Internacional de Vacaciones)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPagoComision_FormClosing);
-            this.Load += new System.EventHandler(this.FrmPagoComision_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPagoComisionPIV_FormClosing);
+            this.Load += new System.EventHandler(this.FrmPagoComisionPIV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInmueble.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCliente.Properties)).EndInit();
