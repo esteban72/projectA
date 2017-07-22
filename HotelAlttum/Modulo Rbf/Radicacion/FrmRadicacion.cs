@@ -545,7 +545,7 @@ namespace CarteraGeneral
             cargoSeleccionado = CmbCargos.SelectedValue.ToString();
             if(cargoSeleccionado == "Jefe Tlmk" || cargoSeleccionado == "Supervisor Tlmk"
                 || cargoSeleccionado == "Telemarquista" || cargoSeleccionado == "Jefe Promocion"
-                || cargoSeleccionado == "Promotor")
+                || cargoSeleccionado == "Promotor" || cargoSeleccionado == "Supervisor de Promocion")
             {
                 TxtComisionAsesor.Text = "0";
                 txtValorFijo.Enabled = true;
