@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdjudicacionPIV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAdicionarAdj = new DevExpress.XtraBars.BarButtonItem();
             this.btnValidarInformacion = new DevExpress.XtraBars.BarButtonItem();
             this.btnCrearAdjudicacion = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLimpiar = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCalcularCuotasSinPagar = new DevExpress.XtraBars.BarButtonItem();
             this.btnConsultarTRM = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Operaciones = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,20 +80,11 @@
             this.LblNombreTitular = new System.Windows.Forms.Label();
             this.LblContrato = new System.Windows.Forms.Label();
             this.TxtContrato = new System.Windows.Forms.TextBox();
-            this.PnlCtaInicialPagada = new System.Windows.Forms.Panel();
             this.chkFechaConsecutiva = new System.Windows.Forms.CheckBox();
             this.dtpFechaCtaInicial = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminarFila = new System.Windows.Forms.Button();
             this.lblMensajeNumCuotas = new System.Windows.Forms.Label();
-            this.DgvCtaInicial = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LblTituloIni = new System.Windows.Forms.Label();
-            this.LblInicial = new System.Windows.Forms.Label();
-            this.TxtValorIni = new System.Windows.Forms.TextBox();
             this.CmbFormaPago = new System.Windows.Forms.ComboBox();
             this.LblFormaPago = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -116,9 +104,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.TxtValorFnc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.lblMensajeCuotas = new System.Windows.Forms.Label();
-            this.txtNumCuotas = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.DgvCuotas = new System.Windows.Forms.DataGridView();
             this.Cto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumCta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,16 +117,12 @@
             this.lblMensajeGrado = new System.Windows.Forms.Label();
             this.lblMensajeContrato = new System.Windows.Forms.Label();
             this.lblErrorTitular1 = new System.Windows.Forms.Label();
-            this.lblErrorCtaInicialPagada = new System.Windows.Forms.Label();
             this.lblValorContrato = new System.Windows.Forms.Label();
             this.trmContrato = new System.Windows.Forms.Label();
             this.txtTRMContrato = new System.Windows.Forms.TextBox();
             this.txtValContratoPesos = new System.Windows.Forms.TextBox();
             this.PnlCtaInicialSinPagar = new System.Windows.Forms.Panel();
-            this.lblFechaInicioCtaInicial = new System.Windows.Forms.Label();
-            this.dtpFechaCtaSinPagar = new System.Windows.Forms.DateTimePicker();
-            this.lblMensajeNumCuotas2 = new System.Windows.Forms.Label();
-            this.DgvCtaInicialSinPagar = new System.Windows.Forms.DataGridView();
+            this.DgvCtaInicial = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,34 +130,23 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtValorSinPagar = new System.Windows.Forms.TextBox();
-            this.lblErrorCtaInicialSinPagar = new System.Windows.Forms.Label();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtValorIni = new System.Windows.Forms.TextBox();
+            this.lblErrorCtaInicial = new System.Windows.Forms.Label();
+            this.PnlTotalFnc = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtTotalFinanciacion = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtValorCuota = new System.Windows.Forms.TextBox();
             this.txtDolarTope = new System.Windows.Forms.TextBox();
             this.chkDolarTope = new System.Windows.Forms.CheckBox();
             this.lblDolarTope = new System.Windows.Forms.Label();
-            this.lblValorCuota = new System.Windows.Forms.Label();
             this.lblErrorCuotasFnc = new System.Windows.Forms.Label();
-            this.chkCuotasTotales = new System.Windows.Forms.CheckBox();
-            this.lblErrorCuotasTotales = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            this.PnlCtaInicialPagada.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicial)).BeginInit();
             this.PnlDatosFnc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCuotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAlttum.Properties)).BeginInit();
             this.PnlCtaInicialSinPagar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicialSinPagar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicial)).BeginInit();
+            this.PnlTotalFnc.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -189,7 +159,6 @@
             this.btnCrearAdjudicacion,
             this.barButtonItem1,
             this.btnLimpiar,
-            this.btnCalcularCuotasSinPagar,
             this.btnConsultarTRM});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 8;
@@ -241,15 +210,6 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
-            // btnCalcularCuotasSinPagar
-            // 
-            this.btnCalcularCuotasSinPagar.Caption = "Calcular cuotas aun sin pagar";
-            this.btnCalcularCuotasSinPagar.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCalcularCuotasSinPagar.Glyph")));
-            this.btnCalcularCuotasSinPagar.Id = 6;
-            this.btnCalcularCuotasSinPagar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCalcularCuotasSinPagar.LargeGlyph")));
-            this.btnCalcularCuotasSinPagar.Name = "btnCalcularCuotasSinPagar";
-            this.btnCalcularCuotasSinPagar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalcularCuotasSinPagar_ItemClick);
-            // 
             // btnConsultarTRM
             // 
             this.btnConsultarTRM.Caption = "Consulta TRM";
@@ -270,7 +230,6 @@
             // Operaciones
             // 
             this.Operaciones.ItemLinks.Add(this.btnValidarInformacion);
-            this.Operaciones.ItemLinks.Add(this.btnCalcularCuotasSinPagar);
             this.Operaciones.ItemLinks.Add(this.btnAdicionarAdj);
             this.Operaciones.Name = "Operaciones";
             this.Operaciones.Text = "Adjudicacion";
@@ -653,29 +612,10 @@
             this.TxtContrato.Size = new System.Drawing.Size(69, 20);
             this.TxtContrato.TabIndex = 324;
             // 
-            // PnlCtaInicialPagada
-            // 
-            this.PnlCtaInicialPagada.BackColor = System.Drawing.Color.Gainsboro;
-            this.PnlCtaInicialPagada.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PnlCtaInicialPagada.Controls.Add(this.chkFechaConsecutiva);
-            this.PnlCtaInicialPagada.Controls.Add(this.dtpFechaCtaInicial);
-            this.PnlCtaInicialPagada.Controls.Add(this.label2);
-            this.PnlCtaInicialPagada.Controls.Add(this.btnEliminarFila);
-            this.PnlCtaInicialPagada.Controls.Add(this.lblMensajeNumCuotas);
-            this.PnlCtaInicialPagada.Controls.Add(this.DgvCtaInicial);
-            this.PnlCtaInicialPagada.Controls.Add(this.LblTituloIni);
-            this.PnlCtaInicialPagada.Controls.Add(this.LblInicial);
-            this.PnlCtaInicialPagada.Controls.Add(this.TxtValorIni);
-            this.PnlCtaInicialPagada.Enabled = false;
-            this.PnlCtaInicialPagada.Location = new System.Drawing.Point(12, 428);
-            this.PnlCtaInicialPagada.Name = "PnlCtaInicialPagada";
-            this.PnlCtaInicialPagada.Size = new System.Drawing.Size(305, 235);
-            this.PnlCtaInicialPagada.TabIndex = 343;
-            // 
             // chkFechaConsecutiva
             // 
             this.chkFechaConsecutiva.AutoSize = true;
-            this.chkFechaConsecutiva.Location = new System.Drawing.Point(174, 52);
+            this.chkFechaConsecutiva.Location = new System.Drawing.Point(179, 50);
             this.chkFechaConsecutiva.Name = "chkFechaConsecutiva";
             this.chkFechaConsecutiva.Size = new System.Drawing.Size(115, 17);
             this.chkFechaConsecutiva.TabIndex = 14;
@@ -686,7 +626,7 @@
             // 
             this.dtpFechaCtaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCtaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCtaInicial.Location = new System.Drawing.Point(83, 50);
+            this.dtpFechaCtaInicial.Location = new System.Drawing.Point(88, 48);
             this.dtpFechaCtaInicial.Name = "dtpFechaCtaInicial";
             this.dtpFechaCtaInicial.Size = new System.Drawing.Size(84, 20);
             this.dtpFechaCtaInicial.TabIndex = 13;
@@ -697,7 +637,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Location = new System.Drawing.Point(12, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 376;
@@ -705,7 +645,7 @@
             // 
             // btnEliminarFila
             // 
-            this.btnEliminarFila.Location = new System.Drawing.Point(217, 202);
+            this.btnEliminarFila.Location = new System.Drawing.Point(230, 239);
             this.btnEliminarFila.Name = "btnEliminarFila";
             this.btnEliminarFila.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarFila.TabIndex = 364;
@@ -718,104 +658,11 @@
             this.lblMensajeNumCuotas.AutoSize = true;
             this.lblMensajeNumCuotas.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblMensajeNumCuotas.ForeColor = System.Drawing.Color.Blue;
-            this.lblMensajeNumCuotas.Location = new System.Drawing.Point(4, 203);
+            this.lblMensajeNumCuotas.Location = new System.Drawing.Point(7, 239);
             this.lblMensajeNumCuotas.Name = "lblMensajeNumCuotas";
             this.lblMensajeNumCuotas.Size = new System.Drawing.Size(10, 13);
             this.lblMensajeNumCuotas.TabIndex = 364;
             this.lblMensajeNumCuotas.Text = "l";
-            // 
-            // DgvCtaInicial
-            // 
-            this.DgvCtaInicial.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DgvCtaInicial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DgvCtaInicial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCtaInicial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Valor});
-            this.DgvCtaInicial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.DgvCtaInicial.Location = new System.Drawing.Point(14, 76);
-            this.DgvCtaInicial.Name = "DgvCtaInicial";
-            this.DgvCtaInicial.RowHeadersVisible = false;
-            this.DgvCtaInicial.Size = new System.Drawing.Size(265, 123);
-            this.DgvCtaInicial.TabIndex = 11;
-            this.DgvCtaInicial.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicial_CellEndEdit);
-            this.DgvCtaInicial.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvCtaInicial_RowsAdded);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle37.Format = "d";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle37;
-            this.Column1.HeaderText = "Dia";
-            this.Column1.MaxInputLength = 2;
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mes";
-            this.Column2.MaxInputLength = 2;
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.Width = 30;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Año";
-            this.Column3.MaxInputLength = 4;
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.Width = 40;
-            // 
-            // Valor
-            // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle38.Format = "N2";
-            dataGridViewCellStyle38.NullValue = null;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle38;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.MaxInputLength = 18;
-            this.Valor.Name = "Valor";
-            this.Valor.Width = 140;
-            // 
-            // LblTituloIni
-            // 
-            this.LblTituloIni.BackColor = System.Drawing.Color.Transparent;
-            this.LblTituloIni.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblTituloIni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LblTituloIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTituloIni.ForeColor = System.Drawing.Color.Black;
-            this.LblTituloIni.Location = new System.Drawing.Point(0, 0);
-            this.LblTituloIni.Name = "LblTituloIni";
-            this.LblTituloIni.Size = new System.Drawing.Size(301, 23);
-            this.LblTituloIni.TabIndex = 211;
-            this.LblTituloIni.Text = "CUOTA INICIAL YA PAGADA";
-            this.LblTituloIni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LblInicial
-            // 
-            this.LblInicial.AutoSize = true;
-            this.LblInicial.BackColor = System.Drawing.Color.Transparent;
-            this.LblInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblInicial.Location = new System.Drawing.Point(19, 29);
-            this.LblInicial.Name = "LblInicial";
-            this.LblInicial.Size = new System.Drawing.Size(116, 13);
-            this.LblInicial.TabIndex = 210;
-            this.LblInicial.Text = "Valor total cuota inicial:";
-            // 
-            // TxtValorIni
-            // 
-            this.TxtValorIni.BackColor = System.Drawing.Color.White;
-            this.TxtValorIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorIni.Location = new System.Drawing.Point(141, 26);
-            this.TxtValorIni.Name = "TxtValorIni";
-            this.TxtValorIni.ReadOnly = true;
-            this.TxtValorIni.Size = new System.Drawing.Size(110, 20);
-            this.TxtValorIni.TabIndex = 152;
-            this.TxtValorIni.Text = "0";
-            this.TxtValorIni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // CmbFormaPago
             // 
@@ -912,7 +759,7 @@
             this.PnlDatosFnc.Controls.Add(this.TxtValorFnc);
             this.PnlDatosFnc.Controls.Add(this.label16);
             this.PnlDatosFnc.Enabled = false;
-            this.PnlDatosFnc.Location = new System.Drawing.Point(648, 428);
+            this.PnlDatosFnc.Location = new System.Drawing.Point(384, 457);
             this.PnlDatosFnc.Name = "PnlDatosFnc";
             this.PnlDatosFnc.Size = new System.Drawing.Size(265, 176);
             this.PnlDatosFnc.TabIndex = 321;
@@ -1058,40 +905,6 @@
             this.label16.TabIndex = 200;
             this.label16.Text = "Total pago\nFNC:";
             // 
-            // lblMensajeCuotas
-            // 
-            this.lblMensajeCuotas.AutoSize = true;
-            this.lblMensajeCuotas.BackColor = System.Drawing.Color.Transparent;
-            this.lblMensajeCuotas.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeCuotas.Location = new System.Drawing.Point(422, 381);
-            this.lblMensajeCuotas.Name = "lblMensajeCuotas";
-            this.lblMensajeCuotas.Size = new System.Drawing.Size(9, 13);
-            this.lblMensajeCuotas.TabIndex = 356;
-            this.lblMensajeCuotas.Text = "l";
-            // 
-            // txtNumCuotas
-            // 
-            this.txtNumCuotas.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNumCuotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumCuotas.Location = new System.Drawing.Point(426, 358);
-            this.txtNumCuotas.Name = "txtNumCuotas";
-            this.txtNumCuotas.Size = new System.Drawing.Size(111, 20);
-            this.txtNumCuotas.TabIndex = 9;
-            this.txtNumCuotas.Text = "0";
-            this.txtNumCuotas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtNumCuotas.TextChanged += new System.EventHandler(this.txtNumCuotas_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(428, 341);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 13);
-            this.label8.TabIndex = 202;
-            this.label8.Text = "N° cuotas iniciales:";
-            // 
             // DgvCuotas
             // 
             this.DgvCuotas.BackgroundColor = System.Drawing.Color.White;
@@ -1126,9 +939,9 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle39.Format = "d";
-            dataGridViewCellStyle39.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle1;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
@@ -1136,20 +949,20 @@
             // 
             // Capital
             // 
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle40.Format = "N2";
-            dataGridViewCellStyle40.NullValue = null;
-            this.Capital.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Capital.DefaultCellStyle = dataGridViewCellStyle2;
             this.Capital.HeaderText = "Capital";
             this.Capital.Name = "Capital";
             this.Capital.ReadOnly = true;
             // 
             // Interes
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle41.Format = "N2";
-            dataGridViewCellStyle41.NullValue = null;
-            this.Interes.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Interes.DefaultCellStyle = dataGridViewCellStyle3;
             this.Interes.HeaderText = "Interes";
             this.Interes.Name = "Interes";
             this.Interes.ReadOnly = true;
@@ -1157,10 +970,10 @@
             // 
             // Cuota
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle42.Format = "N2";
-            dataGridViewCellStyle42.NullValue = null;
-            this.Cuota.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Cuota.DefaultCellStyle = dataGridViewCellStyle4;
             this.Cuota.HeaderText = "Cuota";
             this.Cuota.Name = "Cuota";
             this.Cuota.ReadOnly = true;
@@ -1168,11 +981,11 @@
             // imgAlttum
             // 
             this.imgAlttum.EditValue = global::CarteraGeneral.RecursosIconos.LogoAlttum;
-            this.imgAlttum.Location = new System.Drawing.Point(700, 257);
+            this.imgAlttum.Location = new System.Drawing.Point(644, 257);
             this.imgAlttum.Name = "imgAlttum";
             this.imgAlttum.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imgAlttum.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.imgAlttum.Size = new System.Drawing.Size(167, 58);
+            this.imgAlttum.Size = new System.Drawing.Size(202, 82);
             this.imgAlttum.TabIndex = 353;
             // 
             // lblMensajeValor
@@ -1180,7 +993,7 @@
             this.lblMensajeValor.AutoSize = true;
             this.lblMensajeValor.BackColor = System.Drawing.Color.Transparent;
             this.lblMensajeValor.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeValor.Location = new System.Drawing.Point(299, 381);
+            this.lblMensajeValor.Location = new System.Drawing.Point(292, 381);
             this.lblMensajeValor.Name = "lblMensajeValor";
             this.lblMensajeValor.Size = new System.Drawing.Size(9, 13);
             this.lblMensajeValor.TabIndex = 354;
@@ -1229,17 +1042,6 @@
             this.lblErrorTitular1.Size = new System.Drawing.Size(9, 13);
             this.lblErrorTitular1.TabIndex = 358;
             this.lblErrorTitular1.Text = "l";
-            // 
-            // lblErrorCtaInicialPagada
-            // 
-            this.lblErrorCtaInicialPagada.AutoSize = true;
-            this.lblErrorCtaInicialPagada.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorCtaInicialPagada.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCtaInicialPagada.Location = new System.Drawing.Point(12, 401);
-            this.lblErrorCtaInicialPagada.Name = "lblErrorCtaInicialPagada";
-            this.lblErrorCtaInicialPagada.Size = new System.Drawing.Size(9, 13);
-            this.lblErrorCtaInicialPagada.TabIndex = 364;
-            this.lblErrorCtaInicialPagada.Text = "l";
             // 
             // lblValorContrato
             // 
@@ -1291,73 +1093,45 @@
             // 
             this.PnlCtaInicialSinPagar.BackColor = System.Drawing.Color.Gainsboro;
             this.PnlCtaInicialSinPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PnlCtaInicialSinPagar.Controls.Add(this.lblFechaInicioCtaInicial);
-            this.PnlCtaInicialSinPagar.Controls.Add(this.dtpFechaCtaSinPagar);
-            this.PnlCtaInicialSinPagar.Controls.Add(this.lblMensajeNumCuotas2);
-            this.PnlCtaInicialSinPagar.Controls.Add(this.DgvCtaInicialSinPagar);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.chkFechaConsecutiva);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.DgvCtaInicial);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.dtpFechaCtaInicial);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.lblMensajeNumCuotas);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.btnEliminarFila);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.label2);
             this.PnlCtaInicialSinPagar.Controls.Add(this.label3);
             this.PnlCtaInicialSinPagar.Controls.Add(this.label4);
-            this.PnlCtaInicialSinPagar.Controls.Add(this.txtValorSinPagar);
+            this.PnlCtaInicialSinPagar.Controls.Add(this.txtValorIni);
             this.PnlCtaInicialSinPagar.Enabled = false;
-            this.PnlCtaInicialSinPagar.Location = new System.Drawing.Point(329, 428);
+            this.PnlCtaInicialSinPagar.Location = new System.Drawing.Point(51, 416);
             this.PnlCtaInicialSinPagar.Name = "PnlCtaInicialSinPagar";
             this.PnlCtaInicialSinPagar.Size = new System.Drawing.Size(313, 272);
             this.PnlCtaInicialSinPagar.TabIndex = 365;
             // 
-            // lblFechaInicioCtaInicial
+            // DgvCtaInicial
             // 
-            this.lblFechaInicioCtaInicial.AutoSize = true;
-            this.lblFechaInicioCtaInicial.BackColor = System.Drawing.Color.Transparent;
-            this.lblFechaInicioCtaInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicioCtaInicial.Location = new System.Drawing.Point(21, 49);
-            this.lblFechaInicioCtaInicial.Name = "lblFechaInicioCtaInicial";
-            this.lblFechaInicioCtaInicial.Size = new System.Drawing.Size(97, 13);
-            this.lblFechaInicioCtaInicial.TabIndex = 375;
-            this.lblFechaInicioCtaInicial.Text = "Fecha inicio cuota:";
-            // 
-            // dtpFechaCtaSinPagar
-            // 
-            this.dtpFechaCtaSinPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaCtaSinPagar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCtaSinPagar.Location = new System.Drawing.Point(164, 49);
-            this.dtpFechaCtaSinPagar.Name = "dtpFechaCtaSinPagar";
-            this.dtpFechaCtaSinPagar.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaCtaSinPagar.TabIndex = 15;
-            // 
-            // lblMensajeNumCuotas2
-            // 
-            this.lblMensajeNumCuotas2.AutoSize = true;
-            this.lblMensajeNumCuotas2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblMensajeNumCuotas2.ForeColor = System.Drawing.Color.Blue;
-            this.lblMensajeNumCuotas2.Location = new System.Drawing.Point(11, 248);
-            this.lblMensajeNumCuotas2.Name = "lblMensajeNumCuotas2";
-            this.lblMensajeNumCuotas2.Size = new System.Drawing.Size(10, 13);
-            this.lblMensajeNumCuotas2.TabIndex = 364;
-            this.lblMensajeNumCuotas2.Text = "l";
-            // 
-            // DgvCtaInicialSinPagar
-            // 
-            this.DgvCtaInicialSinPagar.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DgvCtaInicialSinPagar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DgvCtaInicialSinPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCtaInicialSinPagar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvCtaInicial.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DgvCtaInicial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DgvCtaInicial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCtaInicial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.Pagado,
             this.dataGridViewTextBoxColumn4});
-            this.DgvCtaInicialSinPagar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.DgvCtaInicialSinPagar.Location = new System.Drawing.Point(6, 75);
-            this.DgvCtaInicialSinPagar.Name = "DgvCtaInicialSinPagar";
-            this.DgvCtaInicialSinPagar.RowHeadersVisible = false;
-            this.DgvCtaInicialSinPagar.Size = new System.Drawing.Size(299, 170);
-            this.DgvCtaInicialSinPagar.TabIndex = 11;
-            this.DgvCtaInicialSinPagar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicialSinPagar_CellEndEdit);
+            this.DgvCtaInicial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.DgvCtaInicial.Location = new System.Drawing.Point(6, 75);
+            this.DgvCtaInicial.Name = "DgvCtaInicial";
+            this.DgvCtaInicial.RowHeadersVisible = false;
+            this.DgvCtaInicial.Size = new System.Drawing.Size(299, 158);
+            this.DgvCtaInicial.TabIndex = 11;
+            this.DgvCtaInicial.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicialSinPagar_CellEndEdit);
+            this.DgvCtaInicial.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvCtaInicial_RowsAdded);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle43.Format = "d";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle5.Format = "d";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn1.HeaderText = "Dia";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -1382,23 +1156,21 @@
             // 
             // Pagado
             // 
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Pagado.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Pagado.DefaultCellStyle = dataGridViewCellStyle6;
             this.Pagado.HeaderText = "Pagado";
             this.Pagado.Name = "Pagado";
-            this.Pagado.ReadOnly = true;
             this.Pagado.Width = 70;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.Format = "N2";
-            dataGridViewCellStyle45.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn4.HeaderText = "Pendiente pago";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 18;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 105;
             // 
             // label3
@@ -1412,7 +1184,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(309, 23);
             this.label3.TabIndex = 211;
-            this.label3.Text = "CUOTA INICIAL AUN SIN PAGAR";
+            this.label3.Text = "CUOTA INICIAL";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -1426,58 +1198,41 @@
             this.label4.TabIndex = 210;
             this.label4.Text = "Valor cuota inicial sin pagar:";
             // 
-            // txtValorSinPagar
+            // txtValorIni
             // 
-            this.txtValorSinPagar.BackColor = System.Drawing.Color.White;
-            this.txtValorSinPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorSinPagar.Location = new System.Drawing.Point(164, 25);
-            this.txtValorSinPagar.Name = "txtValorSinPagar";
-            this.txtValorSinPagar.ReadOnly = true;
-            this.txtValorSinPagar.Size = new System.Drawing.Size(100, 20);
-            this.txtValorSinPagar.TabIndex = 152;
-            this.txtValorSinPagar.Text = "0";
-            this.txtValorSinPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtValorIni.BackColor = System.Drawing.Color.White;
+            this.txtValorIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorIni.Location = new System.Drawing.Point(164, 25);
+            this.txtValorIni.Name = "txtValorIni";
+            this.txtValorIni.ReadOnly = true;
+            this.txtValorIni.Size = new System.Drawing.Size(100, 20);
+            this.txtValorIni.TabIndex = 152;
+            this.txtValorIni.Text = "0";
+            this.txtValorIni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblErrorCtaInicialSinPagar
+            // lblErrorCtaInicial
             // 
-            this.lblErrorCtaInicialSinPagar.AutoSize = true;
-            this.lblErrorCtaInicialSinPagar.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorCtaInicialSinPagar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCtaInicialSinPagar.Location = new System.Drawing.Point(332, 412);
-            this.lblErrorCtaInicialSinPagar.Name = "lblErrorCtaInicialSinPagar";
-            this.lblErrorCtaInicialSinPagar.Size = new System.Drawing.Size(9, 13);
-            this.lblErrorCtaInicialSinPagar.TabIndex = 373;
-            this.lblErrorCtaInicialSinPagar.Text = "l";
+            this.lblErrorCtaInicial.AutoSize = true;
+            this.lblErrorCtaInicial.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCtaInicial.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCtaInicial.Location = new System.Drawing.Point(45, 400);
+            this.lblErrorCtaInicial.Name = "lblErrorCtaInicial";
+            this.lblErrorCtaInicial.Size = new System.Drawing.Size(9, 13);
+            this.lblErrorCtaInicial.TabIndex = 373;
+            this.lblErrorCtaInicial.Text = "l";
             // 
-            // panelControl1
+            // PnlTotalFnc
             // 
-            this.panelControl1.Controls.Add(this.label5);
-            this.panelControl1.Location = new System.Drawing.Point(654, 339);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(113, 66);
-            this.panelControl1.TabIndex = 374;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.label5.Location = new System.Drawing.Point(3, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 52);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ingrese los valores\nanteriores para que\nse habiliten los\nformularios de abajo.";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.txtTotalFinanciacion);
-            this.panel1.Location = new System.Drawing.Point(648, 616);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 84);
-            this.panel1.TabIndex = 360;
+            this.PnlTotalFnc.BackColor = System.Drawing.Color.Transparent;
+            this.PnlTotalFnc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PnlTotalFnc.Controls.Add(this.label19);
+            this.PnlTotalFnc.Controls.Add(this.label23);
+            this.PnlTotalFnc.Controls.Add(this.txtTotalFinanciacion);
+            this.PnlTotalFnc.Enabled = false;
+            this.PnlTotalFnc.Location = new System.Drawing.Point(665, 491);
+            this.PnlTotalFnc.Name = "PnlTotalFnc";
+            this.PnlTotalFnc.Size = new System.Drawing.Size(216, 109);
+            this.PnlTotalFnc.TabIndex = 360;
             // 
             // label19
             // 
@@ -1485,11 +1240,11 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(54, 3);
+            this.label19.Location = new System.Drawing.Point(25, 4);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(150, 26);
+            this.label19.Size = new System.Drawing.Size(168, 26);
             this.label19.TabIndex = 207;
-            this.label19.Text = "TOTAL FINANCIACION Y\nCUOTAS SIN PAGAR";
+            this.label19.Text = "TOTAL FINANCIACION CON\nCUOTAS INICIALES";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label23
@@ -1497,7 +1252,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(47, 44);
+            this.label23.Location = new System.Drawing.Point(13, 41);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(86, 13);
             this.label23.TabIndex = 197;
@@ -1508,44 +1263,20 @@
             this.txtTotalFinanciacion.AcceptsReturn = true;
             this.txtTotalFinanciacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTotalFinanciacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalFinanciacion.Location = new System.Drawing.Point(139, 41);
+            this.txtTotalFinanciacion.Location = new System.Drawing.Point(63, 57);
             this.txtTotalFinanciacion.Name = "txtTotalFinanciacion";
             this.txtTotalFinanciacion.ReadOnly = true;
-            this.txtTotalFinanciacion.Size = new System.Drawing.Size(81, 20);
+            this.txtTotalFinanciacion.Size = new System.Drawing.Size(116, 20);
             this.txtTotalFinanciacion.TabIndex = 12;
             this.txtTotalFinanciacion.Text = "0";
             this.txtTotalFinanciacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(548, 340);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 13);
-            this.label11.TabIndex = 378;
-            this.label11.Text = "Valor cuota inicial:";
-            // 
-            // txtValorCuota
-            // 
-            this.txtValorCuota.AcceptsReturn = true;
-            this.txtValorCuota.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtValorCuota.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorCuota.Location = new System.Drawing.Point(551, 357);
-            this.txtValorCuota.Name = "txtValorCuota";
-            this.txtValorCuota.Size = new System.Drawing.Size(83, 20);
-            this.txtValorCuota.TabIndex = 10;
-            this.txtValorCuota.Text = "0";
-            this.txtValorCuota.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtValorCuota.TextChanged += new System.EventHandler(this.txtValorCuota_TextChanged);
             // 
             // txtDolarTope
             // 
             this.txtDolarTope.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDolarTope.Enabled = false;
             this.txtDolarTope.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolarTope.Location = new System.Drawing.Point(784, 357);
+            this.txtDolarTope.Location = new System.Drawing.Point(426, 358);
             this.txtDolarTope.Name = "txtDolarTope";
             this.txtDolarTope.Size = new System.Drawing.Size(83, 20);
             this.txtDolarTope.TabIndex = 12;
@@ -1555,7 +1286,7 @@
             // chkDolarTope
             // 
             this.chkDolarTope.AutoSize = true;
-            this.chkDolarTope.Location = new System.Drawing.Point(784, 339);
+            this.chkDolarTope.Location = new System.Drawing.Point(426, 340);
             this.chkDolarTope.Name = "chkDolarTope";
             this.chkDolarTope.Size = new System.Drawing.Size(88, 17);
             this.chkDolarTope.TabIndex = 11;
@@ -1568,83 +1299,40 @@
             this.lblDolarTope.AutoSize = true;
             this.lblDolarTope.BackColor = System.Drawing.Color.Transparent;
             this.lblDolarTope.ForeColor = System.Drawing.Color.Red;
-            this.lblDolarTope.Location = new System.Drawing.Point(781, 380);
+            this.lblDolarTope.Location = new System.Drawing.Point(423, 381);
             this.lblDolarTope.Name = "lblDolarTope";
             this.lblDolarTope.Size = new System.Drawing.Size(9, 13);
             this.lblDolarTope.TabIndex = 382;
             this.lblDolarTope.Text = "l";
-            // 
-            // lblValorCuota
-            // 
-            this.lblValorCuota.AutoSize = true;
-            this.lblValorCuota.BackColor = System.Drawing.Color.Transparent;
-            this.lblValorCuota.ForeColor = System.Drawing.Color.Red;
-            this.lblValorCuota.Location = new System.Drawing.Point(551, 380);
-            this.lblValorCuota.Name = "lblValorCuota";
-            this.lblValorCuota.Size = new System.Drawing.Size(9, 13);
-            this.lblValorCuota.TabIndex = 383;
-            this.lblValorCuota.Text = "l";
             // 
             // lblErrorCuotasFnc
             // 
             this.lblErrorCuotasFnc.AutoSize = true;
             this.lblErrorCuotasFnc.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorCuotasFnc.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCuotasFnc.Location = new System.Drawing.Point(648, 412);
+            this.lblErrorCuotasFnc.Location = new System.Drawing.Point(384, 441);
             this.lblErrorCuotasFnc.Name = "lblErrorCuotasFnc";
             this.lblErrorCuotasFnc.Size = new System.Drawing.Size(9, 13);
             this.lblErrorCuotasFnc.TabIndex = 360;
             this.lblErrorCuotasFnc.Text = "l";
-            // 
-            // chkCuotasTotales
-            // 
-            this.chkCuotasTotales.AutoSize = true;
-            this.chkCuotasTotales.Location = new System.Drawing.Point(426, 321);
-            this.chkCuotasTotales.Name = "chkCuotasTotales";
-            this.chkCuotasTotales.Size = new System.Drawing.Size(101, 17);
-            this.chkCuotasTotales.TabIndex = 386;
-            this.chkCuotasTotales.Text = "Cuotas totales?";
-            this.chkCuotasTotales.UseVisualStyleBackColor = true;
-            this.chkCuotasTotales.CheckedChanged += new System.EventHandler(this.chkCuotasTotales_CheckedChanged);
-            // 
-            // lblErrorCuotasTotales
-            // 
-            this.lblErrorCuotasTotales.AutoSize = true;
-            this.lblErrorCuotasTotales.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorCuotasTotales.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCuotasTotales.Location = new System.Drawing.Point(528, 322);
-            this.lblErrorCuotasTotales.Name = "lblErrorCuotasTotales";
-            this.lblErrorCuotasTotales.Size = new System.Drawing.Size(9, 13);
-            this.lblErrorCuotasTotales.TabIndex = 389;
-            this.lblErrorCuotasTotales.Text = "l";
             // 
             // FrmAdjudicacionPIV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 737);
-            this.Controls.Add(this.lblErrorCuotasTotales);
-            this.Controls.Add(this.chkCuotasTotales);
             this.Controls.Add(this.lblErrorCuotasFnc);
-            this.Controls.Add(this.lblValorCuota);
-            this.Controls.Add(this.txtValorCuota);
             this.Controls.Add(this.lblDolarTope);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.chkDolarTope);
             this.Controls.Add(this.txtDolarTope);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.lblErrorCtaInicialSinPagar);
-            this.Controls.Add(this.lblMensajeCuotas);
+            this.Controls.Add(this.PnlTotalFnc);
+            this.Controls.Add(this.lblErrorCtaInicial);
             this.Controls.Add(this.PnlCtaInicialSinPagar);
             this.Controls.Add(this.txtValContratoPesos);
-            this.Controls.Add(this.txtNumCuotas);
             this.Controls.Add(this.txtTRMContrato);
             this.Controls.Add(this.trmContrato);
             this.Controls.Add(this.lblValorContrato);
-            this.Controls.Add(this.lblErrorCtaInicialPagada);
             this.Controls.Add(this.lblErrorTitular1);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblMensajeContrato);
             this.Controls.Add(this.lblMensajeGrado);
             this.Controls.Add(this.lblMensajeFormaPago);
@@ -1658,7 +1346,6 @@
             this.Controls.Add(this.CmbGrado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtValorContrato);
-            this.Controls.Add(this.PnlCtaInicialPagada);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.DtpFechaContrato);
             this.Controls.Add(this.lblTipo);
@@ -1703,21 +1390,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdjudicacionPIV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            this.PnlCtaInicialPagada.ResumeLayout(false);
-            this.PnlCtaInicialPagada.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicial)).EndInit();
             this.PnlDatosFnc.ResumeLayout(false);
             this.PnlDatosFnc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCuotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAlttum.Properties)).EndInit();
             this.PnlCtaInicialSinPagar.ResumeLayout(false);
             this.PnlCtaInicialSinPagar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicialSinPagar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCtaInicial)).EndInit();
+            this.PnlTotalFnc.ResumeLayout(false);
+            this.PnlTotalFnc.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1762,15 +1443,6 @@
         private System.Windows.Forms.Label LblNombreTitular;
         private System.Windows.Forms.Label LblContrato;
         private System.Windows.Forms.TextBox TxtContrato;
-        private System.Windows.Forms.Panel PnlCtaInicialPagada;
-        private System.Windows.Forms.DataGridView DgvCtaInicial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.Label LblTituloIni;
-        private System.Windows.Forms.Label LblInicial;
-        private System.Windows.Forms.TextBox TxtValorIni;
         private System.Windows.Forms.ComboBox CmbFormaPago;
         private System.Windows.Forms.Label LblFormaPago;
         private System.Windows.Forms.Label label17;
@@ -1779,13 +1451,11 @@
         private System.Windows.Forms.TextBox TxtValorContrato;
         private System.Windows.Forms.Panel PnlDatosFnc;
         private System.Windows.Forms.Label lblValorTotalFnc;
-        private System.Windows.Forms.TextBox txtNumCuotas;
         private System.Windows.Forms.Label lblTituloFnc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox CmbPeriodoFnc;
         private System.Windows.Forms.DateTimePicker DtpInicioFnc;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtValorFnc;
         private System.Windows.Forms.Label label16;
@@ -1798,7 +1468,6 @@
         private System.Windows.Forms.Label lblMensajeGrado;
         private System.Windows.Forms.Label lblMensajeContrato;
         private System.Windows.Forms.Label lblErrorValorFnc;
-        private System.Windows.Forms.Label lblMensajeCuotas;
         private System.Windows.Forms.Label lblErrorTitular1;
         private DevExpress.XtraBars.BarButtonItem btnCrearAdjudicacion;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -1806,23 +1475,16 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private System.Windows.Forms.Label lblMensajeNumCuotas;
         private System.Windows.Forms.Button btnEliminarFila;
-        private System.Windows.Forms.Label lblErrorCtaInicialPagada;
         private System.Windows.Forms.Label lblValorContrato;
         private System.Windows.Forms.Label trmContrato;
         private System.Windows.Forms.TextBox txtTRMContrato;
         private System.Windows.Forms.TextBox txtValContratoPesos;
         private System.Windows.Forms.Panel PnlCtaInicialSinPagar;
-        private System.Windows.Forms.Label lblMensajeNumCuotas2;
-        private System.Windows.Forms.DataGridView DgvCtaInicialSinPagar;
+        private System.Windows.Forms.DataGridView DgvCtaInicial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtValorSinPagar;
-        private System.Windows.Forms.Label lblErrorCtaInicialSinPagar;
-        private System.Windows.Forms.Label lblFechaInicioCtaInicial;
-        private System.Windows.Forms.DateTimePicker dtpFechaCtaSinPagar;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label5;
-        private DevExpress.XtraBars.BarButtonItem btnCalcularCuotasSinPagar;
+        private System.Windows.Forms.TextBox txtValorIni;
+        private System.Windows.Forms.Label lblErrorCtaInicial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCtasFnc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cto;
@@ -1835,23 +1497,18 @@
         private System.Windows.Forms.CheckBox chkFechaConsecutiva;
         private System.Windows.Forms.DateTimePicker dtpFechaCtaInicial;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnlTotalFnc;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtTotalFinanciacion;
-        private System.Windows.Forms.TextBox txtValorCuota;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDolarTope;
         private System.Windows.Forms.CheckBox chkDolarTope;
         private System.Windows.Forms.Label lblDolarTope;
-        private System.Windows.Forms.Label lblValorCuota;
         private System.Windows.Forms.Label lblErrorCuotasFnc;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.CheckBox chkCuotasTotales;
-        private System.Windows.Forms.Label lblErrorCuotasTotales;
     }
 }

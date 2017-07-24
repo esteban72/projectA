@@ -79,12 +79,14 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     cmbContrato.Enabled = true;
                     if (cmbContrato.DataSource != null)
                     {
-                        pictureBoxVerificar.Image = new System.Drawing.Bitmap(@"C:\Users\Desarrollador\Desktop\LAND\imagenes\comprobado.png");
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
                         lblMensaje.Text = "C a r g a   E x i t o s a.";
                     }
                     else
                     {
-                        pictureBoxVerificar.Image = new System.Drawing.Bitmap(@"C:\Users\Desarrollador\Desktop\LAND\imagenes\error.png");
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
                         lblMensaje.Text = "Error cargando los contratos " + comision.Error;
                     }
                 }
@@ -223,12 +225,14 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     lblMensaje.Text = "E l i g a   u n   c o n t r a t o.";
                     if (cmbContrato.DataSource != null)
                     {
-                        pictureBoxVerificar.Image = new System.Drawing.Bitmap(@"C:\Users\Desarrollador\Desktop\LAND\imagenes\comprobado.png");
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
                         lblMensaje.Text = "C a r g a   E x i t o s a.";
                     }
                     else
                     {
-                        pictureBoxVerificar.Image = new System.Drawing.Bitmap(@"C:\Users\Desarrollador\Desktop\LAND\imagenes\error.png");
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
                         lblMensaje.Text = "Error cargando los contratos " + comision.Error;
                     }
                 }

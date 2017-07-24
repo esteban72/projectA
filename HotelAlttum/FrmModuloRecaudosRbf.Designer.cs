@@ -123,7 +123,7 @@
             // 
             // BtnREcaudosDetallados
             // 
-            this.BtnREcaudosDetallados.Caption = "Recaudos Detalaldos";
+            this.BtnREcaudosDetallados.Caption = "Recaudos Detallados";
             this.BtnREcaudosDetallados.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnREcaudosDetallados.Glyph")));
             this.BtnREcaudosDetallados.Id = 7;
             this.BtnREcaudosDetallados.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("BtnREcaudosDetallados.LargeGlyph")));

@@ -202,7 +202,15 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         cmbVecesPagoComision.Items.Add("1");
                         lblMensajeComision.Text = "Ú l t i m o   p a g o   d e   l a   c o m i s i ó n.";
                         cmbVecesPagoComision.Text = "1";
-                        break;  
+                        break;
+                    case "0-4":
+                        cmbVecesPagoComision.Items.Add("1");
+                        cmbVecesPagoComision.Items.Add("2");
+                        cmbVecesPagoComision.Items.Add("3");
+                        cmbVecesPagoComision.Items.Add("4");
+                        lblMensajeComision.Text = "S e   p u e d e    p a g a r   e l   t o t a l   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "4";
+                        break; 
                 }
                 
             }
