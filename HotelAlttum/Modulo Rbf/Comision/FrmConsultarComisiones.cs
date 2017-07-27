@@ -19,6 +19,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
     {
         ClsComision comision = new ClsComision();
         string TRM_FechaContrato;
+        string contrato;
         public FrmConsultarComisiones()
         {
             InitializeComponent();
@@ -260,6 +261,52 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
         }
 
+        
 
+        private void txtFiltrarContrato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter)){
+                contrato = txtFiltrarContrato.Text;
+                comision.ConsultarContrato("sp_Alttum_FiltrarContrato", contrato);
+                if (comision.ContadorContratos > 0)
+                {
+                    cmbContrato.Text = contrato;
+                    cmbContrato_SelectedIndexChanged(sender, e);
+                    lblMensaje.Text = "C o n t r a t o   e n c o n t r a d o.";
+                    txtFiltrarContrato.Text = "";
+                    btnExcel.Enabled = true;
+                    btnImprimir.Enabled = true;
+                    cmbContrato.Enabled = true;
+                    dpFechaComision.Enabled = true;
+                    dpFecha2Comision.Enabled = true;
+                    grdConsultarComisiones.Enabled = true;
+                    btnBuscarFecha.Enabled = true;
+                }
+                else
+                {
+                    cmbContrato.Text = "0";
+                    lblMensaje.Text = "E l   c o n t r a t o   q u e   e s t a   b u s c a n d o   n o   r e g i s t r a.";
+                    btnExcel.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    cmbContrato.Enabled = false;
+                    txtVecesPagadaComision.Text = "";
+                    dpFechaComision.Enabled = false;
+                    dpFecha2Comision.Enabled = false;
+                    btnBuscarFecha.Enabled = false;
+                    txtCliente.Text = "";
+                    txtInmueble.Text = "";
+                    txtFechaContrato.Text = "";
+                    txtVentaTotal.Text = "";
+                    txtTotalRecaudado.Text = "";
+                    txtTRM.Text = "";
+                    txtPorcentajeComisionado.Text = "";
+                    txtTotalComisionPagada.Text = "";
+                    grdConsultarComisiones.Enabled = false;
+                }
+            }            
+        }
+
+        
+        
     }
 }

@@ -72,6 +72,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdExportar = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtFiltrarContrato = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -486,11 +488,29 @@
             this.gridView2.GridControl = this.grdExportar;
             this.gridView2.Name = "gridView2";
             // 
+            // txtFiltrarContrato
+            // 
+            this.txtFiltrarContrato.Location = new System.Drawing.Point(241, 195);
+            this.txtFiltrarContrato.Name = "txtFiltrarContrato";
+            this.txtFiltrarContrato.Size = new System.Drawing.Size(71, 21);
+            this.txtFiltrarContrato.TabIndex = 221;
+            this.txtFiltrarContrato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltrarContrato_KeyPress);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(159, 198);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(76, 13);
+            this.labelControl1.TabIndex = 222;
+            this.labelControl1.Text = "Filtrar contrato:";
+            // 
             // FrmConsultarComisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 723);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.txtFiltrarContrato);
             this.Controls.Add(this.grdExportar);
             this.Controls.Add(this.grdConsultarComisiones);
             this.Controls.Add(this.lblBuscarFecha);
@@ -601,5 +621,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl grdExportar;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.TextBox txtFiltrarContrato;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

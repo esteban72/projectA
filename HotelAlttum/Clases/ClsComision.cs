@@ -757,6 +757,35 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        public void ConsultarContrato(string sentencia, string campo)
+        {
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consultar;
+            ContadorContratos = 0;
+            try
+            {
+                Query.CommandType = CommandType.StoredProcedure;
+                Query.Connection = MysqlConexion;
+                Query.CommandText = sentencia;
+                Query.Parameters.AddWithValue("_Contrato", campo);
+                Query.Connection.Open();
+                consultar = Query.ExecuteReader();
+                if (consultar.Read())
+                {
+                    sContrato = consultar.GetString(0);
+                    ContadorContratos++;
+                }
+            }
+            catch (Exception ex)
+            {
+                sError = ex.Message;
+            }
+            finally
+            {
+                MysqlConexion.Close();
+            }
+        }
+
         #region "Metodos para consultas comisiones pagadas"
 
         public List<string> ListaContratos_Monterrey(string Sentencia, string Campo)
