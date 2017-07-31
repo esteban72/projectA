@@ -145,6 +145,12 @@
   <ItemGroup>
     <Compile Include="Clases\ClsComision.cs" />
     <Compile Include="Clases\ClsRadicacion.cs" />
+    <Compile Include="Correo\FrmCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correo\FrmCorreo.Designer.cs">
+      <DependentUpon>FrmCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DtsConsultas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +210,12 @@
     <Compile Include="Modulo Rbf\Comision\FrmPagoComision.Designer.cs">
       <DependentUpon>FrmPagoComision.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComisiones75.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmPagoComisiones75.Designer.cs">
+      <DependentUpon>FrmPagoComisiones75.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Rbf\Comision\FrmPagoComisionMonterrey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +227,12 @@
     </Compile>
     <Compile Include="Modulo Rbf\Comision\FrmPagoComisionPIV.Designer.cs">
       <DependentUpon>FrmPagoComisionPIV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmAdjudicacion1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Radicacion\FrmAdjudicacion1.Designer.cs">
+      <DependentUpon>FrmAdjudicacion1.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Rbf\Reservas\FrmRecaudoReserva.cs">
       <SubType>Form</SubType>
@@ -771,6 +789,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Correo\FrmCorreo.resx">
+      <DependentUpon>FrmCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdjudicacionMonterey.resx">
       <DependentUpon>FrmAdjudicacionMonterey.cs</DependentUpon>
     </EmbeddedResource>
@@ -798,11 +819,17 @@
     <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComision.resx">
       <DependentUpon>FrmPagoComision.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComisiones75.resx">
+      <DependentUpon>FrmPagoComisiones75.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComisionMonterrey.resx">
       <DependentUpon>FrmPagoComisionMonterrey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComisionPIV.resx">
       <DependentUpon>FrmPagoComisionPIV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Radicacion\FrmAdjudicacion1.resx">
+      <DependentUpon>FrmAdjudicacion1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Rbf\Reservas\FrmRecaudoReserva.resx">
       <DependentUpon>FrmRecaudoReserva.cs</DependentUpon>
@@ -1235,6 +1262,7 @@
     <None Include="Resources\efectivo.png" />
     <Content Include="Resources\comprobado.png" />
     <None Include="Resources\Agregar_Usuario.png" />
+    <None Include="Resources\email.png" />
     <Content Include="Resources\error.png" />
     <None Include="Resources\actualizar.png" />
     <None Include="Resources\buscar.png" />
@@ -1255,6 +1283,7 @@
     <None Include="Resources\1402297523_trashcan-delete.png" />
     <None Include="Resources\ALTTM2.1.png" />
     <None Include="Resources\ALTUMBAI.png" />
+    <None Include="Resources\Firma1.jpg" />
     <Content Include="Resources\Imagotipo_LAND_01.jpg" />
     <Content Include="Resources\Imagotipo_LAND_01.png" />
     <Content Include="Resources\Imagotipo_LAND_011.jpg" />

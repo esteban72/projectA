@@ -33,6 +33,9 @@
             this.btnPagar = new DevExpress.XtraBars.BarButtonItem();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRechazar = new DevExpress.XtraBars.BarButtonItem();
             this.pestanaComisiones = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.SeccionComisiones = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -86,9 +89,12 @@
             this.ribbon.ExpandCollapseItem,
             this.btnPagar,
             this.btnActualizar,
-            this.btnExcel});
+            this.btnExcel,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.btnRechazar});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.pestanaComisiones});
@@ -121,6 +127,30 @@
             this.btnExcel.ImageUri.Uri = "ExportToXLS";
             this.btnExcel.Name = "btnExcel";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Pagar";
+            this.barButtonItem1.Id = 4;
+            this.barButtonItem1.LargeGlyph = global::CarteraGeneral.RecursosIconos.efectivo;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Actualizar";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btnRechazar
+            // 
+            this.btnRechazar.Caption = "Rechazar por falta de comisionistas";
+            this.btnRechazar.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRechazar.Glyph")));
+            this.btnRechazar.Id = 7;
+            this.btnRechazar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnRechazar.LargeGlyph")));
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRechazar_ItemClick);
+            // 
             // pestanaComisiones
             // 
             this.pestanaComisiones.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -132,6 +162,7 @@
             // 
             this.SeccionComisiones.ItemLinks.Add(this.btnPagar);
             this.SeccionComisiones.ItemLinks.Add(this.btnActualizar);
+            this.SeccionComisiones.ItemLinks.Add(this.btnRechazar);
             this.SeccionComisiones.Name = "SeccionComisiones";
             this.SeccionComisiones.Text = "Comisiones";
             // 
@@ -499,5 +530,8 @@
         private System.Windows.Forms.TextBox txtNotaValorFijo;
         private DevExpress.XtraEditors.TextEdit txtTotalPagarComision;
         private DevExpress.XtraEditors.LabelControl lblTotalPagarComision;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnRechazar;
     }
 }

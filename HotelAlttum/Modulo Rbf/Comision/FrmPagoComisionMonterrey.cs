@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using CarteraGeneral.Clases;
 using CarteraGeneral.WebServiceTRMColombia;
+using CarteraGeneral.Correo;
 
 namespace CarteraGeneral.Modulo_Rbf.Comision
 {
@@ -291,6 +292,36 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
         private void FrmPagoComisionMonterrey_FormClosing(object sender, FormClosingEventArgs e)
         {
             comision = null;
+        }
+
+        private void btnRechazar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                DialogResult respuesta;
+                respuesta = MessageBox.Show("Esta seguro de rechazar estos comisionistas por falta de información?\n" +
+                "La persona encargada deberá volver a ingresalos.", "Confirmación.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    if (comision.RechazarComisionistas(cmbContrato.SelectedValue.ToString()))
+                    {
+                        DialogResult respuesta2;
+                        respuesta2 = MessageBox.Show("Registro rechazado exitosamente.\nDesea enviar un correo notificando el rechazo?",
+                            "Envio de correo.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (respuesta2 == DialogResult.Yes)
+                        {
+                            FrmCorreo correo = new FrmCorreo();
+                            correo.Show();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ups! hubo un inconveniente: " + ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
     {
         ClsComision comision = new ClsComision();
         string TRM_FechaContrato;
+        string contrato;
         public FrmConsultarComisionesMonterrey()
         {
             InitializeComponent();
@@ -27,35 +28,36 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
         private void FrmConsultarComisionesMonterrey_Load(object sender, EventArgs e)
         {
-            try { 
-            lblMensaje.Text = "";
-            dpFecha2Comision.Enabled = false;
-            cmbContrato.DataSource = comision.ListaContratos("sp_Monterrey_ContratosComisionados", "Contrato");
-            if (comision.ContadorContratos > 0)
+            try
             {
-                btnExcel.Enabled = true;
-                btnImprimir.Enabled = true;
-                cmbContrato.Enabled = true;
-                if (cmbContrato.DataSource != null)
+                lblMensaje.Text = "";
+                dpFecha2Comision.Enabled = false;
+                cmbContrato.DataSource = comision.ListaContratos("sp_Monterrey_ContratosComisionados", "Contrato");
+                if (comision.ContadorContratos > 0)
                 {
-                    pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
-                    pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                    lblMensaje.Text = comision.ContadorContratos+"  c o n t r a t o (s)   c a r g a d o (s).";
+                    btnExcel.Enabled = true;
+                    btnImprimir.Enabled = true;
+                    cmbContrato.Enabled = true;
+                    if (cmbContrato.DataSource != null)
+                    {
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
+                        lblMensaje.Text = comision.ContadorContratos + "  c o n t r a t o (s)   c a r g a d o (s).";
+                    }
+                    else
+                    {
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
+                        lblMensaje.Text = "Error cargando los contratos " + comision.Error;
+                    }
                 }
                 else
                 {
-                    pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
-                    pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                    lblMensaje.Text = "Error cargando los contratos " + comision.Error;
+                    lblMensaje.Text = "S i n   c o m i s i o n e s   p a g a d a s.";
+                    btnExcel.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    cmbContrato.Enabled = false;
                 }
-            }
-            else
-            {
-                lblMensaje.Text = "S i n   c o m i s i o n e s   p a g a d a s.";
-                btnExcel.Enabled = false;
-                btnImprimir.Enabled = false;
-                cmbContrato.Enabled = false;
-            }
 
             }
             catch (Exception ex)
@@ -65,10 +67,11 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
         }
 
-        
+
         private void chkRangoFechas_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkRangoFechas.Checked){
+            if (chkRangoFechas.Checked)
+            {
                 dpFecha2Comision.Enabled = true;
             }
             else
@@ -133,14 +136,15 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                 MessageBox.Show("Ups! Hubo el siguiente inconveniente: " + ex.Message + " " + comision.Error, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void btnBuscarFecha_Click(object sender, EventArgs e)
         {
             comision.Fecha1Comision = dpFechaComision.Value;
-            if(dpFecha2Comision.Enabled == true){
+            if (dpFecha2Comision.Enabled == true)
+            {
                 comision.Fecha2Comision = dpFecha2Comision.Value;
                 cmbContrato.DataSource = comision.ContratosXFecha("sp_Monterrey_ContratosXFecha", "Contrato");
-                
+
             }
             else
             {
@@ -224,12 +228,12 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
         private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
         {
-            comision.exportarArchivo(grdExportar, sender, e);            
+            comision.exportarArchivo(grdExportar, sender, e);
         }
 
         private void btnImprimir_ItemClick(object sender, ItemClickEventArgs e)
         {
-            imprimir(grdConsultarComisiones,"COMISIONES PAGADAS");
+            imprimir(grdConsultarComisiones, "COMISIONES PAGADAS");
         }
 
         private void FrmConsultarComisionesMonterrey_FormClosing(object sender, FormClosingEventArgs e)
@@ -257,6 +261,55 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             //brick.BackColor = Color.Blue;
             brick.ForeColor = Color.Gray;
             brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
+        }
+
+        private void txtFiltrarContrato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                contrato = txtFiltrarContrato.Text;
+                comision.ConsultarContrato("sp_Monterrey_FiltrarContrato", contrato);
+                if (comision.ContadorContratos > 0)
+                {
+                    cmbContrato.Text = contrato;
+                    cmbContrato_SelectedIndexChanged(sender, e);
+                    lblMensaje.Text = "C o n t r a t o   e n c o n t r a d o.";
+                    txtFiltrarContrato.Text = "";
+                    btnExcel.Enabled = true;
+                    btnImprimir.Enabled = true;
+                    cmbContrato.Enabled = true;
+                    dpFechaComision.Enabled = true;
+                    dpFecha2Comision.Enabled = true;
+                    grdConsultarComisiones.Enabled = true;
+                    btnBuscarFecha.Enabled = true;
+                }
+                else
+                {
+                    cmbContrato.Text = "0";
+                    lblMensaje.Text = "E l   c o n t r a t o   q u e   e s t a   b u s c a n d o   n o   r e g i s t r a.";
+                    btnExcel.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    cmbContrato.Enabled = false;
+                    txtVecesPagadaComision.Text = "";
+                    dpFechaComision.Enabled = false;
+                    dpFecha2Comision.Enabled = false;
+                    btnBuscarFecha.Enabled = false;
+                    txtCliente.Text = "";
+                    txtInmueble.Text = "";
+                    txtFechaContrato.Text = "";
+                    txtVentaTotal.Text = "";
+                    txtTotalRecaudado.Text = "";
+                    txtTRM.Text = "";
+                    txtPorcentajeComisionado.Text = "";
+                    txtTotalComisionPagada.Text = "";
+                    grdConsultarComisiones.Enabled = false;
+                }
+            }
+        }
+
+        private void FrmConsultarComisionesMonterrey_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            comision = null;
         }
 
     }

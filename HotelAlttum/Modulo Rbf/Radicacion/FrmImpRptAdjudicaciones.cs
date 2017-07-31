@@ -41,8 +41,8 @@ namespace CarteraGeneral
             DtDatosAdjdicacion = conexion.MtdBuscarDataset("Select Fecha,IdInmueble,FormaPago,Contrato,Valor,CuotaInicial,Contado,Financiacion,PlazoFnc,"+
             "TasaFnc,CuotaFnc,Extraordinaria,PlazoExtra,TasaExtra,CuotaExtra,Usuario,FechaOperacion From Adjudicacion  Where IdAdjudicacion = " + VarIdAdjudicacion );
 
-            this.impcomisionTableAdapter.Adapter.SelectCommand.CommandText = "select c.IdAdjudicacion,c.IdCargo Cargo,d.NombreCargo NombreCargo,c.IdTercero IdGestor,t.NombreCompleto as NombreGestor,c.Comision1,c.Comision2 " +
-            " from comision c join tablacomision d on d.idcargo=c.idcargo join Contabilidad_alttum.Terceros t on t.IdTercero=c.IdTercero  Where c.IdAdjudicacion = '" + VarIdAdjudicacion + "' Order by t.nombrecompleto";
+            this.impcomisionTableAdapter.Adapter.SelectCommand.CommandText = "select c.IdAdjudicacion,c.IdCargo Cargo,d.NombreCargo NombreCargo,c.IdTercero IdGestor,t.NombreCompleto as NombreGestor,c.PorcentajeComision " +
+            " from comisiones c join tablacomisiones d on d.idcargo=c.idcargo join Contabilidad_alttum.Terceros t on t.IdTercero=c.IdTercero  Where c.IdAdjudicacion = '" + VarIdAdjudicacion + "' Order by t.nombrecompleto";
 
 
             string cliente = DtDatosTerceros.Rows[0][0].ToString();

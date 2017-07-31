@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPagoComisionMonterrey));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnPagar = new DevExpress.XtraBars.BarButtonItem();
             this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
@@ -63,6 +64,7 @@
             this.txtNotaValorFijo = new System.Windows.Forms.TextBox();
             this.txtTotalPagarComision = new DevExpress.XtraEditors.TextEdit();
             this.lblTotalPagarComision = new DevExpress.XtraEditors.LabelControl();
+            this.btnRechazar = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInmueble.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCliente.Properties)).BeginInit();
@@ -85,9 +87,10 @@
             this.ribbon.ExpandCollapseItem,
             this.btnPagar,
             this.btnActualizar,
-            this.btnExcel});
+            this.btnExcel,
+            this.btnRechazar});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 4;
+            this.ribbon.MaxItemId = 5;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.pestanaComisiones});
@@ -131,6 +134,7 @@
             // 
             this.SeccionComisiones.ItemLinks.Add(this.btnPagar);
             this.SeccionComisiones.ItemLinks.Add(this.btnActualizar);
+            this.SeccionComisiones.ItemLinks.Add(this.btnRechazar);
             this.SeccionComisiones.Name = "SeccionComisiones";
             this.SeccionComisiones.Text = "Comisiones M.";
             // 
@@ -400,6 +404,15 @@
             this.lblTotalPagarComision.TabIndex = 46;
             this.lblTotalPagarComision.Text = "Total necesario para \npagar la comisión:";
             // 
+            // btnRechazar
+            // 
+            this.btnRechazar.Caption = "Rechazar por falta de comisionistas";
+            this.btnRechazar.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRechazar.Glyph")));
+            this.btnRechazar.Id = 4;
+            this.btnRechazar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnRechazar.LargeGlyph")));
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRechazar_ItemClick);
+            // 
             // FrmPagoComisionMonterrey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,5 +509,6 @@
         private System.Windows.Forms.TextBox txtNotaValorFijo;
         private DevExpress.XtraEditors.TextEdit txtTotalPagarComision;
         private DevExpress.XtraEditors.LabelControl lblTotalPagarComision;
+        private DevExpress.XtraBars.BarButtonItem btnRechazar;
     }
 }

@@ -380,7 +380,37 @@ namespace CarteraGeneral.Clases
                 MysqlConexion.Close();
             }
         }
-        
+
+        public Boolean vecesPagoComisionContrato_Antiguo(string campo)
+        {
+            try
+            {
+                MySqlCommand Query = new MySqlCommand();
+                MySqlDataReader consultar;
+                Query.CommandType = CommandType.StoredProcedure;
+                Query.Connection = MysqlConexion;
+                Query.CommandText = "sp_Alttum_VecesPuedeComisionarContrato_Antiguo";
+                Query.Parameters.AddWithValue("_Contrato", campo);
+                Query.Connection.Open();
+                consultar = Query.ExecuteReader();
+                if (consultar.Read())
+                {
+                    sVecesPuedeComisionarContrato = consultar.GetString("VecesComisionadas_VecesPuedeComisionar");
+                }
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                sError = ex.Message;
+                return false;
+            }
+            finally
+            {
+                MysqlConexion.Close();
+            }
+        }
         
         /*Metodo que valida los contratos que ya han sido radicados y que se 
          encuentran en la tabla comisiones y calcula los valores que a cada comisionista
@@ -445,6 +475,29 @@ namespace CarteraGeneral.Clases
             MysqlConexion.Open();
             DrdListaComisiones = CmdListaContratos.ExecuteReader();
             return true;
+            }
+            catch (Exception ex)
+            {
+                sError = ex.Message;
+                return false;
+            }
+            finally
+            {
+                MysqlConexion.Close();
+            }
+        }
+
+        public Boolean RechazarComisionistas(string contrato)
+        {
+            try
+            {
+                MySqlCommand CmdListaContratos = new MySqlCommand("sp_Rechazar_Comisionistas", MysqlConexion);
+                CmdListaContratos.Parameters.AddWithValue("_Contrato", contrato);
+                CmdListaContratos.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader DrdListaComisiones;
+                MysqlConexion.Open();
+                DrdListaComisiones = CmdListaContratos.ExecuteReader();
+                return true;
             }
             catch (Exception ex)
             {

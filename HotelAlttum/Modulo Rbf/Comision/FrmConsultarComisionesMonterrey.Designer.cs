@@ -71,6 +71,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdExportar = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtFiltrarContrato = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -483,11 +485,29 @@
             this.gridView2.GridControl = this.grdExportar;
             this.gridView2.Name = "gridView2";
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(159, 198);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(76, 13);
+            this.labelControl1.TabIndex = 223;
+            this.labelControl1.Text = "Filtrar contrato:";
+            // 
+            // txtFiltrarContrato
+            // 
+            this.txtFiltrarContrato.Location = new System.Drawing.Point(241, 195);
+            this.txtFiltrarContrato.Name = "txtFiltrarContrato";
+            this.txtFiltrarContrato.Size = new System.Drawing.Size(71, 21);
+            this.txtFiltrarContrato.TabIndex = 224;
+            this.txtFiltrarContrato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltrarContrato_KeyPress);
+            // 
             // FrmConsultarComisionesMonterrey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 723);
+            this.Controls.Add(this.txtFiltrarContrato);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grdExportar);
             this.Controls.Add(this.grdConsultarComisiones);
             this.Controls.Add(this.lblBuscarFecha);
@@ -530,6 +550,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Consultar Comisiones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmConsultarComisionesMonterrey_FormClosing_1);
             this.Load += new System.EventHandler(this.FrmConsultarComisionesMonterrey_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCliente.Properties)).EndInit();
@@ -598,5 +619,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl grdExportar;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.TextBox txtFiltrarContrato;
     }
 }

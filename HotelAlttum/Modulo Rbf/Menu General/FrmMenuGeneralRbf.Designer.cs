@@ -90,6 +90,7 @@
             this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnAddLotesEnvio = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagoComisionAlttum = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPagoComisionSobre75 = new DevExpress.XtraBars.BarButtonItem();
             this.TsmTerceros = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -189,9 +190,10 @@
             this.BtnTrmAdd,
             this.barButtonItem30,
             this.BtnAddLotesEnvio,
-            this.BtnPagoComisionAlttum});
+            this.BtnPagoComisionAlttum,
+            this.btnPagoComisionSobre75});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 103;
+            this.ribbon.MaxItemId = 104;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.TsmTerceros,
@@ -799,6 +801,15 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.BtnPagoComisionAlttum.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPagoComisionAlttum_ItemClick);
             // 
+            // btnPagoComisionSobre75
+            // 
+            this.btnPagoComisionSobre75.Caption = "Pago comisiones sobre el 75%";
+            this.btnPagoComisionSobre75.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPagoComisionSobre75.Glyph")));
+            this.btnPagoComisionSobre75.Id = 103;
+            this.btnPagoComisionSobre75.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPagoComisionSobre75.LargeGlyph")));
+            this.btnPagoComisionSobre75.Name = "btnPagoComisionSobre75";
+            this.btnPagoComisionSobre75.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPagoComisionSobre75_ItemClick);
+            // 
             // TsmTerceros
             // 
             this.TsmTerceros.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -921,6 +932,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.BtnPagoComisionAlttum);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnPagoComisionSobre75);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnConsultaComisiones);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Comisiones Alttum";
@@ -1171,5 +1183,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem30;
         private DevExpress.XtraBars.BarButtonItem BtnAddLotesEnvio;
         private DevExpress.XtraBars.BarButtonItem BtnPagoComisionAlttum;
+        private DevExpress.XtraBars.BarButtonItem btnPagoComisionSobre75;
     }
 }

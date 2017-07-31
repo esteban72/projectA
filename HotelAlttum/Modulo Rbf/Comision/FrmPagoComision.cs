@@ -10,6 +10,7 @@ using DevExpress.XtraBars;
 using CarteraGeneral.Clases;
 using CarteraGeneral.WebServiceTRMColombia;
 using System.Globalization;
+using CarteraGeneral.Correo;
 
 namespace CarteraGeneral.Modulo_Rbf.Comision
 {
@@ -34,7 +35,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     DialogResult respuesta;
                     respuesta = MessageBox.Show("            Esta seguro de realizar este pago?\n"
                         + "Recuerde: El valor para pagar esta comisión es de: \n\t        "
-                        + "*** $" + Convert.ToString(comision.TotalPagoComision.ToString("###,###.###"))+" ***", 
+                        + "*** $" + Convert.ToString(comision.TotalPagoComision.ToString("###,###.###")) + " ***",
                         "Confirmación realizar pago.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (respuesta == DialogResult.Yes)
@@ -79,6 +80,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     btnPagar.Enabled = true;
                     cmbVecesPagoComision.Enabled = true;
                     cmbContrato.Enabled = true;
+                    btnRechazar.Enabled = true;
                     lblMensaje.Text = "E l i g a   u n   c o n t r a t o.";
                     if (cmbContrato.DataSource != null)
                     {
@@ -99,6 +101,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     btnPagar.Enabled = false;
                     cmbVecesPagoComision.Enabled = false;
                     cmbContrato.Enabled = false;
+                    btnRechazar.Enabled = false;
                 }
 
             }
@@ -194,7 +197,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         cmbVecesPagoComision.Items.Add("4");
                         lblMensajeComision.Text = "S e   p u e d e    p a g a r   e l   t o t a l   d e   l a s   c o m i s i o n e s.";
                         cmbVecesPagoComision.Text = "4";
-                        break; 
+                        break;
                     case "1-2":
                         cmbVecesPagoComision.Items.Add("1");
                         lblMensajeComision.Text = "S o l o   s e   p u e d e   r e a l i z a r   " +
@@ -229,7 +232,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         cmbVecesPagoComision.Text = "2";
                         break;
                 }
-                
+
             }
         }
 
@@ -302,7 +305,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                 else
                 {
                     MessageBox.Show("Por favor ver el número de veces que puede comisionar este contrato.\n"
-                        +"Nota: Este contrato puede comisionar en "+contVecesQuePuedeComisionar+" ocasion(es).", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        + "Nota: Este contrato puede comisionar en " + contVecesQuePuedeComisionar + " ocasion(es).", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -316,5 +319,37 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
         {
             comision = null;
         }
+
+        private void btnRechazar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                DialogResult respuesta;
+                respuesta = MessageBox.Show("Esta seguro de rechazar estos comisionistas por falta de información?\n"+
+                "La persona encargada deberá volver a ingresalos.","Confirmación.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    if (comision.RechazarComisionistas(cmbContrato.SelectedValue.ToString()))
+                    {
+                        DialogResult respuesta2;
+                        respuesta2 = MessageBox.Show("Registro rechazado exitosamente.\nDesea enviar un correo notificando el rechazo?",
+                            "Envio de correo.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (respuesta2 == DialogResult.Yes)
+                        {
+                            FrmCorreo correo = new FrmCorreo();
+                            correo.Show();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show("Ups! hubo un inconveniente: "+ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

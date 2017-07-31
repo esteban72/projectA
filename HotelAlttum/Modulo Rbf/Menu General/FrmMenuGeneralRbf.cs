@@ -400,6 +400,14 @@ namespace CarteraGeneral
             ConsultarComisionesMonterrey.Show();
         }
 
+        private void btnPagoComisionSobre75_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmPagoComisiones75 comision75 = new FrmPagoComisiones75();
+            comision75.Show();
+        }
+
+        
+
         
 
     }

@@ -1254,19 +1254,19 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(13, 41);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(86, 13);
+            this.label23.Size = new System.Drawing.Size(46, 13);
             this.label23.TabIndex = 197;
-            this.label23.Text = "Total a financiar:";
+            this.label23.Text = "T o t a l:";
             // 
             // txtTotalFinanciacion
             // 
             this.txtTotalFinanciacion.AcceptsReturn = true;
             this.txtTotalFinanciacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTotalFinanciacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalFinanciacion.Location = new System.Drawing.Point(63, 57);
+            this.txtTotalFinanciacion.Location = new System.Drawing.Point(41, 57);
             this.txtTotalFinanciacion.Name = "txtTotalFinanciacion";
             this.txtTotalFinanciacion.ReadOnly = true;
-            this.txtTotalFinanciacion.Size = new System.Drawing.Size(116, 20);
+            this.txtTotalFinanciacion.Size = new System.Drawing.Size(138, 20);
             this.txtTotalFinanciacion.TabIndex = 12;
             this.txtTotalFinanciacion.Text = "0";
             this.txtTotalFinanciacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

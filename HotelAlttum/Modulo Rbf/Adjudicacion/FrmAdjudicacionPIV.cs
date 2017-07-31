@@ -400,7 +400,6 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             lblMensajeNumCuotas.Text = "";
             lblErrorCtaInicial.Text = "";
             lblErrorCtaInicial.Text = "";
-            txtValorIni.Text = "0";
             txtCtasFnc.Text = "0";
             txtTotalFinanciacion.Text = "0";
             txtTRMContrato.Text = "0";
@@ -663,6 +662,9 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 }
                 else
                 {
+                    SumValorInicial += Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value);
+                }
+                if(Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[4].Value) > 0){
                     SumValorInicial += Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[4].Value);
                 }
             }
