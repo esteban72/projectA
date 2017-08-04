@@ -330,7 +330,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    if (comision.RechazarComisionistas(cmbContrato.SelectedValue.ToString()))
+                    if (comision.RechazarOperacion(cmbContrato.SelectedValue.ToString(), "Comisionistas"))
                     {
                         DialogResult respuesta2;
                         respuesta2 = MessageBox.Show("Registro rechazado exitosamente.\nDesea enviar un correo notificando el rechazo?",

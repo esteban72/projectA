@@ -14,19 +14,20 @@ namespace CarteraGeneral.Correo
 {
     public partial class FrmCorreo : Form
     {
+        public string contrato;
         public FrmCorreo()
         {
             InitializeComponent();
         }
 
         
-        private void btnEnviar2_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             // Montamos la estructura básica del mensaje...
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("coordinadoradminab@alttum.land");
+                mail.From = new MailAddress("desarrolladorab@alttum.land");
                 mail.To.Add(txtPara.Text);
                 mail.To.Add("coordinadoradminab@alttum.land");
                 mail.Subject = txtAsunto.Text;
@@ -45,7 +46,7 @@ namespace CarteraGeneral.Correo
                 // Ahora creamos la vista para clientes que 
                 // pueden mostrar contenido HTML...
 
-                string html = "<h4>" + txtContenido.Text + "</h4>" +
+                string html = "<p>" + txtContenido.Text + "</p>" +
                               "<img src='cid:imagen' />";
 
                 AlternateView htmlView =
@@ -73,7 +74,7 @@ namespace CarteraGeneral.Correo
 
                 SmtpClient cliente = new SmtpClient("smtp.gmail.com", 25);
                 cliente.EnableSsl = true;
-                cliente.Credentials = new NetworkCredential("desarrolladorab@alttum.land", "");
+                cliente.Credentials = new NetworkCredential("desarrolladorab@alttum.land", "E$teban07052011.");
                 cliente.Send(mail);
                 MessageBox.Show("Correo enviado exitosamente.", "¡EXITO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -83,5 +84,11 @@ namespace CarteraGeneral.Correo
                 MessageBox.Show("Hubo un inconveniente enviando el mensaje: "+ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FrmCorreo_Load(object sender, EventArgs e)
+        {
+            txtAsunto.Text = "Corrección de personas que comisionan contrato " + contrato;
+        }
+        
     }
 }

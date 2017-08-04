@@ -308,7 +308,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
 
                 if (TxtValorFnc.Text == "0" || TxtValorFnc.Text == "")
                 {
-                    lblErrorValorFnc.Text = "Ingrese el valor correcto.";
+                    lblErrorValorFnc.Text = "Ingrese el valor\ncorrecto.";
                     CuentaErrores++;
                     if (PnlDatosFnc.Enabled == false && (DgvCtaInicial.Rows.Count - 1) > 1)
                     {
@@ -338,6 +338,13 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     {
 
                         lblErrorCtaInicial.Text = "Las fechas de la couta inicial no pueden tener valores en blanco.";
+                        CuentaErrores++;
+                    }
+                    if ((Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) != 0 && Convert.ToInt32(DgvCtaInicial.Rows[i].Cells[5].Value) == 0)
+                        || (Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) != 0 && DgvCtaInicial.Rows[i].Cells[5].Value == null)
+                    || (Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[3].Value) != 0 && Convert.ToString(DgvCtaInicial.Rows[i].Cells[5].Value) == ""))
+                    {
+                        lblErrorCtaInicial.Text = "El número del recibo no puede estar en 0 o en blanco.";
                         CuentaErrores++;
                     }
                 }
@@ -449,12 +456,12 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             int periodo = 0;
             int dia, mes, año;
 
-            double SumaCapital = 0, sumaCuotas = 0;
+            double SumaCapital = 0, sumaCuotas = 0, sumaCapitalUSD = 0, sumaCuotasUSD = 0;
             System.Data.DataTable credito = new System.Data.DataTable();
             //credito = MtdCuotas(Convert.ToDouble(TxtTasaFnc.Text), Convert.ToInt16(txtRestoCuotas.Text), Convert.ToDouble(TxtValorFnc.Text), Convert.ToInt16(30 / Convert.ToDouble(CmbPeriodoFnc.Text) * 12), DtpInicioFnc.Value);
             DateTime FechaIni, FechaFnc;
             double CapitalIni = 0, valorRestoCuotas = 0;
-            int NumCuota = 0;
+            int NumCuota = 0, NumRecibo = 0;
 
             switch (CmbPeriodoFnc.Text)
             {
@@ -487,7 +494,8 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     FechaIni = Convert.ToDateTime(Convert.ToString(DgvCtaInicial.Rows[i].Cells[0].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[1].Value) + "-" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[2].Value));
                     CapitalIni = Math.Round(double.Parse(DgvCtaInicial.Rows[i].Cells[3].Value.ToString(), CultureInfo.InvariantCulture), 2);
                     valorRestoCuotas = Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[4].Value.ToString());
-                    DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, (CapitalIni * valorDolar), 0, (valorRestoCuotas * valorDolar));
+                    NumRecibo = Convert.ToInt32(DgvCtaInicial.Rows[i].Cells[5].Value.ToString());
+                    DgvCuotas.Rows.Add("CI", NumCuota, FechaIni, CapitalIni, (CapitalIni * valorDolar), valorRestoCuotas, (valorRestoCuotas * valorDolar), NumRecibo);
                     siguiente++;
                 }
 
@@ -526,8 +534,17 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                                 break;
                         }
 
+                        if (dia > 29 && mes == 2)
+                        {
+                            dia = 28;
+                        }
+                        else
+                        {
+                            dia = FechaFnc.Day;
+                        }
+
                         FechaIni = Convert.ToDateTime(dia + "-" + mes + "-" + año);
-                        DgvCuotas.Rows.Add("FN", NumCuota, FechaIni, 0, 0, Math.Round(Convert.ToDouble(TxtValorFnc.Text) * valorDolar, 2));
+                        DgvCuotas.Rows.Add("FN", NumCuota, FechaIni, 0, 0, Convert.ToDouble(TxtValorFnc.Text), Math.Round(Convert.ToDouble(TxtValorFnc.Text) * valorDolar, 2));
                         mes += periodo;
 
                     }
@@ -570,8 +587,17 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                                 break;
                         }
 
+                        if (dia > 29 && mes == 2)
+                        {
+                            dia = 28;
+                        }
+                        else
+                        {
+                            dia = FechaFnc.Day;
+                        }
+
                         FechaIni = Convert.ToDateTime(dia + "-" + mes + "-" + año);
-                        DgvCuotas.Rows.Add("FN", NumCuota, FechaIni, 0, 0, Math.Round(Convert.ToDouble(TxtValorFnc.Text) * valorDolar, 2));
+                        DgvCuotas.Rows.Add("FN", NumCuota, FechaIni, 0, 0, Convert.ToDouble(TxtValorFnc.Text), Math.Round(Convert.ToDouble(TxtValorFnc.Text) * valorDolar, 2));
                         mes += periodo;
 
                     }
@@ -579,15 +605,19 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             }
             for (int i = 0; i < (DgvCuotas.Rows.Count); i++)
             {
-                SumaCapital += Convert.ToDouble(DgvCuotas.Rows[i].Cells[3].Value);
+                sumaCapitalUSD += Convert.ToDouble(DgvCuotas.Rows[i].Cells[3].Value);
+                SumaCapital += Convert.ToDouble(DgvCuotas.Rows[i].Cells[4].Value);
                 //SumaCapital = Math.Round(SumaCapital,1);
-                sumaCuotas += Convert.ToDouble(DgvCuotas.Rows[i].Cells[5].Value);
+                sumaCuotasUSD += Convert.ToDouble(DgvCuotas.Rows[i].Cells[5].Value);
+                sumaCuotas += Convert.ToDouble(DgvCuotas.Rows[i].Cells[6].Value);
                 //sumaCuotas = Math.Round(sumaCuotas,1);
             }
             int contFilasDvgCuotas = DgvCuotas.Rows.Count - 1;
             DgvCuotas.Rows[contFilasDvgCuotas].Cells[2].Value = "T O T A L  . .";
-            DgvCuotas.Rows[contFilasDvgCuotas].Cells[3].Value = SumaCapital;
-            DgvCuotas.Rows[contFilasDvgCuotas].Cells[5].Value = sumaCuotas;
+            DgvCuotas.Rows[contFilasDvgCuotas].Cells[3].Value = sumaCapitalUSD;
+            DgvCuotas.Rows[contFilasDvgCuotas].Cells[4].Value = SumaCapital;
+            DgvCuotas.Rows[contFilasDvgCuotas].Cells[5].Value = sumaCuotasUSD;
+            DgvCuotas.Rows[contFilasDvgCuotas].Cells[6].Value = sumaCuotas;
             DgvCuotas.Rows[contFilasDvgCuotas].DefaultCellStyle.BackColor = Color.Blue;
             DgvCuotas.Rows[contFilasDvgCuotas].DefaultCellStyle.ForeColor = Color.White;
             //ValidacionCapital = SumaCapital;
@@ -677,9 +707,9 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         #region "Metodo principal add"
         private void MtdAdicionar()
         {
-            string VarIdCta, VarConcepto;
-            decimal VarCapital, VarCuota;
-            int VarNumcuota;
+            string VarIdCta, VarConcepto, idtransacciones, ConsecutivoRecaudo, mesConvertido = "";
+            decimal VarCapital, VarCuota, varCapitalUSD, varCuotaUSD;
+            int VarNumcuota, contCI = 0, contConsecutivo = 0, mesCuota;
             DateTime VarFecha;
             MtdValidarAdd();
             if (CuentaErrores > 0)
@@ -694,6 +724,8 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 if (rest == DialogResult.Yes)
                 {
                     Consecutivo = conexion.siguienteAdjudicacion("select if(max(IdAdjudicacion)is null,1,max(IdAdjudicacion+1)) as 'Sig consecutivo Adj' from Adjudicacion");
+                    idtransacciones = conexion.MtdBscDatos("Select Consecutivo from Contabilidad_alttum.Documento where IdComprobante = 99");
+                    ConsecutivoRecaudo = conexion.MtdBscDatos("select if(max(IdRecaudo)is null,1,max(IdRecaudo+1))from datosrecaudos");
                     if (Consecutivo != 0)
                     {
 
@@ -701,14 +733,14 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                         MySqlConnection MysqlConexion = new MySqlConnection(FrmLogeo.StrConexion);
                         string StrAddAdjudicacion = " INSERT INTO adjudicacion (IdAdjudicacion, Fecha, FechaContrato, Contrato, IdProyecto, IdTercero1, IdTercero2, Idtercero3," +
                         "IdInmueble, TipodeAdjudicacion, Temporada, Grado, FormaPago, Valor, CuotaInicial, Financiacion, PlazoFnc, " +
-                        "CuotaFnc, InicioFnc, Estado, Usuario, FechaOperacion, Porcentaje, TipoOperacion, Observacion, Trm) " +
+                        "CuotaFnc, InicioFnc, Estado, Usuario, FechaOperacion, Porcentaje, TipoOperacion, Observacion, Trm, ValorContratoUSD, CuotaInicialUSD, FinanciacionUSD, CuotaFncUSD) " +
 
                         "VALUES ( @IdAdjudicacion, @Fecha, @FechaContrato, @Contrato, @IdProyecto, @IdTercero1, @IdTercero2, @Idtercero3, @IdInmueble, @TipodeAdjudicacion, @Temporada, @Grado," +
                         "@FormaPago, @Valor, @CuotaInicial, @Financiacion, @PlazoFnc, @CuotaFnc, @InicioFnc, @Estado, @Usuario, @FechaOperacion, " +
-                        "@Porcentaje, @TipoOperacion, @Observacion, @Trm)";
+                        "@Porcentaje, @TipoOperacion, @Observacion, @Trm, @ValorContratoUSD, @CuotaInicialUSD, @FinanciacionUSD, @CuotaFncUSD)";
 
-                        string StrAddFnc = "insert into financiacion (IdCta,IdAdjudicacion,Concepto,NumCuota,Fecha,Capital,Cuota,SaldoCapital,SaldoCuota,UltimaFechaPago,Usuario,FechaOperacion) " +
-                                                         "Values (@IdCta,@IdAdjudicacion,@Concepto,@NumCuota,@FechaFnc,@Capital,@Cuota,@Capital,@Cuota,@FechaFnc,@Usuario,@FechaOperacion)";
+                        string StrAddFnc = "insert into financiacion (IdCta,IdAdjudicacion,Concepto,NumCuota,Fecha,Capital_USD, Capital,Cuota_USD,Cuota,SaldoCapital,SaldoCuota,UltimaFechaPago,Usuario,FechaOperacion) " +
+                                                         "Values (@IdCta,@IdAdjudicacion,@Concepto,@NumCuota,@FechaFnc,@Capital_USD,@Capital,@Cuota_USD,@Cuota,@Capital,@Cuota,@FechaFnc,@Usuario,@FechaOperacion)";
 
                         string StrModReserva = "Update Reservas Set Estado = 'Adjudicado',IdAdjudicacion =@IdAdjudicacion Where idReserva ='" + TxtReserva.Text + "'";
 
@@ -751,12 +783,30 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             CmdAddPrm.Parameters.Add("@IdCta", MySql.Data.MySqlClient.MySqlDbType.VarChar);
                             CmdAddPrm.Parameters.Add("@Concepto", MySql.Data.MySqlClient.MySqlDbType.VarChar);
                             CmdAddPrm.Parameters.Add("@FechaFnc", MySql.Data.MySqlClient.MySqlDbType.Date);
+                            CmdAddPrm.Parameters.Add("@Capital_USD", MySql.Data.MySqlClient.MySqlDbType.Decimal);
                             CmdAddPrm.Parameters.Add("@Capital", MySql.Data.MySqlClient.MySqlDbType.Decimal);
+                            CmdAddPrm.Parameters.Add("@Cuota_USD", MySql.Data.MySqlClient.MySqlDbType.Decimal);
                             CmdAddPrm.Parameters.Add("@Cuota", MySql.Data.MySqlClient.MySqlDbType.Decimal);
                             CmdAddPrm.Parameters.Add("@NumCuota", MySql.Data.MySqlClient.MySqlDbType.Int16);
                             CmdAddPrm.Parameters.Add("@Trm", MySql.Data.MySqlClient.MySqlDbType.Double);
+                            CmdAddPrm.Parameters.Add("@ValorContratoUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
+                            CmdAddPrm.Parameters.Add("@CuotaInicialUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
+                            CmdAddPrm.Parameters.Add("@FinanciacionUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
+                            CmdAddPrm.Parameters.Add("@CuotaFncUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
 
+                            //Variables de abajo para la insercion en datosrecaudos
+                            CmdAddPrm.Parameters.Add("@IdRecaudo", MySql.Data.MySqlClient.MySqlDbType.Int32);
+                            CmdAddPrm.Parameters.Add("@NumRecibo", MySql.Data.MySqlClient.MySqlDbType.VarChar);
+                            CmdAddPrm.Parameters.Add("@IdTercero", MySql.Data.MySqlClient.MySqlDbType.VarChar);
+                            CmdAddPrm.Parameters.Add("@Operacion", MySql.Data.MySqlClient.MySqlDbType.VarChar);
+                            CmdAddPrm.Parameters.Add("@DetalleRec", MySql.Data.MySqlClient.MySqlDbType.VarChar);
+                            CmdAddPrm.Parameters.Add("@Transaccion", MySql.Data.MySqlClient.MySqlDbType.Int32);
 
+                            //Variables para la insercion en recaudos
+                            CmdAddPrm.Parameters.Add("@IdFinanciacion", MySql.Data.MySqlClient.MySqlDbType.String);
+                            CmdAddPrm.Parameters.Add("@FechaCuota", MySql.Data.MySqlClient.MySqlDbType.Date);
+                            CmdAddPrm.Parameters.Add("@EstadoRec", MySql.Data.MySqlClient.MySqlDbType.String);
+                            CmdAddPrm.Parameters.Add("@Periodo", MySql.Data.MySqlClient.MySqlDbType.Int32);
 
                             CmdAddPrm.Parameters["@IdAdjudicacion"].Value = Consecutivo;
                             CmdAddPrm.Parameters["@Fecha"].Value = DateTime.Now.Date;
@@ -787,8 +837,8 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             int indexCuotas = Convert.ToInt32(DgvCuotas.Rows.Count - 1);
                             CmdAddPrm.Parameters["@FormaPago"].Value = CmbFormaPago.Text;
                             CmdAddPrm.Parameters["@Valor"].Value = Convert.ToDouble(txtValContratoPesos.Text);
-                            CmdAddPrm.Parameters["@CuotaInicial"].Value = Math.Ceiling(Convert.ToDouble(DgvCuotas.Rows[indexCuotas].Cells[3].Value));
-                            CmdAddPrm.Parameters["@Financiacion"].Value = Convert.ToDouble(txtTotalFinanciacion.Text) * valorDolar;
+                            CmdAddPrm.Parameters["@CuotaInicial"].Value = Math.Ceiling(Convert.ToDouble(DgvCuotas.Rows[indexCuotas].Cells[4].Value));
+                            CmdAddPrm.Parameters["@Financiacion"].Value = Convert.ToDouble(lblValorTotalFnc.Text) * valorDolar;
                             CmdAddPrm.Parameters["@PlazoFnc"].Value = Convert.ToInt16(txtCtasFnc.Text);
                             CmdAddPrm.Parameters["@CuotaFnc"].Value = Convert.ToDouble(TxtValorFnc.Text) * valorDolar;
                             CmdAddPrm.Parameters["@InicioFnc"].Value = DtpInicioFnc.Value;
@@ -799,24 +849,35 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             CmdAddPrm.Parameters["@Porcentaje"].Value = 0;
                             CmdAddPrm.Parameters["@Observacion"].Value = TxtObservacion.Text;
                             CmdAddPrm.Parameters["@Trm"].Value = Convert.ToDouble(txtDolarTope.Text);
+                            CmdAddPrm.Parameters["@ValorContratoUSD"].Value = Convert.ToDouble(TxtValorContrato.Text);
+                            CmdAddPrm.Parameters["@CuotaInicialUSD"].Value = Convert.ToDouble(txtValorIni.Text);
+                            CmdAddPrm.Parameters["@FinanciacionUSD"].Value = Convert.ToDouble(lblValorTotalFnc.Text);
+                            CmdAddPrm.Parameters["@CuotaFncUSD"].Value = Convert.ToDouble(TxtValorFnc.Text);
 
                             CmdAddPrm.CommandText = StrAddAdjudicacion;
                             CmdAddPrm.ExecuteNonQuery();
 
                             for (int i = 0; i < DgvCuotas.Rows.Count - 1; i++)
                             {
-
+                                if (DgvCuotas.Rows[i].Cells[0].Value.ToString() == "CI" && Convert.ToInt32(DgvCuotas.Rows[i].Cells[7].Value.ToString()) > 0)
+                                {
+                                    contCI++;
+                                }
                                 VarConcepto = DgvCuotas.Rows[i].Cells[0].Value.ToString();
                                 VarNumcuota = Convert.ToInt16(DgvCuotas.Rows[i].Cells[1].Value);
                                 VarIdCta = VarConcepto + VarNumcuota + "ADJ" + Consecutivo;
                                 VarFecha = Convert.ToDateTime(DgvCuotas.Rows[i].Cells[2].Value);
-                                VarCapital = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[3].Value);
-                                VarCuota = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[5].Value);
+                                varCapitalUSD = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[3].Value);
+                                VarCapital = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[4].Value);
+                                varCuotaUSD = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[5].Value);
+                                VarCuota = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[6].Value);
 
                                 CmdAddPrm.Parameters["@IdCta"].Value = VarIdCta;
                                 CmdAddPrm.Parameters["@Concepto"].Value = VarConcepto;
                                 CmdAddPrm.Parameters["@FechaFnc"].Value = VarFecha;
+                                CmdAddPrm.Parameters["@Capital_USD"].Value = varCapitalUSD;
                                 CmdAddPrm.Parameters["@Capital"].Value = VarCapital;
+                                CmdAddPrm.Parameters["@Cuota_USD"].Value = varCuotaUSD;
                                 CmdAddPrm.Parameters["@Cuota"].Value = VarCuota;
                                 CmdAddPrm.Parameters["@NumCuota"].Value = VarNumcuota;
 
@@ -829,8 +890,58 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                                 CmdAddPrm.CommandText = StrModInmuebles;
                                 CmdAddPrm.ExecuteNonQuery();
                             }
+
+                            for (int i = 0; i < contCI; i++)
+                            {
+                                //Se realiza insercion en datosrecaudos
+                                CmdAddPrm.Parameters["@IdRecaudo"].Value = ConsecutivoRecaudo;
+                                CmdAddPrm.Parameters["@Fecha"].Value = Convert.ToDateTime(Convert.ToString(DgvCuotas.Rows[i].Cells[2].Value));
+                                CmdAddPrm.Parameters["@NumRecibo"].Value = DgvCuotas.Rows[i].Cells[7].Value.ToString();
+                                CmdAddPrm.Parameters["@IdTercero"].Value = TxtTitular1.Text;
+                                CmdAddPrm.Parameters["@Operacion"].Value = "Cuota Inicial";
+                                CmdAddPrm.Parameters["@Valor"].Value = Convert.ToDecimal(Convert.ToString(DgvCuotas.Rows[i].Cells[4].Value));
+                                CmdAddPrm.Parameters["@FormaPago"].Value = "Bancolombia";
+                                CmdAddPrm.Parameters["@DetalleRec"].Value = "ABONO CUOTA INICIAL";
+                                CmdAddPrm.Parameters["@Usuario"].Value = FrmLogeo.FrmUsuarioIdUsr;
+                                CmdAddPrm.Parameters["@FechaOperacion"].Value = DateTime.Now.Date;
+                                CmdAddPrm.Parameters["@Transaccion"].Value = idtransacciones;
+
+                                string SentenciaDatosRcd = "insert into datosrecaudos (IdRecaudo, IdAdjudicacion, Fecha, NumRecibo, IdTercero, Operacion, Valor, FormaPago, Detalle, Usuario, FechaOperacion, Transaccion) " +
+                                                                              "Values (@IdRecaudo, @IdAdjudicacion, @Fecha, @NumRecibo, @IdTercero, @Operacion, @Valor, @FormaPago, @DetalleRec, @Usuario, @FechaOperacion, @Transaccion)";
+
+                                CmdAddPrm.CommandText = SentenciaDatosRcd;
+                                CmdAddPrm.ExecuteNonQuery();
+                                
+                                CmdAddPrm.Parameters["@IdFinanciacion"].Value = ("CI" + Convert.ToString(DgvCuotas.Rows[i].Cells[1].Value) + "ADJ" + Consecutivo);
+                                CmdAddPrm.Parameters["@NumCuota"].Value = Convert.ToInt16(DgvCuotas.Rows[i].Cells[1].Value);
+                                CmdAddPrm.Parameters["@Concepto"].Value = Convert.ToString(DgvCuotas.Rows[i].Cells[0].Value);
+                                CmdAddPrm.Parameters["@Capital"].Value = Convert.ToDecimal(DgvCuotas.Rows[i].Cells[4].Value);
+                                CmdAddPrm.Parameters["@EstadoRec"].Value = "Aprobado";
+                                mesCuota = Convert.ToInt32(DgvCtaInicial.Rows[i].Cells[1].Value);
+                                if (mesCuota < 10)
+                                {
+                                    mesConvertido = "0" + Convert.ToString(DgvCtaInicial.Rows[i].Cells[1].Value);
+                                }
+                                CmdAddPrm.Parameters["@Periodo"].Value = Convert.ToInt32(Convert.ToString(DgvCtaInicial.Rows[i].Cells[2].Value) + "" + mesConvertido);
+                                CmdAddPrm.Parameters["@FechaCuota"].Value = Convert.ToDateTime(DgvCuotas.Rows[i].Cells[2].Value);
+                                
+
+                                CmdAddPrm.CommandText = "Insert into recaudos (IdRecaudo, IdAdjudicacion, IdFinanciacion, Recibo, Fecha, NumCuota, Concepto," +
+                                                        "Capital, FechaOperacion, Usuario, Estado, Periodo, FechaCuota)" +
+                                                        "Values (@IdRecaudo, @IdAdjudicacion, @IdFinanciacion, @NumRecibo, @Fecha, @NumCuota, @Concepto," +
+                                                        "@Capital, @FechaOperacion, @Usuario, @EstadoRec, @Periodo, @FechaCuota)";
+                                CmdAddPrm.ExecuteNonQuery();
+
+                                contConsecutivo = Convert.ToInt32(ConsecutivoRecaudo);
+                                contConsecutivo++;
+                                ConsecutivoRecaudo = contConsecutivo.ToString();
+                                //CmdAddPrm.CommandText = "Update Financiacion Set SaldoCapital=(SaldoCapital-@Capital),SaldoInteres=(SaldoInteres-@InteresCte),SaldoCuota=(SaldoCuota-@Capital-@InteresCte)," +
+                                //"UltimaFechaPago=@Fecha, FechaOperacion = curdate() Where IdCta=@IdFinanciacion";
+                                //CmdAddPrm.ExecuteNonQuery();
+                            }
+
                             myTrans.Commit();
-                            MessageBox.Show("Registro Adicionado.\nEsta adjudicación queda con la número: " + Consecutivo.ToString(), "Adicionar Adjudicacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("                  Registro Adicionado.\nEsta adjudicación queda con la número: " + Consecutivo.ToString(), "Adicionar Adjudicacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             btnAdicionarAdj.Enabled = false;
                             MtdLimpiar();
 
@@ -925,7 +1036,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         #endregion
 
 
-        private void DgvCtaInicialSinPagar_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void DgvCtaInicial_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             sumaValoresDvg2();
             if ((Convert.ToString(DgvCtaInicial.CurrentRow.Cells[3].Value)) == "")
@@ -952,7 +1063,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 {
                     diaCtaInicial = 28;
                 }
-                DgvCtaInicial.Rows.Add(diaCtaInicial, mesCtaInicial, añoCtaInicial, 0, 0);
+                DgvCtaInicial.Rows.Add(diaCtaInicial, mesCtaInicial, añoCtaInicial, 0, 0, 0);
                 
             }
         }
@@ -982,7 +1093,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 diaCtaInicial = 28;
             }
 
-            DgvCtaInicial.Rows.Add(diaCtaInicial, mesCtaInicial, añoCtaInicial, 0, 0);
+            DgvCtaInicial.Rows.Add(diaCtaInicial, mesCtaInicial, añoCtaInicial, 0, 0, 0);
 
         }
 

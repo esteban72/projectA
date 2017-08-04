@@ -331,7 +331,7 @@ namespace CarteraGeneral
                     myCommand.ExecuteNonQuery();
 
                     myCommand.CommandText = "Update Financiacion Set SaldoCapital=(SaldoCapital-@Capital),SaldoInteres=(SaldoInteres-@InteresCte),SaldoCuota=(SaldoCuota-@Capital-@InteresCte)," +
-                    "UltimaFechaPago=@Fecha  Where IdCta=@IdFinanciacion";
+                    "UltimaFechaPago=@Fecha, FechaOperacion = curdate() Where IdCta=@IdFinanciacion";
                     myCommand.ExecuteNonQuery();
                     }
                 }

@@ -66,8 +66,8 @@
             this.btnConsultaComisiones = new DevExpress.XtraBars.BarButtonItem();
             this.btnPagoComisionMonterrey = new DevExpress.XtraBars.BarButtonItem();
             this.btnConsultasMonterrey = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPagoComisionesPIV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConsultasPIV = new DevExpress.XtraBars.BarButtonItem();
             this.BtnCumplimientoPresupuesto = new DevExpress.XtraBars.BarButtonItem();
             this.BtnPagados = new DevExpress.XtraBars.BarButtonItem();
             this.BtnTramiteEscritura = new DevExpress.XtraBars.BarButtonItem();
@@ -167,8 +167,8 @@
             this.btnConsultaComisiones,
             this.btnPagoComisionMonterrey,
             this.btnConsultasMonterrey,
-            this.barButtonItem9,
-            this.barButtonItem10,
+            this.btnPagoComisionesPIV,
+            this.btnConsultasPIV,
             this.BtnCumplimientoPresupuesto,
             this.BtnPagados,
             this.BtnTramiteEscritura,
@@ -557,20 +557,21 @@
             this.btnConsultasMonterrey.Name = "btnConsultasMonterrey";
             this.btnConsultasMonterrey.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConsultasMonterrey_ItemClick);
             // 
-            // barButtonItem9
+            // btnPagoComisionesPIV
             // 
-            this.barButtonItem9.Caption = "Pago Comisiones P I V";
-            this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
-            this.barButtonItem9.Id = 78;
-            this.barButtonItem9.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.LargeGlyph")));
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btnPagoComisionesPIV.Caption = "Pago Comisiones P I V";
+            this.btnPagoComisionesPIV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPagoComisionesPIV.Glyph")));
+            this.btnPagoComisionesPIV.Id = 78;
+            this.btnPagoComisionesPIV.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPagoComisionesPIV.LargeGlyph")));
+            this.btnPagoComisionesPIV.Name = "btnPagoComisionesPIV";
+            this.btnPagoComisionesPIV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPagoComisionesPIV_ItemClick);
             // 
-            // barButtonItem10
+            // btnConsultasPIV
             // 
-            this.barButtonItem10.Caption = "Consulta comisiones pagadas";
-            this.barButtonItem10.Id = 79;
-            this.barButtonItem10.LargeGlyph = global::CarteraGeneral.RecursosIconos.reporte_pagoComisiones;
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.btnConsultasPIV.Caption = "Consulta comisiones pagadas";
+            this.btnConsultasPIV.Id = 79;
+            this.btnConsultasPIV.LargeGlyph = global::CarteraGeneral.RecursosIconos.reporte_pagoComisiones;
+            this.btnConsultasPIV.Name = "btnConsultasPIV";
             // 
             // BtnCumplimientoPresupuesto
             // 
@@ -947,8 +948,8 @@
             // 
             // ribbonPageGroup11
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnPagoComisionesPIV);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnConsultasPIV);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Comisiones PIV";
             // 
@@ -1159,8 +1160,8 @@
         private DevExpress.XtraBars.BarButtonItem btnConsultaComisiones;
         private DevExpress.XtraBars.BarButtonItem btnPagoComisionMonterrey;
         private DevExpress.XtraBars.BarButtonItem btnConsultasMonterrey;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem btnPagoComisionesPIV;
+        private DevExpress.XtraBars.BarButtonItem btnConsultasPIV;
         private DevExpress.XtraBars.BarButtonItem BtnCumplimientoPresupuesto;
         private DevExpress.XtraBars.BarButtonItem BtnPagados;
         private DevExpress.XtraBars.BarButtonItem BtnTramiteEscritura;

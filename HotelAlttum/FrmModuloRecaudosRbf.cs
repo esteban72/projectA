@@ -23,7 +23,7 @@ namespace CarteraGeneral
         
         private void FrmModuloRecaudosRbf_Load(object sender, EventArgs e)
         {
-            this.Text = "MODULO DE REACUOS USUARIO CONECTADO: " + FrmLogeo.Usuario.ToUpper();
+            this.Text = "MODULO DE RECAUDOS USUARIO CONECTADO: " + FrmLogeo.Usuario.ToUpper();
             GrdCartera.DataSource = conexion.MtdBuscarDataset(RscRecaudos.DatosAdjudicacion);
             BtnAdd.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "401");            
             BtnMod.Enabled = conexion.MtdBscFrmIdFrm("Modificar", FrmLogeo.FrmUsuarioIdUsr, "401");

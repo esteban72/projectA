@@ -381,7 +381,7 @@ namespace CarteraGeneral.Clases
             }
         }
 
-        public Boolean vecesPagoComisionContrato_Antiguo(string campo)
+        public Boolean vecesPagoComisionContrato_Antiguo(string campo, int ingreso)
         {
             try
             {
@@ -391,6 +391,7 @@ namespace CarteraGeneral.Clases
                 Query.Connection = MysqlConexion;
                 Query.CommandText = "sp_Alttum_VecesPuedeComisionarContrato_Antiguo";
                 Query.Parameters.AddWithValue("_Contrato", campo);
+                Query.Parameters.AddWithValue("_Ingreso", ingreso);
                 Query.Connection.Open();
                 consultar = Query.ExecuteReader();
                 if (consultar.Read())
@@ -487,12 +488,13 @@ namespace CarteraGeneral.Clases
             }
         }
 
-        public Boolean RechazarComisionistas(string contrato)
+        public Boolean RechazarOperacion(string contrato, string tipoRechazo)
         {
             try
             {
-                MySqlCommand CmdListaContratos = new MySqlCommand("sp_Rechazar_Comisionistas", MysqlConexion);
+                MySqlCommand CmdListaContratos = new MySqlCommand("sp_Rechazar_Operacion", MysqlConexion);
                 CmdListaContratos.Parameters.AddWithValue("_Contrato", contrato);
+                CmdListaContratos.Parameters.AddWithValue("_TipoRechazo", tipoRechazo);
                 CmdListaContratos.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader DrdListaComisiones;
                 MysqlConexion.Open();

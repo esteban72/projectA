@@ -36,6 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAdicionarAdj = new DevExpress.XtraBars.BarButtonItem();
             this.btnValidarInformacion = new DevExpress.XtraBars.BarButtonItem();
@@ -108,9 +110,11 @@
             this.Cto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumCta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapitalUSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Capital = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CuotaUSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumReciboCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imgAlttum = new DevExpress.XtraEditors.PictureEdit();
             this.lblMensajeValor = new System.Windows.Forms.Label();
             this.lblMensajeFormaPago = new System.Windows.Forms.Label();
@@ -128,6 +132,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumRecibo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtValorIni = new System.Windows.Forms.TextBox();
@@ -369,7 +374,7 @@
             this.TxtObservacion.Location = new System.Drawing.Point(126, 227);
             this.TxtObservacion.MaxLength = 590;
             this.TxtObservacion.Name = "TxtObservacion";
-            this.TxtObservacion.Size = new System.Drawing.Size(741, 20);
+            this.TxtObservacion.Size = new System.Drawing.Size(702, 20);
             this.TxtObservacion.TabIndex = 5;
             // 
             // BtnBuscarTitular1
@@ -645,7 +650,7 @@
             // 
             // btnEliminarFila
             // 
-            this.btnEliminarFila.Location = new System.Drawing.Point(230, 239);
+            this.btnEliminarFila.Location = new System.Drawing.Point(298, 239);
             this.btnEliminarFila.Name = "btnEliminarFila";
             this.btnEliminarFila.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarFila.TabIndex = 364;
@@ -759,9 +764,9 @@
             this.PnlDatosFnc.Controls.Add(this.TxtValorFnc);
             this.PnlDatosFnc.Controls.Add(this.label16);
             this.PnlDatosFnc.Enabled = false;
-            this.PnlDatosFnc.Location = new System.Drawing.Point(384, 457);
+            this.PnlDatosFnc.Location = new System.Drawing.Point(421, 445);
             this.PnlDatosFnc.Name = "PnlDatosFnc";
-            this.PnlDatosFnc.Size = new System.Drawing.Size(265, 176);
+            this.PnlDatosFnc.Size = new System.Drawing.Size(219, 176);
             this.PnlDatosFnc.TabIndex = 321;
             // 
             // label9
@@ -780,7 +785,7 @@
             this.txtCtasFnc.AcceptsReturn = true;
             this.txtCtasFnc.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCtasFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCtasFnc.Location = new System.Drawing.Point(31, 101);
+            this.txtCtasFnc.Location = new System.Drawing.Point(22, 101);
             this.txtCtasFnc.Name = "txtCtasFnc";
             this.txtCtasFnc.Size = new System.Drawing.Size(81, 20);
             this.txtCtasFnc.TabIndex = 13;
@@ -793,7 +798,7 @@
             this.lblErrorValorFnc.AutoSize = true;
             this.lblErrorValorFnc.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorValorFnc.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorValorFnc.Location = new System.Drawing.Point(118, 51);
+            this.lblErrorValorFnc.Location = new System.Drawing.Point(109, 51);
             this.lblErrorValorFnc.Name = "lblErrorValorFnc";
             this.lblErrorValorFnc.Size = new System.Drawing.Size(9, 13);
             this.lblErrorValorFnc.TabIndex = 357;
@@ -804,7 +809,7 @@
             this.lblValorTotalFnc.AutoSize = true;
             this.lblValorTotalFnc.BackColor = System.Drawing.Color.Transparent;
             this.lblValorTotalFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotalFnc.Location = new System.Drawing.Point(184, 145);
+            this.lblValorTotalFnc.Location = new System.Drawing.Point(165, 145);
             this.lblValorTotalFnc.Name = "lblValorTotalFnc";
             this.lblValorTotalFnc.Size = new System.Drawing.Size(13, 13);
             this.lblValorTotalFnc.TabIndex = 210;
@@ -816,7 +821,7 @@
             this.lblTituloFnc.BackColor = System.Drawing.Color.Transparent;
             this.lblTituloFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloFnc.ForeColor = System.Drawing.Color.Black;
-            this.lblTituloFnc.Location = new System.Drawing.Point(87, 6);
+            this.lblTituloFnc.Location = new System.Drawing.Point(67, 3);
             this.lblTituloFnc.Name = "lblTituloFnc";
             this.lblTituloFnc.Size = new System.Drawing.Size(94, 13);
             this.lblTituloFnc.TabIndex = 207;
@@ -828,7 +833,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(144, 82);
+            this.label6.Location = new System.Drawing.Point(110, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 13);
             this.label6.TabIndex = 208;
@@ -844,7 +849,7 @@
             "60",
             "90",
             "120"});
-            this.CmbPeriodoFnc.Location = new System.Drawing.Point(176, 101);
+            this.CmbPeriodoFnc.Location = new System.Drawing.Point(138, 100);
             this.CmbPeriodoFnc.Name = "CmbPeriodoFnc";
             this.CmbPeriodoFnc.Size = new System.Drawing.Size(44, 21);
             this.CmbPeriodoFnc.TabIndex = 14;
@@ -854,7 +859,7 @@
             // 
             this.DtpInicioFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpInicioFnc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpInicioFnc.Location = new System.Drawing.Point(31, 143);
+            this.DtpInicioFnc.Location = new System.Drawing.Point(22, 143);
             this.DtpInicioFnc.Name = "DtpInicioFnc";
             this.DtpInicioFnc.Size = new System.Drawing.Size(83, 20);
             this.DtpInicioFnc.TabIndex = 15;
@@ -864,7 +869,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 128);
+            this.label7.Location = new System.Drawing.Point(3, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 206;
@@ -875,18 +880,18 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 32);
+            this.label10.Location = new System.Drawing.Point(3, 32);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 197;
-            this.label10.Text = "Valor:";
+            this.label10.Text = "Valor cuota:";
             // 
             // TxtValorFnc
             // 
             this.TxtValorFnc.AcceptsReturn = true;
             this.TxtValorFnc.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtValorFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtValorFnc.Location = new System.Drawing.Point(31, 48);
+            this.TxtValorFnc.Location = new System.Drawing.Point(22, 48);
             this.TxtValorFnc.Name = "TxtValorFnc";
             this.TxtValorFnc.Size = new System.Drawing.Size(81, 20);
             this.TxtValorFnc.TabIndex = 12;
@@ -899,7 +904,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(120, 137);
+            this.label16.Location = new System.Drawing.Point(110, 137);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 26);
             this.label16.TabIndex = 200;
@@ -913,14 +918,16 @@
             this.Cto,
             this.NumCta,
             this.Fecha,
+            this.CapitalUSD,
             this.Capital,
-            this.Interes,
-            this.Cuota});
-            this.DgvCuotas.Location = new System.Drawing.Point(926, 202);
+            this.CuotaUSD,
+            this.Cuota,
+            this.NumReciboCuota});
+            this.DgvCuotas.Location = new System.Drawing.Point(846, 202);
             this.DgvCuotas.Name = "DgvCuotas";
             this.DgvCuotas.ReadOnly = true;
             this.DgvCuotas.RowHeadersVisible = false;
-            this.DgvCuotas.Size = new System.Drawing.Size(422, 470);
+            this.DgvCuotas.Size = new System.Drawing.Size(502, 486);
             this.DgvCuotas.TabIndex = 350;
             // 
             // Cto
@@ -928,7 +935,7 @@
             this.Cto.HeaderText = "Cto";
             this.Cto.Name = "Cto";
             this.Cto.ReadOnly = true;
-            this.Cto.Width = 40;
+            this.Cto.Width = 35;
             // 
             // NumCta
             // 
@@ -945,43 +952,59 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 80;
+            this.Fecha.Width = 70;
             // 
-            // Capital
+            // CapitalUSD
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Capital.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Capital.HeaderText = "Capital";
-            this.Capital.Name = "Capital";
-            this.Capital.ReadOnly = true;
+            this.CapitalUSD.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CapitalUSD.HeaderText = "Capital USD";
+            this.CapitalUSD.Name = "CapitalUSD";
+            this.CapitalUSD.ReadOnly = true;
+            this.CapitalUSD.Width = 60;
             // 
-            // Interes
+            // Capital
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.Format = "N2";
             dataGridViewCellStyle3.NullValue = null;
-            this.Interes.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Interes.HeaderText = "Interes";
-            this.Interes.Name = "Interes";
-            this.Interes.ReadOnly = true;
-            this.Interes.Width = 45;
+            this.Capital.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Capital.HeaderText = "Capital";
+            this.Capital.Name = "Capital";
+            this.Capital.ReadOnly = true;
+            this.Capital.Width = 75;
+            // 
+            // CuotaUSD
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CuotaUSD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CuotaUSD.HeaderText = "Cuota USD";
+            this.CuotaUSD.Name = "CuotaUSD";
+            this.CuotaUSD.ReadOnly = true;
+            this.CuotaUSD.Width = 68;
             // 
             // Cuota
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Cuota.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Cuota.DefaultCellStyle = dataGridViewCellStyle5;
             this.Cuota.HeaderText = "Cuota";
             this.Cuota.Name = "Cuota";
             this.Cuota.ReadOnly = true;
+            this.Cuota.Width = 90;
+            // 
+            // NumReciboCuota
+            // 
+            this.NumReciboCuota.HeaderText = "Nº Recibo";
+            this.NumReciboCuota.Name = "NumReciboCuota";
+            this.NumReciboCuota.ReadOnly = true;
+            this.NumReciboCuota.Width = 47;
             // 
             // imgAlttum
             // 
             this.imgAlttum.EditValue = global::CarteraGeneral.RecursosIconos.LogoAlttum;
-            this.imgAlttum.Location = new System.Drawing.Point(644, 257);
+            this.imgAlttum.Location = new System.Drawing.Point(576, 257);
             this.imgAlttum.Name = "imgAlttum";
             this.imgAlttum.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imgAlttum.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
@@ -1103,9 +1126,9 @@
             this.PnlCtaInicialSinPagar.Controls.Add(this.label4);
             this.PnlCtaInicialSinPagar.Controls.Add(this.txtValorIni);
             this.PnlCtaInicialSinPagar.Enabled = false;
-            this.PnlCtaInicialSinPagar.Location = new System.Drawing.Point(51, 416);
+            this.PnlCtaInicialSinPagar.Location = new System.Drawing.Point(20, 416);
             this.PnlCtaInicialSinPagar.Name = "PnlCtaInicialSinPagar";
-            this.PnlCtaInicialSinPagar.Size = new System.Drawing.Size(313, 272);
+            this.PnlCtaInicialSinPagar.Size = new System.Drawing.Size(393, 272);
             this.PnlCtaInicialSinPagar.TabIndex = 365;
             // 
             // DgvCtaInicial
@@ -1118,20 +1141,21 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.Pagado,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.NumRecibo});
             this.DgvCtaInicial.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.DgvCtaInicial.Location = new System.Drawing.Point(6, 75);
             this.DgvCtaInicial.Name = "DgvCtaInicial";
             this.DgvCtaInicial.RowHeadersVisible = false;
-            this.DgvCtaInicial.Size = new System.Drawing.Size(299, 158);
+            this.DgvCtaInicial.Size = new System.Drawing.Size(378, 158);
             this.DgvCtaInicial.TabIndex = 11;
-            this.DgvCtaInicial.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicialSinPagar_CellEndEdit);
+            this.DgvCtaInicial.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicial_CellEndEdit);
             this.DgvCtaInicial.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvCtaInicial_RowsAdded);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle5.Format = "d";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Format = "d";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn1.HeaderText = "Dia";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -1156,22 +1180,30 @@
             // 
             // Pagado
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Pagado.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Pagado.DefaultCellStyle = dataGridViewCellStyle7;
             this.Pagado.HeaderText = "Pagado";
             this.Pagado.Name = "Pagado";
             this.Pagado.Width = 70;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn4.HeaderText = "Pendiente pago";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 18;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 105;
+            // 
+            // NumRecibo
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.NumRecibo.DefaultCellStyle = dataGridViewCellStyle9;
+            this.NumRecibo.HeaderText = "Nº Recibo";
+            this.NumRecibo.Name = "NumRecibo";
+            this.NumRecibo.Width = 80;
             // 
             // label3
             // 
@@ -1182,7 +1214,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(309, 23);
+            this.label3.Size = new System.Drawing.Size(389, 23);
             this.label3.TabIndex = 211;
             this.label3.Text = "CUOTA INICIAL";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1215,7 +1247,7 @@
             this.lblErrorCtaInicial.AutoSize = true;
             this.lblErrorCtaInicial.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorCtaInicial.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCtaInicial.Location = new System.Drawing.Point(45, 400);
+            this.lblErrorCtaInicial.Location = new System.Drawing.Point(20, 400);
             this.lblErrorCtaInicial.Name = "lblErrorCtaInicial";
             this.lblErrorCtaInicial.Size = new System.Drawing.Size(9, 13);
             this.lblErrorCtaInicial.TabIndex = 373;
@@ -1229,9 +1261,9 @@
             this.PnlTotalFnc.Controls.Add(this.label23);
             this.PnlTotalFnc.Controls.Add(this.txtTotalFinanciacion);
             this.PnlTotalFnc.Enabled = false;
-            this.PnlTotalFnc.Location = new System.Drawing.Point(665, 491);
+            this.PnlTotalFnc.Location = new System.Drawing.Point(646, 493);
             this.PnlTotalFnc.Name = "PnlTotalFnc";
-            this.PnlTotalFnc.Size = new System.Drawing.Size(216, 109);
+            this.PnlTotalFnc.Size = new System.Drawing.Size(194, 101);
             this.PnlTotalFnc.TabIndex = 360;
             // 
             // label19
@@ -1240,7 +1272,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(25, 4);
+            this.label19.Location = new System.Drawing.Point(13, 4);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(168, 26);
             this.label19.TabIndex = 207;
@@ -1252,7 +1284,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(13, 41);
+            this.label23.Location = new System.Drawing.Point(5, 41);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(46, 13);
             this.label23.TabIndex = 197;
@@ -1263,7 +1295,7 @@
             this.txtTotalFinanciacion.AcceptsReturn = true;
             this.txtTotalFinanciacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTotalFinanciacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalFinanciacion.Location = new System.Drawing.Point(41, 57);
+            this.txtTotalFinanciacion.Location = new System.Drawing.Point(33, 57);
             this.txtTotalFinanciacion.Name = "txtTotalFinanciacion";
             this.txtTotalFinanciacion.ReadOnly = true;
             this.txtTotalFinanciacion.Size = new System.Drawing.Size(138, 20);
@@ -1310,7 +1342,7 @@
             this.lblErrorCuotasFnc.AutoSize = true;
             this.lblErrorCuotasFnc.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorCuotasFnc.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCuotasFnc.Location = new System.Drawing.Point(384, 441);
+            this.lblErrorCuotasFnc.Location = new System.Drawing.Point(426, 429);
             this.lblErrorCuotasFnc.Name = "lblErrorCuotasFnc";
             this.lblErrorCuotasFnc.Size = new System.Drawing.Size(9, 13);
             this.lblErrorCuotasFnc.TabIndex = 360;
@@ -1332,6 +1364,7 @@
             this.Controls.Add(this.txtTRMContrato);
             this.Controls.Add(this.trmContrato);
             this.Controls.Add(this.lblValorContrato);
+            this.Controls.Add(this.PnlDatosFnc);
             this.Controls.Add(this.lblErrorTitular1);
             this.Controls.Add(this.lblMensajeContrato);
             this.Controls.Add(this.lblMensajeGrado);
@@ -1339,7 +1372,6 @@
             this.Controls.Add(this.lblMensajeValor);
             this.Controls.Add(this.imgAlttum);
             this.Controls.Add(this.DgvCuotas);
-            this.Controls.Add(this.PnlDatosFnc);
             this.Controls.Add(this.CmbFormaPago);
             this.Controls.Add(this.LblFormaPago);
             this.Controls.Add(this.label17);
@@ -1487,12 +1519,6 @@
         private System.Windows.Forms.Label lblErrorCtaInicial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCtasFnc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumCta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Capital;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Interes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuota;
         private DevExpress.XtraBars.BarButtonItem btnConsultarTRM;
         private System.Windows.Forms.CheckBox chkFechaConsecutiva;
         private System.Windows.Forms.DateTimePicker dtpFechaCtaInicial;
@@ -1510,5 +1536,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumRecibo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumCta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapitalUSD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Capital;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CuotaUSD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumReciboCuota;
     }
 }

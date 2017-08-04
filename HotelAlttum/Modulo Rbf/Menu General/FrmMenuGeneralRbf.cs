@@ -406,6 +406,12 @@ namespace CarteraGeneral
             comision75.Show();
         }
 
+        private void btnPagoComisionesPIV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmPagoComisionPIV piv = new FrmPagoComisionPIV();
+            piv.Show();
+        }
+
         
 
         

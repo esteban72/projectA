@@ -62,7 +62,6 @@
             this.txtAsunto.Name = "txtAsunto";
             this.txtAsunto.Size = new System.Drawing.Size(379, 22);
             this.txtAsunto.TabIndex = 3;
-            this.txtAsunto.Text = "Corrección de personas que comisionan";
             // 
             // label1
             // 
@@ -86,14 +85,14 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Appearance.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.Appearance.Options.UseFont = true;
-            this.btnEnviar.Location = new System.Drawing.Point(263, 351);
+            this.btnEnviar.Location = new System.Drawing.Point(259, 354);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(107, 35);
-            this.btnEnviar.TabIndex = 7;
+            this.btnEnviar.Size = new System.Drawing.Size(109, 34);
+            this.btnEnviar.TabIndex = 6;
             this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar2_Click);
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // FrmCorreo
             // 
@@ -110,6 +109,7 @@
             this.Name = "FrmCorreo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enviar correo";
+            this.Load += new System.EventHandler(this.FrmCorreo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

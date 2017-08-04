@@ -17,6 +17,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
     {
         ClsComision comision = new ClsComision();
         string TRM_FechaContrato;
+        int ingreso = 0;
         public FrmPagoComisiones75()
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             {
                 MessageBox.Show("Sucedio el siguiente inconveniente: " + ex.Message);
             }
+            
         }
 
         private void cmbContrato_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             cmbVecesPagoComision.Text = "";
             cmbVecesPagoComision.Items.Clear();
             if (comision.ContadorContratos > 0)
-            {
+            {                
                 cantidadVecesQuePuedeComisionarContrato();
 
                 if (comision.cargarInformacionContrato())
@@ -115,11 +117,12 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                 txtPorcentajeComisionado.Text = "";
                 grwComisiones = null;
             }
+            ingreso++;
         }
 
         private void cantidadVecesQuePuedeComisionarContrato()
         {
-            if (comision.vecesPagoComisionContrato_Antiguo(cmbContrato.SelectedValue.ToString()))
+            if (comision.vecesPagoComisionContrato_Antiguo(cmbContrato.SelectedValue.ToString(), ingreso))
             {
                 switch (comision.VecesPuedeComisionarContrato)
                 {
@@ -233,6 +236,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     btnPagar.Enabled = true;
                     cmbVecesPagoComision.Enabled = true;
                     cmbContrato.Enabled = true;
+                    btnRechazar.Enabled = true;
                     lblMensaje.Text = "E l i g a   u n   c o n t r a t o.";
                     if (cmbContrato.DataSource != null)
                     {
@@ -331,19 +335,22 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    if (comision.RechazarComisionistas(cmbContrato.SelectedValue.ToString()))
+                    if (comision.RechazarOperacion(cmbContrato.SelectedValue.ToString(), "Comisionistas"))
                     {
                         DialogResult respuesta2;
-                        respuesta2 = MessageBox.Show("Registro rechazado exitosamente.\nDesea enviar un correo notificando el rechazo?",
+                        respuesta2 = MessageBox.Show("         Registro rechazado exitosamente.\nDesea enviar un correo notificando el rechazo?",
                             "Envio de correo.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (respuesta2 == DialogResult.Yes)
                         {
                             FrmCorreo correo = new FrmCorreo();
+                            correo.contrato = cmbContrato.SelectedValue.ToString();
                             correo.Show();
                         }
                     }
                 }
+                btnPagar.Enabled = false;
+                btnRechazar.Enabled = false;
             }
             catch (Exception ex)
             {
