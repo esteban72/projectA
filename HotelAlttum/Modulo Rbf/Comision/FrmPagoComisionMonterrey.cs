@@ -162,49 +162,78 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             {
                 switch (comision.VecesPuedeComisionarContrato)
                 {
-                    case "0-1":
-                        cmbVecesPagoComision.Items.Add("1");
-                        lblMensajeComision.Text = "S o l o  s e  p u e d e   r e a l i z a r   e l  " +
-                        "p r i m e r   p a g o.";
-                        cmbVecesPagoComision.Text = "1";
-                        break;
-                    case "0-2":
-                        cmbVecesPagoComision.Items.Add("1");
-                        cmbVecesPagoComision.Items.Add("2");
-                        lblMensajeComision.Text = "S e   p u e d e n   r e a l i z a r   l o s   2   "+
-                            "p r i m e r o s   p a g o s.";
-                        cmbVecesPagoComision.Text = "2";
-                        break;
                     case "0-4":
                         cmbVecesPagoComision.Items.Add("1");
                         cmbVecesPagoComision.Items.Add("2");
                         cmbVecesPagoComision.Items.Add("3");
                         cmbVecesPagoComision.Items.Add("4");
-                        lblMensajeComision.Text = "S e   p u e d e  r e a l i z a r   e l   p a g o   " +
+                        lblMensajeComision.Text = "S e   p u e d e   r e a l i z a r   e l   p a g o   " +
                             "c o m p l e t o   d e   l a s   c o m i s i o n e s.";
                         cmbVecesPagoComision.Text = "4";
                         break;
+                    case "0-3":
+                        cmbVecesPagoComision.Items.Add("1");
+                        cmbVecesPagoComision.Items.Add("2");
+                        cmbVecesPagoComision.Items.Add("3");
+                        lblMensajeComision.Text = "S e   p u e d e n   p a g a r   3   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "0-2":
+                        cmbVecesPagoComision.Items.Add("1");
+                        cmbVecesPagoComision.Items.Add("2");
+                        lblMensajeComision.Text = "S e   p u e d e n   r e a l i z a r   l o s   2   " +
+                            "p r i m e r o s   p a g o s.";
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "0-1":
+                        cmbVecesPagoComision.Items.Add("1");
+                        lblMensajeComision.Text = "S o l o   s e   p u e d e   r e a l i z a r   e l  " +
+                        "p r i m e r   p a g o.";
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+
+                    case "1-4":
+                        cmbVecesPagoComision.Items.Add("1");
+                        cmbVecesPagoComision.Items.Add("2");
+                        cmbVecesPagoComision.Items.Add("3");
+                        lblMensajeComision.Text = "S e   p u e d e  p a g a r   e l   r e s t o   d e   l a s   " +
+                        "c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    
+                    case "1-3":
+                        cmbVecesPagoComision.Items.Add("1");
+                        cmbVecesPagoComision.Items.Add("2");
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   h a s t a   l a   3 r a   c o m i s i o n.";
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+
                     case "1-2":
                         cmbVecesPagoComision.Items.Add("1");
                         lblMensajeComision.Text = "S o l o   s e   p u e d e   r e a l i z a r   " +
                             "e l   s e g u n d o   p a g o.";
                         cmbVecesPagoComision.Text = "1";
                         break;
-                    case "1-4":
-                        cmbVecesPagoComision.Items.Add("1");
-                        cmbVecesPagoComision.Items.Add("2");
-                        cmbVecesPagoComision.Items.Add("3");
-                        lblMensajeComision.Text = "S e   p u e d e  p a g a r   e l   r e s t o   d e   l a s   "+
-                        "c o m i s i o n e s.";
-                        cmbVecesPagoComision.Text = "3";
-                        break;
+                    
                     case "2-4":
                         cmbVecesPagoComision.Items.Add("1");
                         cmbVecesPagoComision.Items.Add("2");
                         lblMensajeComision.Text = "S e   p u e d e n   p a g a r   l a s   u l t i m a s   " +
-                            "2  c o m i s i o n e s.";
+                            "2   c o m i s i o n e s.";
                         cmbVecesPagoComision.Text = "2";
-                        break;  
+                        break;
+
+                    case "2-3":
+                        cmbVecesPagoComision.Items.Add("1");
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   3 r a   c o m i s i o n.";
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+
+                    case "3-4":
+                        cmbVecesPagoComision.Items.Add("1");
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   u l t i m a   c o m i s i o n.";
+                        cmbVecesPagoComision.Text = "1";
+                        break;
                 }
                 
             }
