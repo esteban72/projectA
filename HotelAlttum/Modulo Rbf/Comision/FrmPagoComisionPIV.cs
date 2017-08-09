@@ -1458,30 +1458,19 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         cmbVecesPagoComision.Text = "1";
                         break;
                     #endregion
-
-
-
+                                                
                     #region "Pago comision 6"
                     
-                    case "5-24":
-                        for (int i = 0; i < 19; i++)
-                        {
-                            string vecesComisiona = Convert.ToString(i++);
-                            cmbVecesPagoComision.Items.Add(vecesComisiona);
-                        }
-                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
-                        cmbVecesPagoComision.Text = "19";
-                        break;
-                    case "5-23":
+                    case "6-24":
                         for (int i = 0; i < 18; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
                             cmbVecesPagoComision.Items.Add(vecesComisiona);
                         }
-                        lblMensajeComision.Text = mensaje1;
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
                         cmbVecesPagoComision.Text = "18";
                         break;
-                    case "5-22":
+                    case "6-23":
                         for (int i = 0; i < 17; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1490,7 +1479,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "17";
                         break;
-                    case "5-21":
+                    case "6-22":
                         for (int i = 0; i < 16; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1499,7 +1488,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "16";
                         break;
-                    case "5-20":
+                    case "6-21":
                         for (int i = 0; i < 15; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1508,7 +1497,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "15";
                         break;
-                    case "5-19":
+                    case "6-20":
                         for (int i = 0; i < 14; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1517,7 +1506,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "14";
                         break;
-                    case "5-18":
+                    case "6-19":
                         for (int i = 0; i < 13; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1526,7 +1515,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "13";
                         break;
-                    case "5-17":
+                    case "6-18":
                         for (int i = 0; i < 12; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1535,7 +1524,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "12";
                         break;
-                    case "5-16":
+                    case "6-17":
                         for (int i = 0; i < 11; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1544,7 +1533,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "11";
                         break;
-                    case "5-15":
+                    case "6-16":
                         for (int i = 0; i < 10; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1553,7 +1542,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "10";
                         break;
-                    case "5-14":
+                    case "6-15":
                         for (int i = 0; i < 9; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1562,7 +1551,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "9";
                         break;
-                    case "5-13":
+                    case "6-14":
                         for (int i = 0; i < 8; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1571,7 +1560,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "8";
                         break;
-                    case "5-12":
+                    case "6-13":
                         for (int i = 0; i < 7; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1580,7 +1569,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "7";
                         break;
-                    case "5-11":
+                    case "6-12":
                         for (int i = 0; i < 6; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1589,7 +1578,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "6";
                         break;
-                    case "5-10":
+                    case "6-11":
                         for (int i = 0; i < 5; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1598,7 +1587,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "5";
                         break;
-                    case "5-9":
+                    case "6-10":
                         for (int i = 0; i < 4; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1607,7 +1596,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "4";
                         break;
-                    case "5-8":
+                    case "6-9":
                         for (int i = 0; i < 3; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1616,7 +1605,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "3";
                         break;
-                    case "5-7":
+                    case "6-8":
                         for (int i = 0; i < 2; i++)
                         {
                             string vecesComisiona = Convert.ToString(i++);
@@ -1624,6 +1613,1462 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         }
                         lblMensajeComision.Text = mensaje1;
                         cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "6-7":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+
+                    #region "Pago comision 7"
+
+                    case "7-24":
+                        for (int i = 0; i < 17; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "17";
+                        break;
+                    case "7-23":
+                        for (int i = 0; i < 16; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "16";
+                        break;
+                    case "7-22":
+                        for (int i = 0; i < 15; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "15";
+                        break;
+                    case "7-21":
+                        for (int i = 0; i < 14; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "14";
+                        break;
+                    case "7-20":
+                        for (int i = 0; i < 13; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "13";
+                        break;
+                    case "7-19":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "7-18":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "7-17":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "7-16":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "7-15":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "7-14":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "7-13":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "7-12":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "7-11":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "7-10":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "7-9":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "7-8":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+
+                    #region "Pago comision 8"
+
+                    case "8-24":
+                        for (int i = 0; i < 16; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "16";
+                        break;
+                    case "8-23":
+                        for (int i = 0; i < 15; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "15";
+                        break;
+                    case "8-22":
+                        for (int i = 0; i < 14; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "14";
+                        break;
+                    case "8-21":
+                        for (int i = 0; i < 13; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "13";
+                        break;
+                    case "8-20":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "8-19":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "8-18":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "8-17":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "8-16":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "8-15":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "8-14":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "8-13":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "8-12":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "8-11":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "8-10":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "8-9":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 9"
+
+                    case "9-24":
+                        for (int i = 0; i < 15; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "15";
+                        break;
+                    case "9-23":
+                        for (int i = 0; i < 14; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "14";
+                        break;
+                    case "9-22":
+                        for (int i = 0; i < 13; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "13";
+                        break;
+                    case "9-21":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "9-20":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "9-19":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "9-18":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "9-17":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "9-16":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "9-15":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "9-14":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "9-13":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "9-12":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "9-11":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "9-10":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 10"
+
+                    case "10-24":
+                        for (int i = 0; i < 14; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "14";
+                        break;
+                    case "10-23":
+                        for (int i = 0; i < 13; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "13";
+                        break;
+                    case "10-22":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "10-21":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "10-20":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "10-19":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "10-18":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "10-17":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "10-16":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "10-15":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "10-14":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "10-13":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "10-12":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "10-11":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 11"
+
+                    case "11-24":
+                        for (int i = 0; i < 13; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "13";
+                        break;
+                    case "11-23":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "11-22":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "11-21":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "11-20":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "11-19":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "11-18":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "11-17":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "11-16":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "11-15":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "11-14":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "11-13":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "11-12":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 12"
+
+                    case "12-24":
+                        for (int i = 0; i < 12; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "12";
+                        break;
+                    case "12-23":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "12-22":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "12-21":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "12-20":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "12-19":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "12-18":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "12-17":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "12-16":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "12-15":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "12-14":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "12-13":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 13"
+
+                    case "13-24":
+                        for (int i = 0; i < 11; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "11";
+                        break;
+                    case "13-23":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "13-22":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "13-21":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "13-20":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "13-19":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "13-18":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "13-17":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "13-16":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "13-15":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "13-14":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 14"
+
+                    case "14-24":
+                        for (int i = 0; i < 10; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "10";
+                        break;
+                    case "14-23":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "14-22":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "14-21":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "14-20":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "14-19":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "14-18":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "14-17":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "14-16":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "14-15":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 15"
+
+                    case "15-24":
+                        for (int i = 0; i < 9; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "9";
+                        break;
+                    case "15-23":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "15-22":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "15-21":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "15-20":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "15-19":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "15-18":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "15-17":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "15-16":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 16"
+
+                    case "16-24":
+                        for (int i = 0; i < 8; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "8";
+                        break;
+                    case "16-23":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "16-22":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "16-21":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "16-20":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "16-19":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "16-18":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "16-17":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 17"
+
+                    case "17-24":
+                        for (int i = 0; i < 7; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "7";
+                        break;
+                    case "17-23":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "17-22":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "17-21":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "17-20":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "17-19":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "17-18":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 18"
+
+                    case "18-24":
+                        for (int i = 0; i < 6; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "6";
+                        break;
+                    case "18-23":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "18-22":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "18-21":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "18-20":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "18-19":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 19"
+
+                    case "19-24":
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "5";
+                        break;
+                    case "19-23":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "19-22":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "19-21":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "19-20":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 20"
+
+                    case "20-24":
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "4";
+                        break;
+                    case "20-23":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "20-22":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "20-21":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 21"
+
+                    case "21-24":
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "3";
+                        break;
+                    case "21-23":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "21-22":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 22"
+
+                    case "22-24":
+                        for (int i = 0; i < 2; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "2";
+                        break;
+                    case "22-23":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = mensaje1;
+                        cmbVecesPagoComision.Text = "1";
+                        break;
+                    #endregion
+
+                    #region "Pago comision 23"
+
+                    case "23-24":
+                        for (int i = 0; i < 1; i++)
+                        {
+                            string vecesComisiona = Convert.ToString(i++);
+                            cmbVecesPagoComision.Items.Add(vecesComisiona);
+                        }
+                        lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
+                        cmbVecesPagoComision.Text = "1";
                         break;
                     #endregion
                 }

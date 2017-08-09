@@ -534,7 +534,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                                 break;
                         }
 
-                        if (dia > 29 && mes == 2)
+                        if (dia >= 29 && mes == 2)
                         {
                             dia = 28;
                         }
@@ -587,7 +587,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                                 break;
                         }
 
-                        if (dia > 29 && mes == 2)
+                        if (dia >= 29 && mes == 2)
                         {
                             dia = 28;
                         }
@@ -1059,7 +1059,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     mesCtaInicial = 1;
                     añoCtaInicial++;
                 }
-                if (diaCtaInicial > 29 && mesCtaInicial == 2)
+                if (diaCtaInicial >= 29 && mesCtaInicial == 2)
                 {
                     diaCtaInicial = 28;
                 }
@@ -1088,7 +1088,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 mesCtaInicial = 1;
                 añoCtaInicial++;
             }
-            if (diaCtaInicial > 29 && mesCtaInicial == 2)
+            if (diaCtaInicial >= 29 && mesCtaInicial == 2)
             {
                 diaCtaInicial = 28;
             }
