@@ -358,17 +358,19 @@ namespace CarteraGeneral.Clases
                 MySqlDataReader consultar;
                 Query.CommandType = CommandType.StoredProcedure;
                 Query.Connection = MysqlConexion;
-                Query.CommandText = "sp_Alttum_VecesQuePuedeComisionarContrato";
+                Query.CommandText = "sp_PIV_VecesQuePuedeComisionarContrato";
                 Query.Parameters.AddWithValue("_Contrato", campo);
                 Query.Connection.Open();
                 consultar = Query.ExecuteReader();
                 if (consultar.Read())
                 {
                     sVecesPuedeComisionarContrato = consultar.GetString("VecesComisionadas_VecesPuedeComisionar");
+                    return true;
                 }
-
-
-                return true;
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {
