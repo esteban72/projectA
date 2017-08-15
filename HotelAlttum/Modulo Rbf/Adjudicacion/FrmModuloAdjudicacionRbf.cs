@@ -11,6 +11,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using CarteraGeneral.Modulo_Rbf.Adjudicacion;
+using CarteraGeneral.Modulo_Rbf.Radicacion;
 
 namespace CarteraGeneral
 {
@@ -281,6 +282,25 @@ namespace CarteraGeneral
             FrmAdjudicacionPIV adjudicacion = new FrmAdjudicacionPIV();
             adjudicacion.EntradaAdjudicacion = "AdicionarPIV";
             adjudicacion.Show();
+        }
+
+        private void btnAddPoblado_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmAdjudicacion1 adjudicacion = new FrmAdjudicacion1();
+            adjudicacion.EntradaAdjudicacion = "Adicionar";
+            adjudicacion.Show();
+        }
+
+        private void btnActualizar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Text = "MODULO DE ADJUDICACION  USUARIO : " + FrmLogeo.Usuario.ToUpper();
+            gridControl1.DataSource = conexion.MtdBuscarDataset(RscRecaudos.DatosAdjudicacionesTodas);
+            BtnAddMonterey.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "301");
+            BtnAdd.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "301");
+            BtnMod.Enabled = conexion.MtdBscFrmIdFrm("Modificar", FrmLogeo.FrmUsuarioIdUsr, "301");
+            BtnDel.Enabled = conexion.MtdBscFrmIdFrm("Eliminar", FrmLogeo.FrmUsuarioIdUsr, "301");
+            BtnDesistir.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "303");
+            BtnCambiarBase.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "907");
         }
     }
 }

@@ -11,6 +11,7 @@ using DevExpress.LookAndFeel;
 using CarteraGeneral.Modulo_Rbf.Terceros;
 using CarteraGeneral.Modulo_Rbf.Inmuebles;
 using CarteraGeneral.Modulo_Rbf.Comision;
+using CarteraGeneral.Modulo_Rbf.Radicacion;
 
 namespace CarteraGeneral
 {
@@ -412,9 +413,11 @@ namespace CarteraGeneral
             piv.Show();
         }
 
-        
-
-        
+        private void btnConsultasPIV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmConsultarComisionesPIV consultaPIV = new FrmConsultarComisionesPIV();
+            consultaPIV.Show();
+        }
 
     }
 }

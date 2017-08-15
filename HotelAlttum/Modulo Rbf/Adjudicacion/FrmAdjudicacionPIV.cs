@@ -119,6 +119,8 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         {
             sumaValoresDvg2();
             MtdValidarAdd();
+            calcularFinanciacion();
+            calcularValorCuotas();
             if (validarFilas(DgvCtaInicial))
             {
                 if (CuentaErrores == 0)
@@ -153,7 +155,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     }
 
                     //double valContrato = Convert.ToDouble(TxtValorContrato.Text);
-                    txtValContratoPesos.Text = (Math.Round(Convert.ToDouble(TxtValorContrato.Text) * valorDolar, 1)).ToString("###,###.###");
+                    txtValContratoPesos.Text = (Convert.ToDouble(TxtValorContrato.Text) * valorDolar).ToString("###,###.###");
                     switch (CmbFormaPago.Text)
                     {
                         case "Credicontado":
@@ -698,8 +700,15 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                     SumValorInicial += Convert.ToDouble(DgvCtaInicial.Rows[i].Cells[4].Value);
                 }
             }
-            SumValorInicial = Math.Round(SumValorInicial, 3);
-            txtValorIni.Text = SumValorInicial.ToString("###,###.###");
+            if(SumValorInicial > 0){
+                SumValorInicial = Math.Round(SumValorInicial, 3);
+                txtValorIni.Text = SumValorInicial.ToString("###,###.###");
+            }
+            else
+            {
+                txtValorIni.Text = "0";
+            }
+            
         }
 
         #endregion
@@ -733,11 +742,11 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                         MySqlConnection MysqlConexion = new MySqlConnection(FrmLogeo.StrConexion);
                         string StrAddAdjudicacion = " INSERT INTO adjudicacion (IdAdjudicacion, Fecha, FechaContrato, Contrato, IdProyecto, IdTercero1, IdTercero2, Idtercero3," +
                         "IdInmueble, TipodeAdjudicacion, Temporada, Grado, FormaPago, Valor, CuotaInicial, Financiacion, PlazoFnc, " +
-                        "CuotaFnc, InicioFnc, Estado, Usuario, FechaOperacion, Porcentaje, TipoOperacion, Observacion, Trm, ValorContratoUSD, CuotaInicialUSD, FinanciacionUSD, CuotaFncUSD) " +
+                        "CuotaFnc, InicioFnc, Estado, Usuario, FechaOperacion, Porcentaje, TipoOperacion, Observacion, Trm, ValorContratoUSD, CuotaInicialUSD, FinanciacionUSD, CuotaFncUSD, MarcaDolarTecho) " +
 
                         "VALUES ( @IdAdjudicacion, @Fecha, @FechaContrato, @Contrato, @IdProyecto, @IdTercero1, @IdTercero2, @Idtercero3, @IdInmueble, @TipodeAdjudicacion, @Temporada, @Grado," +
                         "@FormaPago, @Valor, @CuotaInicial, @Financiacion, @PlazoFnc, @CuotaFnc, @InicioFnc, @Estado, @Usuario, @FechaOperacion, " +
-                        "@Porcentaje, @TipoOperacion, @Observacion, @Trm, @ValorContratoUSD, @CuotaInicialUSD, @FinanciacionUSD, @CuotaFncUSD)";
+                        "@Porcentaje, @TipoOperacion, @Observacion, @Trm, @ValorContratoUSD, @CuotaInicialUSD, @FinanciacionUSD, @CuotaFncUSD, @MarcaDolarTecho)";
 
                         string StrAddFnc = "insert into financiacion (IdCta,IdAdjudicacion,Concepto,NumCuota,Fecha,Capital_USD, Capital,Cuota_USD,Cuota,SaldoCapital,SaldoCuota,UltimaFechaPago,Usuario,FechaOperacion) " +
                                                          "Values (@IdCta,@IdAdjudicacion,@Concepto,@NumCuota,@FechaFnc,@Capital_USD,@Capital,@Cuota_USD,@Cuota,@Capital,@Cuota,@FechaFnc,@Usuario,@FechaOperacion)";
@@ -793,6 +802,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             CmdAddPrm.Parameters.Add("@CuotaInicialUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
                             CmdAddPrm.Parameters.Add("@FinanciacionUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
                             CmdAddPrm.Parameters.Add("@CuotaFncUSD", MySql.Data.MySqlClient.MySqlDbType.Double);
+                            CmdAddPrm.Parameters.Add("@MarcaDolarTecho", MySql.Data.MySqlClient.MySqlDbType.Binary);
 
                             //Variables de abajo para la insercion en datosrecaudos
                             CmdAddPrm.Parameters.Add("@IdRecaudo", MySql.Data.MySqlClient.MySqlDbType.Int32);
@@ -848,7 +858,15 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                             CmdAddPrm.Parameters["@TipoOperacion"].Value = "PIV";
                             CmdAddPrm.Parameters["@Porcentaje"].Value = 0;
                             CmdAddPrm.Parameters["@Observacion"].Value = TxtObservacion.Text;
-                            CmdAddPrm.Parameters["@Trm"].Value = Convert.ToDouble(txtDolarTope.Text);
+                            if(chkDolarTope.Checked){
+                                CmdAddPrm.Parameters["@MarcaDolarTecho"].Value = 1;
+                                CmdAddPrm.Parameters["@Trm"].Value = Convert.ToDouble(txtDolarTope.Text);
+                            }
+                            else
+                            {
+                                CmdAddPrm.Parameters["@Trm"].Value = Convert.ToDouble(txtTRMContrato.Text);
+                            }
+                            
                             CmdAddPrm.Parameters["@ValorContratoUSD"].Value = Convert.ToDouble(TxtValorContrato.Text);
                             CmdAddPrm.Parameters["@CuotaInicialUSD"].Value = Convert.ToDouble(txtValorIni.Text);
                             CmdAddPrm.Parameters["@FinanciacionUSD"].Value = Convert.ToDouble(lblValorTotalFnc.Text);
@@ -990,6 +1008,43 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         {
             try
             {
+                calcularFinanciacion();
+            }
+            catch (Exception)
+            {
+                lblErrorValorFnc.Text = "Revisar que no hayan\ncampos en blanco.";
+            }
+        }
+
+
+        private void calcularFinanciacion()
+        {
+            double valorFinanciacion = Convert.ToDouble(TxtValorFnc.Text);
+            double valorContrato = Convert.ToDouble(TxtValorContrato.Text);
+            double valorInicial = Convert.ToDouble(txtValorIni.Text);  
+            double numCuotasFnc = Convert.ToDouble(txtCtasFnc.Text);
+            double totalFnc = 0;
+            if (valorFinanciacion > 0 && numCuotasFnc > 0)
+            {
+                lblErrorValorFnc.Text = "";
+                totalFnc = valorContrato - valorInicial;
+                lblValorTotalFnc.Text = totalFnc.ToString("###,###.###");
+            }
+
+            if (valorFinanciacion > 0)
+            {
+                lblErrorValorFnc.Text = "";
+            }
+            else
+            {
+                lblErrorValorFnc.Text = "Ingrese el valor correcto.";
+            }
+        }
+
+        private void calcularValorCuotas()
+        {
+            try
+            {
                 double valorFinanciacion = Convert.ToDouble(TxtValorFnc.Text);
                 double numCuotasFnc = Convert.ToDouble(txtCtasFnc.Text);
                 double totalFnc = 0;
@@ -997,7 +1052,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
                 {
                     lblErrorValorFnc.Text = "";
                     totalFnc = valorFinanciacion * numCuotasFnc;
-                    lblValorTotalFnc.Text = totalFnc.ToString("###,###.###");
+                    txtSumaFnc.Text = totalFnc.ToString("###,###.###");
                 }
 
                 if (valorFinanciacion > 0)
@@ -1011,12 +1066,9 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             }
             catch (Exception)
             {
-                lblErrorValorFnc.Text = "Revisar que no hayan\ncampos en blanco.";
+                lblErrorValorFnc.Text = "Ingrese el valor correcto.";
             }
         }
-
-
-
 
         private bool validarFilas(DataGridView grid)
         {
@@ -1136,26 +1188,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
         {
             try
             {
-                double valorFinanciacion = Convert.ToDouble(TxtValorFnc.Text);
-                int numCuotasFnc = Convert.ToInt32(txtCtasFnc.Text);
-                double totalFnc = 0;
-                if (valorFinanciacion > 0 && numCuotasFnc > 0)
-                {
-                    lblErrorCuotasFnc.Text = "";
-                    totalFnc = valorFinanciacion * numCuotasFnc;
-                    lblValorTotalFnc.Text = totalFnc.ToString("###,###.###");
-                }
-
-                if (numCuotasFnc > 0)
-                {
-                    lblErrorCuotasFnc.Text = "";
-                    lblErrorValorFnc.Text = "";
-                }
-                else
-                {
-                    lblErrorCuotasFnc.Text = "Ingrese el número de cuotas correcto.";
-                }
-
+                calcularFinanciacion();
             }
             catch (Exception)
             {
@@ -1168,6 +1201,7 @@ namespace CarteraGeneral.Modulo_Rbf.Adjudicacion
             CalcularNumCuotas();
         }
 
+        
 
     }
 }

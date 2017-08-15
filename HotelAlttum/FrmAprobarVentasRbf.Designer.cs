@@ -45,7 +45,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.BtnAprobar = new DevExpress.XtraBars.BarButtonItem();
-            this.BtnSalir = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnActualizar = new DevExpress.XtraBars.BarButtonItem();
             this.BtnConsultar = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -221,7 +221,7 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.BtnAprobar,
-            this.BtnSalir,
+            this.BtnActualizar,
             this.BtnConsultar});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 9;
@@ -242,14 +242,14 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.BtnAprobar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAdd_ItemClick);
             // 
-            // BtnSalir
+            // BtnActualizar
             // 
-            this.BtnSalir.Caption = "Salir";
-            this.BtnSalir.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnSalir.Glyph")));
-            this.BtnSalir.Id = 6;
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.BtnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSalir_ItemClick);
+            this.BtnActualizar.Caption = "Actualizar";
+            this.BtnActualizar.Glyph = ((System.Drawing.Image)(resources.GetObject("BtnActualizar.Glyph")));
+            this.BtnActualizar.Id = 6;
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.BtnActualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnActualizar_ItemClick);
             // 
             // BtnConsultar
             // 
@@ -273,7 +273,7 @@
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnAprobar);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnConsultar);
-            this.ribbonPageGroup1.ItemLinks.Add(this.BtnSalir);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnActualizar);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Aciones de Aprobacion";
             // 
@@ -295,6 +295,7 @@
             this.Name = "FrmAprobarVentasRbf";
             this.Text = "FrmAprobarVentasRbf";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAprobarVentasRbf_FormClosing);
             this.Load += new System.EventHandler(this.FrmAprobarVentasRbf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -322,7 +323,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.BarButtonItem BtnAprobar;
-        private DevExpress.XtraBars.BarButtonItem BtnSalir;
+        private DevExpress.XtraBars.BarButtonItem BtnActualizar;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;

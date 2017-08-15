@@ -29,6 +29,7 @@ namespace CarteraGeneral.Clases
         private double dPorcentajeComisionado;
         private double dTotalPagoComision;
         private double dvalTRMcontrato;
+        private int iMarcaDolarTecho;
         private double valorGenerico;
         
         //Demas operaciones
@@ -126,6 +127,12 @@ namespace CarteraGeneral.Clases
         {
             get { return dTotalPagoComision; }
             set { dTotalPagoComision = value; }
+        }
+
+        public int MarcaDolarTecho
+        {
+            get { return iMarcaDolarTecho; }
+            set { iMarcaDolarTecho = value; }
         }
         #endregion
 
@@ -246,11 +253,11 @@ namespace CarteraGeneral.Clases
                 Query.CommandText = "SELECT adj.IdAdjudicacion, TR.NombreCompleto, adj.IdInmueble, adj.FechaContrato, "+
                                     "adj.Valor AS 'Valor total venta', sum(rec.Capital) as 'Total recaudado',"+
                                     "if(adj.FechaContrato >= '2016-05-20' and adj.FechaContrato <= '2017-06-01',"+
-                                    "(SELECT DISTINCT format (((VecesPagoComision* 100)/4),0) AS PorcentajeComision FROM comisiones "+
+                                    "(SELECT DISTINCT format (((VecesPagoComision* 100)*0.25),0) AS PorcentajeComision FROM comisiones "+
                                     "WHERE IdAdjudicacion = (SELECT IdAdjudicacion FROM adjudicacion where Contrato = '" + sContrato + "') and IdCargo not in (12,13,14,15,16,19))," +
-                                    "(SELECT DISTINCT format (((VecesPagoComision* 100)/3),0) AS PorcentajeComision FROM comisiones "+
-                                    "WHERE IdAdjudicacion = (SELECT IdAdjudicacion FROM adjudicacion where Contrato = '" + sContrato + "') and IdCargo not in (12,13,14,15,16,19))) as 'PorcentajeComision' " +
-                                    "FROM contabilidad_alttum.terceros TR "+
+                                    "(SELECT DISTINCT format (((VecesPagoComision* 100)*0.33),0) AS PorcentajeComision FROM comisiones "+
+                                    "WHERE IdAdjudicacion = (SELECT IdAdjudicacion FROM adjudicacion where Contrato = '" + sContrato + "') and IdCargo not in (12,13,14,15,16,19))) as 'PorcentajeComision', " +
+                                    "adj.Trm, adj.MarcaDolarTecho FROM contabilidad_alttum.terceros TR "+
                                     "INNER JOIN adjudicacion adj on adj.IdTercero1 = TR.IdTercero "+
                                     "INNER JOIN recaudos rec on adj.IdAdjudicacion = rec.IdAdjudicacion "+
                                     "WHERE adj.Contrato = '" + sContrato + "' and rec.Concepto != 'GA' " +
@@ -266,6 +273,8 @@ namespace CarteraGeneral.Clases
                     dTotalVenta = consultar.GetDouble(4);
                     dTotalRecaudado = consultar.GetDouble(5);
                     dPorcentajeComisionado = consultar.GetDouble(6);
+                    dvalTRMcontrato = consultar.GetDouble(7);
+                    iMarcaDolarTecho = consultar.GetInt16(8);
                 }
                 return true;
             }
@@ -418,14 +427,18 @@ namespace CarteraGeneral.Clases
         /*Metodo que valida los contratos que ya han sido radicados y que se 
          encuentran en la tabla comisiones y calcula los valores que a cada comisionista
          se le debe pagar*/
-        public void ActualizarComisiones(string IdAdjudicacion)
+        public void ActualizarComisiones(string IdAdjudicacion, string trmContrato)
         {
+            if(trmContrato == "0" || trmContrato == ""){
+                trmContrato = "1";
+            }
+            double trmContratoConvert = Convert.ToDouble(trmContrato);
             string IdTercero;
             Int32 cargo;
             List<string> ListaPersonasComisionan = new List<string>();
             List<string> ListaIdCargoPersonas = new List<string>();
             MySqlCommand CmdListaContratos = new MySqlCommand("sp_ListaComisionesActualizar", MysqlConexion);
-            CmdListaContratos.Parameters.AddWithValue("_IdAdjudicacion", IdAdjudicacion);
+            CmdListaContratos.Parameters.AddWithValue("_IdAdjudicacion", IdAdjudicacion);            
             CmdListaContratos.CommandType = CommandType.StoredProcedure;
             MySqlDataReader DrdListaComisiones;
 
@@ -448,6 +461,7 @@ namespace CarteraGeneral.Clases
                     cmdValoresComisiones.Parameters.AddWithValue("_IdTercero", IdTercero);
                     cmdValoresComisiones.Parameters.AddWithValue("_IdAdjudicacion", IdAdjudicacion);
                     cmdValoresComisiones.Parameters.AddWithValue("_IdCargo", cargo);
+                    cmdValoresComisiones.Parameters.AddWithValue("_trmContrato", trmContratoConvert);
                     cmdValoresComisiones.Connection.Open();
                     cmdValoresComisiones.ExecuteNonQuery();
                     cmdValoresComisiones.Connection.Close();
@@ -466,11 +480,11 @@ namespace CarteraGeneral.Clases
 
         /*Metodo que con un sp realiza el registro del pago de la comision
          que este pagando en el momento el usuario*/
-        public Boolean PagoComision(string contrato, string numeroPago)
+        public Boolean PagoComision(string sp, string contrato, string numeroPago)
         {
             try
             {
-            MySqlCommand CmdListaContratos = new MySqlCommand("sp_PagoComision", MysqlConexion);
+            MySqlCommand CmdListaContratos = new MySqlCommand(sp, MysqlConexion);
             CmdListaContratos.Parameters.AddWithValue("_Contrato", contrato);
             CmdListaContratos.Parameters.AddWithValue("_NumeroPago", numeroPago);
             CmdListaContratos.CommandType = CommandType.StoredProcedure;
@@ -779,6 +793,51 @@ namespace CarteraGeneral.Clases
             catch (Exception ex)
             {
                 sError = ex.Message;
+            }
+            finally
+            {
+                MysqlConexion.Close();
+            }
+        }
+
+
+        public bool cargarInformacionContratoPIV()
+        {
+
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consultar;
+            try
+            {
+                MysqlConexion.Open();
+                Query.CommandText = "SELECT adj.IdAdjudicacion, TR.NombreCompleto, adj.IdInmueble, adj.FechaContrato, " +
+                                    "adj.Valor AS 'Valor total venta', sum(rec.Capital) as 'Total recaudado'," +
+                                    "(SELECT DISTINCT format (((VecesPagoComision* 100)/24),3) AS PorcentajeComision FROM comisiones " +
+                                    "WHERE IdAdjudicacion = (SELECT IdAdjudicacion FROM adjudicacion where Contrato = '" + sContrato + "') and IdCargo not in (12,13,14,15,16,19)) as 'PorcentajeComision', " +
+                                    "adj.Trm, adj.MarcaDolarTecho FROM contabilidad_alttum.terceros TR " +
+                                    "INNER JOIN adjudicacion adj on adj.IdTercero1 = TR.IdTercero " +
+                                    "INNER JOIN recaudos rec on adj.IdAdjudicacion = rec.IdAdjudicacion " +
+                                    "WHERE adj.Contrato = '" + sContrato + "' and rec.Concepto != 'GA' " +
+                                    "GROUP BY adj.IdAdjudicacion, adj.IdInmueble, adj.FechaContrato, adj.Valor";
+
+                Query.Connection = MysqlConexion;
+                consultar = Query.ExecuteReader();
+                while (consultar.Read())
+                {
+                    sCliente = consultar.GetString(1);
+                    sInmueble = consultar.GetString(2);
+                    dFechaContrato = consultar.GetDateTime(3);
+                    dTotalVenta = consultar.GetDouble(4);
+                    dTotalRecaudado = consultar.GetDouble(5);
+                    dPorcentajeComisionado = consultar.GetDouble(6);
+                    dvalTRMcontrato = consultar.GetDouble(7);
+                    iMarcaDolarTecho = consultar.GetInt16(8);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                sError = ex.Message;
+                return false;
             }
             finally
             {

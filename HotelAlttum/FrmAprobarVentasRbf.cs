@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CarteraGeneral.Modulo_Rbf.Radicacion;
 
 namespace CarteraGeneral
 {
@@ -47,6 +48,7 @@ namespace CarteraGeneral
                     FrmAdjudicacion adjudicacion = new FrmAdjudicacion();
                     adjudicacion.EntradaAdjudicacion = "Aprobar";
                     adjudicacion.VarIdajudicacion = VarIdAdjudicacion;
+                    adjudicacion.tipoContrato = VarTipoOperacion;
                     adjudicacion.Show();
                 }
             }
@@ -67,17 +69,32 @@ namespace CarteraGeneral
             }
             else
             {
-
-                FrmAdjudicacion adjudicacion = new FrmAdjudicacion();
+                
+                //FrmAdjudicacion adjudicacion = new FrmAdjudicacion();
+                //adjudicacion.EntradaAdjudicacion = "Consultar";
+                //adjudicacion.VarIdajudicacion = VarIdAdjudicacion;
+                //adjudicacion.tipoContrato = VarTipoOperacion;
+                //adjudicacion.Show();
+                FrmAdjudicacion1 adjudicacion = new FrmAdjudicacion1();
                 adjudicacion.EntradaAdjudicacion = "Consultar";
                 adjudicacion.VarIdajudicacion = VarIdAdjudicacion;
+                adjudicacion.tipoContrato = VarTipoOperacion;
                 adjudicacion.Show();
             }
         }
 
-        private void BtnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Close();
+            this.Text = "APROBACION DE ADJUDICACION USUARIO: " + FrmLogeo.Usuario.ToUpper();
+            BtnAprobar.Enabled = conexion.MtdBscFrmIdFrm("Adicionar", FrmLogeo.FrmUsuarioIdUsr, "306");
+            gridControl1.DataSource = conexion.MtdBuscarDataset(Sentencia);
         }
+
+        private void FrmAprobarVentasRbf_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conexion = null;
+        }
+
+        
     }
 }

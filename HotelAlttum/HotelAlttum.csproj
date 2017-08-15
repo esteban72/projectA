@@ -35,7 +35,7 @@
     <PublisherName>Smart Time</PublisherName>
     <SuiteName>Hotel Alttum</SuiteName>
     <MinimumRequiredVersion>7.0.0.1</MinimumRequiredVersion>
-    <ApplicationRevision>53</ApplicationRevision>
+    <ApplicationRevision>61</ApplicationRevision>
     <ApplicationVersion>9.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -203,6 +203,12 @@
     </Compile>
     <Compile Include="Modulo Rbf\Comision\FrmConsultarComisionesMonterrey.Designer.cs">
       <DependentUpon>FrmConsultarComisionesMonterrey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisionesPIV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Rbf\Comision\FrmConsultarComisionesPIV.Designer.cs">
+      <DependentUpon>FrmConsultarComisionesPIV.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Rbf\Comision\FrmPagoComision.cs">
       <SubType>Form</SubType>
@@ -815,6 +821,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Rbf\Comision\FrmConsultarComisionesMonterrey.resx">
       <DependentUpon>FrmConsultarComisionesMonterrey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Rbf\Comision\FrmConsultarComisionesPIV.resx">
+      <DependentUpon>FrmConsultarComisionesPIV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Rbf\Comision\FrmPagoComision.resx">
       <DependentUpon>FrmPagoComision.cs</DependentUpon>

@@ -300,7 +300,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     {
                         try
                         {
-                            if (comision.PagoComision(cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
+                            if (comision.PagoComision("sp_PagoComision",cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
                             {
                                 MessageBox.Show("Se realizó el registro del pago exitosamente.", "REGISTRO EXITOSO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 btnPagar.Enabled = false;

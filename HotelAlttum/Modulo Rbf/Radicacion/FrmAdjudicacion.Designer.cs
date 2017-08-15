@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.LblContrato = new System.Windows.Forms.Label();
             this.TxtContrato = new System.Windows.Forms.TextBox();
@@ -117,6 +118,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PendientePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LblTituloIni = new System.Windows.Forms.Label();
             this.LblInicial = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -1122,7 +1124,7 @@
             this.PnlDatosInicial.Controls.Add(this.TxtValorIni);
             this.PnlDatosInicial.Location = new System.Drawing.Point(15, 237);
             this.PnlDatosInicial.Name = "PnlDatosInicial";
-            this.PnlDatosInicial.Size = new System.Drawing.Size(305, 177);
+            this.PnlDatosInicial.Size = new System.Drawing.Size(322, 177);
             this.PnlDatosInicial.TabIndex = 322;
             // 
             // DgvCtaInicial
@@ -1134,11 +1136,12 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Valor});
+            this.Valor,
+            this.PendientePago});
             this.DgvCtaInicial.Location = new System.Drawing.Point(3, 51);
             this.DgvCtaInicial.Name = "DgvCtaInicial";
             this.DgvCtaInicial.RowHeadersVisible = false;
-            this.DgvCtaInicial.Size = new System.Drawing.Size(282, 113);
+            this.DgvCtaInicial.Size = new System.Drawing.Size(300, 113);
             this.DgvCtaInicial.TabIndex = 11;
             this.DgvCtaInicial.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCtaInicial_CellValidated);
             this.DgvCtaInicial.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.DgvCtaInicial_EditingControlShowing);
@@ -1180,7 +1183,14 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.MaxInputLength = 18;
             this.Valor.Name = "Valor";
-            this.Valor.Width = 140;
+            this.Valor.Width = 80;
+            // 
+            // PendientePago
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.PendientePago.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PendientePago.HeaderText = "Pendiente Pago";
+            this.PendientePago.Name = "PendientePago";
             // 
             // LblTituloIni
             // 
@@ -1191,7 +1201,7 @@
             this.LblTituloIni.ForeColor = System.Drawing.Color.Black;
             this.LblTituloIni.Location = new System.Drawing.Point(0, 0);
             this.LblTituloIni.Name = "LblTituloIni";
-            this.LblTituloIni.Size = new System.Drawing.Size(301, 23);
+            this.LblTituloIni.Size = new System.Drawing.Size(318, 23);
             this.LblTituloIni.TabIndex = 211;
             this.LblTituloIni.Text = "CUOTA INICIAL";
             this.LblTituloIni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1279,8 +1289,8 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle3.Format = "d";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn5.HeaderText = "Dia";
             this.dataGridViewTextBoxColumn5.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -1305,9 +1315,9 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "C2";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.Format = "C2";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn8.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn8.MaxInputLength = 18;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -1572,8 +1582,8 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle5.Format = "d";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Format = "d";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn1.HeaderText = "Dia";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -1598,9 +1608,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle6.Format = "C2";
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle7.Format = "C2";
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 18;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -1726,39 +1736,39 @@
             // 
             // Fecha
             // 
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle8;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
             // 
             // Capital
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Capital.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Capital.DefaultCellStyle = dataGridViewCellStyle9;
             this.Capital.HeaderText = "Capital";
             this.Capital.Name = "Capital";
             this.Capital.ReadOnly = true;
             // 
             // Interes
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Interes.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Interes.DefaultCellStyle = dataGridViewCellStyle10;
             this.Interes.HeaderText = "Interes";
             this.Interes.Name = "Interes";
             this.Interes.ReadOnly = true;
             // 
             // Cuota
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Cuota.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Cuota.DefaultCellStyle = dataGridViewCellStyle11;
             this.Cuota.HeaderText = "Cuota";
             this.Cuota.Name = "Cuota";
             this.Cuota.ReadOnly = true;
@@ -1811,6 +1821,7 @@
             this.Text = "Adjudicacion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.FrmAdjudicacion_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAdjudicacion_FormClosing);
             this.Load += new System.EventHandler(this.FrmAdjudicacion_Load);
             this.PnlDatos.ResumeLayout(false);
             this.PnlDatos.PerformLayout();
@@ -1903,10 +1914,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel PnlDatosInicial;
         private System.Windows.Forms.DataGridView DgvCtaInicial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Label LblTituloIni;
         private System.Windows.Forms.Label LblInicial;
         public System.Windows.Forms.TextBox textBox1;
@@ -1966,5 +1973,10 @@
         private System.Windows.Forms.DateTimePicker DtpFechaContrato;
         private System.Windows.Forms.TextBox TxtValorBase;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PendientePago;
     }
 }

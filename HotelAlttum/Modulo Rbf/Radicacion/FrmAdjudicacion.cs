@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
+using CarteraGeneral.Clases;
 
 namespace CarteraGeneral
 {
@@ -26,7 +27,7 @@ namespace CarteraGeneral
         double SumValorInicial;
         double SumValorContado;
         double SumValorExtraVariado;
-        public string EntradaAdjudicacion;
+        public string EntradaAdjudicacion, tipoContrato;
         public string VarIdajudicacion;
         System.Data.DataTable DtComisiones = new System.Data.DataTable();
         System.Data.DataTable DtFinanciacion = new System.Data.DataTable();
@@ -39,6 +40,7 @@ namespace CarteraGeneral
         List<string> DatosdeErrores = new List<string>();
 
         ClsIdentificacion conexion = new ClsIdentificacion();
+        ClsComision consultar = new ClsComision();
 
         #endregion
 
@@ -116,26 +118,56 @@ namespace CarteraGeneral
                     }
                     else
 
-                     if (EntradaAdjudicacion == "Consultar")
+                     if (EntradaAdjudicacion == "Consultar" && tipoContrato != "PIV")
                         {
                             MtdLimpiar();
                             Lbltituloreserva.Visible = false;
                             TxtReserva.Visible = false;
                             BtnBscReserva.Visible = false;
                             MtdLoadMod();
-                            LblTitulo.Text = "CONSULTA ADJUDICACION";                           
+                            LblTitulo.Text = "CONSULTAR ADJUDICACION";                           
                             BtnOk.Visible = false;
                             BtnValidar.Visible = false;
                         }
                      else
 
-                         if (EntradaAdjudicacion == "Aprobar")
+                         if (EntradaAdjudicacion == "Consultar" && tipoContrato == "PIV")
                          {
                              MtdLimpiar();
                              Lbltituloreserva.Visible = false;
                              TxtReserva.Visible = false;
                              BtnBscReserva.Visible = false;
-                             MtdLoadMod();
+                             MtdLoadPIV();
+                             LblTitulo.Text = "CONSULTAR ADJUDICACION";
+                             BtnOk.Visible = true;
+                             BtnOk.Text = "Aprobar";
+                             BtnValidar.Visible = false;
+                             BtnOk.Enabled = true;
+                         }
+                         else
+
+                             if (EntradaAdjudicacion == "Aprobar" && tipoContrato != "PIV")
+                             {
+                                 MtdLimpiar();
+                                 Lbltituloreserva.Visible = false;
+                                 TxtReserva.Visible = false;
+                                 BtnBscReserva.Visible = false;
+                                 MtdLoadMod();
+                                 LblTitulo.Text = "APROBAR ADJUDICACION";
+                                 BtnOk.Visible = true;
+                                 BtnOk.Text = "Aprobar";
+                                 BtnValidar.Visible = false;
+                                 BtnOk.Enabled = true;
+                             }
+                     else
+
+                         if (EntradaAdjudicacion == "Aprobar" && tipoContrato == "PIV")
+                         {
+                             MtdLimpiar();
+                             Lbltituloreserva.Visible = false;
+                             TxtReserva.Visible = false;
+                             BtnBscReserva.Visible = false;
+                             MtdLoadPIV();
                              LblTitulo.Text = "APROBAR ADJUDICACION";
                              BtnOk.Visible = true;
                              BtnOk.Text = "Aprobar";
@@ -166,11 +198,20 @@ namespace CarteraGeneral
 //===================================================================================================================================================
         private void MtdDatosAdjudicacion()
         {
-            DatosAdjudicacion = conexion.MtdBuscarDataset("Select Fecha,Contrato,IdInmueble,IdTercero1,IdTercero2,IdTercero3,Observacion,Grado,FormaPago,Valor,"+
-            "GastosLegales,CuotaInicial,Contado,Financiacion,PlazoFnc,TasaFnc,CuotaFnc,InicioFnc,Extraordinaria,PlazoExtra,TasaExtra,CuotaExtra,InicioExtra,"+
-            "Porcentaje,TipodeAdjudicacion ,FechaContrato, BaseComision  from Adjudicacion where IdAdjudicacion = " + VarIdajudicacion );
-            DtFinanciacion = conexion.MtdBuscarDataset("Select Concepto,NumCuota,Fecha,Capital,Interes,Cuota From Financiacion Where IdAdjudicacion="+VarIdajudicacion);
-           
+            if(tipoContrato == "PIV"){
+                DatosAdjudicacion = conexion.MtdBuscarDataset("Select Fecha,Contrato,IdInmueble,IdTercero1,IdTercero2,IdTercero3,Observacion,Grado,FormaPago,ValorContratoUSD," +
+            "GastosLegales,CuotaInicialUSD,Contado,FinanciacionUSD,PlazoFnc,TasaFnc,CuotaFncUSD,InicioFnc,Extraordinaria,PlazoExtra,TasaExtra,CuotaExtra,InicioExtra," +
+            "Porcentaje,TipodeAdjudicacion ,FechaContrato, BaseComision from Adjudicacion where IdAdjudicacion = " + VarIdajudicacion);
+                DtFinanciacion = conexion.MtdBuscarDataset("Select Concepto,NumCuota,Fecha,Capital_USD,Interes,Cuota_USD From Financiacion Where IdAdjudicacion=" + VarIdajudicacion);
+            }
+            else
+            {
+                DatosAdjudicacion = conexion.MtdBuscarDataset("Select Fecha,Contrato,IdInmueble,IdTercero1,IdTercero2,IdTercero3,Observacion,Grado,FormaPago,Valor," +
+            "GastosLegales,CuotaInicial,Contado,Financiacion,PlazoFnc,TasaFnc,CuotaFnc,InicioFnc,Extraordinaria,PlazoExtra,TasaExtra,CuotaExtra,InicioExtra," +
+            "Porcentaje,TipodeAdjudicacion ,FechaContrato, BaseComision  from Adjudicacion where IdAdjudicacion = " + VarIdajudicacion);
+                DtFinanciacion = conexion.MtdBuscarDataset("Select Concepto,NumCuota,Fecha,Capital,Interes,Cuota From Financiacion Where IdAdjudicacion=" + VarIdajudicacion);
+            }
+                       
             DtpFecha.Text = DatosAdjudicacion.Rows[0][0].ToString();
             DtpFechaContrato.Text = DatosAdjudicacion.Rows[0][25].ToString();
             TxtContrato.Text = DatosAdjudicacion.Rows[0][1].ToString();
@@ -246,7 +287,6 @@ namespace CarteraGeneral
 
         private void MtdLoadMod()
         {
-           
          
             MtdDatosAdjudicacion();
             MtdDatosCtaIni();
@@ -281,6 +321,27 @@ namespace CarteraGeneral
             MtdDiferencia();
         }
 
+        private void MtdLoadPIV()
+        {
+
+            MtdDatosAdjudicacion();
+            MtdDatosCtaIni();
+            MtdDatosContado();
+
+            switch (CmbFormaPago.Text)
+            {
+                case "Credicontado":
+                    MtdCredicontado();
+                    break;
+
+                case "Credito":
+                    MtdCredito();
+                    break;
+                default:
+                    break;
+            }
+            MtdDiferencia();
+        }
         //===================================================================================================================================================
         // I N I C I O   M E T O D O   D A T O S   C T A   I N I C I A L
         //===================================================================================================================================================
@@ -291,14 +352,30 @@ namespace CarteraGeneral
             DgvCtaInicial.Columns[1].DataPropertyName = "Mes";
             DgvCtaInicial.Columns[2].DataPropertyName = "Ano";
             DgvCtaInicial.Columns[3].DataPropertyName = "Valor";
-            System.Data.DataTable DtDatosReg = conexion.MtdBuscarDataset("select day(fecha) Dia , MONTH(fecha) Mes,year(fecha) Ano," +
-            "Capital from financiacion where Concepto= 'CI' AND idadjudicacion='" + LblAdjudicacion.Text + "'");
-            for (int i = 0; i < (DtDatosReg.Rows.Count); i++)
+            System.Data.DataTable DtDatosReg;
+            if (tipoContrato == "PIV")
             {
-                DgvCtaInicial.Rows.Add(DtDatosReg.Rows[i][0], DtDatosReg.Rows[i][1], DtDatosReg.Rows[i][2], DtDatosReg.Rows[i][3]);
+                DtDatosReg = conexion.MtdBuscarDataset("select day(fecha) Dia , MONTH(fecha) Mes,year(fecha) Ano," +
+            "Capital_USD, Cuota_USD from financiacion where Concepto= 'CI' AND idadjudicacion='" + LblAdjudicacion.Text + "'");
+                for (int i = 0; i < (DtDatosReg.Rows.Count); i++)
+                {
+                    DgvCtaInicial.Rows.Add(DtDatosReg.Rows[i][0], DtDatosReg.Rows[i][1], DtDatosReg.Rows[i][2], DtDatosReg.Rows[i][3],
+                        DtDatosReg.Rows[i][4]);
 
+                }
             }
+            else
+            {
+                DtDatosReg = conexion.MtdBuscarDataset("select day(fecha) Dia , MONTH(fecha) Mes,year(fecha) Ano," +
+            "Capital from financiacion where Concepto= 'CI' AND idadjudicacion='" + LblAdjudicacion.Text + "'");
+                for (int i = 0; i < (DtDatosReg.Rows.Count); i++)
+                {
+                    DgvCtaInicial.Rows.Add(DtDatosReg.Rows[i][0], DtDatosReg.Rows[i][1], DtDatosReg.Rows[i][2], DtDatosReg.Rows[i][3]);
 
+                }
+            }
+            
+            
             CuentaIni = DgvCtaInicial.RowCount - 1;
         }
         //===================================================================================================================================================
@@ -2898,24 +2975,15 @@ namespace CarteraGeneral
 
         #endregion
 
+        private void FrmAdjudicacion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conexion = null;
+            consultar = null;
+        }
 
-       
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
     }
 }

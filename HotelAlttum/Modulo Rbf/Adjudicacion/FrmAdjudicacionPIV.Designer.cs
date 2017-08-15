@@ -138,6 +138,9 @@
             this.txtValorIni = new System.Windows.Forms.TextBox();
             this.lblErrorCtaInicial = new System.Windows.Forms.Label();
             this.PnlTotalFnc = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSumaFnc = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtTotalFinanciacion = new System.Windows.Forms.TextBox();
@@ -1257,14 +1260,54 @@
             // 
             this.PnlTotalFnc.BackColor = System.Drawing.Color.Transparent;
             this.PnlTotalFnc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PnlTotalFnc.Controls.Add(this.label5);
+            this.PnlTotalFnc.Controls.Add(this.label8);
+            this.PnlTotalFnc.Controls.Add(this.txtSumaFnc);
             this.PnlTotalFnc.Controls.Add(this.label19);
             this.PnlTotalFnc.Controls.Add(this.label23);
             this.PnlTotalFnc.Controls.Add(this.txtTotalFinanciacion);
             this.PnlTotalFnc.Enabled = false;
-            this.PnlTotalFnc.Location = new System.Drawing.Point(646, 493);
+            this.PnlTotalFnc.Location = new System.Drawing.Point(646, 450);
             this.PnlTotalFnc.Name = "PnlTotalFnc";
-            this.PnlTotalFnc.Size = new System.Drawing.Size(194, 101);
+            this.PnlTotalFnc.Size = new System.Drawing.Size(194, 160);
             this.PnlTotalFnc.TabIndex = 360;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(27, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 26);
+            this.label5.TabIndex = 210;
+            this.label5.Text = "SUMA VALOR CUOTA +\nNº DE CUOTAS FNC";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 35);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 209;
+            this.label8.Text = "T o t a l:";
+            // 
+            // txtSumaFnc
+            // 
+            this.txtSumaFnc.AcceptsReturn = true;
+            this.txtSumaFnc.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSumaFnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSumaFnc.Location = new System.Drawing.Point(34, 51);
+            this.txtSumaFnc.Name = "txtSumaFnc";
+            this.txtSumaFnc.ReadOnly = true;
+            this.txtSumaFnc.Size = new System.Drawing.Size(138, 20);
+            this.txtSumaFnc.TabIndex = 208;
+            this.txtSumaFnc.Text = "0";
+            this.txtSumaFnc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -1272,7 +1315,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(13, 4);
+            this.label19.Location = new System.Drawing.Point(13, 80);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(168, 26);
             this.label19.TabIndex = 207;
@@ -1284,7 +1327,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(5, 41);
+            this.label23.Location = new System.Drawing.Point(5, 113);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(46, 13);
             this.label23.TabIndex = 197;
@@ -1295,7 +1338,7 @@
             this.txtTotalFinanciacion.AcceptsReturn = true;
             this.txtTotalFinanciacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTotalFinanciacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalFinanciacion.Location = new System.Drawing.Point(33, 57);
+            this.txtTotalFinanciacion.Location = new System.Drawing.Point(33, 129);
             this.txtTotalFinanciacion.Name = "txtTotalFinanciacion";
             this.txtTotalFinanciacion.ReadOnly = true;
             this.txtTotalFinanciacion.Size = new System.Drawing.Size(138, 20);
@@ -1545,5 +1588,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaUSD;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuota;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumReciboCuota;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSumaFnc;
     }
 }

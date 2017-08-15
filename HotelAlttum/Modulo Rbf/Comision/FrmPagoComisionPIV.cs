@@ -83,7 +83,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     {
                         try
                         {
-                            if (comision.PagoComision(cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
+                            if (comision.PagoComision("sp_PagoComision_PIV",cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
                             {
                                 MessageBox.Show("Se realizó el registro del pago exitosamente.", "REGISTRO EXITOSO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 btnPagar.Enabled = false;
@@ -109,54 +109,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
         private void btnActualizar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
-            {
-                lblMensaje.Text = "";
-                lblMensajeComision.Text = "";
-                cmbVecesPagoComision.Text = "";
-                cmbContrato.DataSource = comision.ListaContratos("sp_Alttum_Contratos", "Contrato");
-                if (comision.ContadorContratos > 0)
-                {
-                    btnPagar.Enabled = true;
-                    cmbVecesPagoComision.Enabled = true;
-                    cmbContrato.Enabled = true;
-                    lblMensaje.Text = "E l i g a   u n   c o n t r a t o.";
-                    if (cmbContrato.DataSource != null)
-                    {
-                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
-                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                        lblMensaje.Text = "C a r g a   E x i t o s a.";
-                    }
-                    else
-                    {
-                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
-                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                        lblMensaje.Text = "Error cargando los contratos " + comision.Error;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No hay contratos para pagar comisión actualmente.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    lblMensaje.Text = "S i n   c o m i s i o n e s   p e n d i e n t e s   p o r   p a g a r.";
-                    cmbVecesPagoComision.Enabled = false;
-                    cmbContrato.Enabled = false;
-                    cmbContrato.Text = "";
-                    txtCliente.Text = "";
-                    txtInmueble.Text = "";
-                    txtFechaContrato.Text = "";
-                    txtVentaTotal.Text = "";
-                    txtTotalRecaudado.Text = "";
-                    txtTRM.Text = "";
-                    txtPorcentajeComisionado.Text = "";
-                    grwComisiones = null;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sucedio el siguiente inconveniente: " + ex.Message);
-
-            }
+            FrmPagoComisionPIV_Load(sender, e);
         }
 
         private void cmbContrato_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,17 +123,26 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
                 if (comision.cargarInformacionContrato())
                 {
-                    TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
-                    tcrmResponse response = default(tcrmResponse);
-                    response = client.queryTCRM(comision.FechaContrato);
-                    TRM_FechaContrato = response.value.ToString("###,###.###");
+                    if (comision.MarcaDolarTecho == 1 && comision.valTRMcontrato > 0)
+                    {
+                        txtTRM.Text = comision.valTRMcontrato.ToString("###,###.###");
+                    }
+                    else
+                    {
+                        TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
+                        tcrmResponse response = default(tcrmResponse);
+                        response = client.queryTCRM(comision.FechaContrato);
+                        TRM_FechaContrato = response.value.ToString("###,###.###");
+                        txtTRM.Text = TRM_FechaContrato;
+                    }
+                    
 
                     txtCliente.Text = comision.Cliente;
                     txtInmueble.Text = comision.Inmueble;
                     txtFechaContrato.Text = comision.FechaContrato.ToString("dd/MM/yyyy");
                     txtVentaTotal.Text = Convert.ToDouble(comision.TotalVenta).ToString("###,###.###");
                     txtTotalRecaudado.Text = Convert.ToDouble(comision.TotalRecaudado).ToString("###,###.###");
-                    txtTRM.Text = TRM_FechaContrato;
+                    
                     txtPorcentajeComisionado.Text = Convert.ToDouble(comision.PorcentajeComisionado).ToString() + "%";
                     grwComisiones.DataSource = comision.cargarInformacionComisiones();
                     if (txtPorcentajeComisionado.Text == "100%")
@@ -284,8 +246,9 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                             "p a r c i a l   d e   l a s   c o m i s i o n e s.";
                 switch (comision.VecesPuedeComisionarContrato)
                 {
+                    #region "Pago Comisiones"
                     #region "Pago ninguna comision"
-                    
+
                     case "0-24":
                         for (int i = 0; i < 24; i++)
                         {
@@ -3070,6 +3033,8 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         lblMensajeComision.Text = "S e   p u e d e   p a g a r   l a   t o t a l i d a d   d e   l a s   c o m i s i o n e s.";
                         cmbVecesPagoComision.Text = "1";
                         break;
+                    #endregion
+
                     #endregion
                 }
 

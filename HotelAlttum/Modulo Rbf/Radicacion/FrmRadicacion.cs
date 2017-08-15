@@ -112,7 +112,7 @@ namespace CarteraGeneral
             //"Porcentaje,TipodeAdjudicacion   from Adjudicacion where IdAdjudicacion = " + VarIdajudicacion);
 
             DatosAdjudicacion = conexion.MtdBuscarDataset("Select adj.FechaContrato,adj.Contrato,adj.IdTercero1,adj.IdTercero2,adj.IdTercero3,adj.IdInmueble,inm.Villa, inm.Unidad, inm.Semana, inm.Temporada," +
-                 "inm.TipodeSemana,adj.Observacion,adj.Grado,adj.FormaPago,adj.Valor,adj.GastosLegales,adj.CuotaInicial,adj.Financiacion,adj.Contado,adj.Extraordinaria,adj.TipoOperacion "+
+                 "inm.TipodeSemana,adj.Observacion,adj.Grado,adj.FormaPago,adj.Valor,adj.GastosLegales,adj.CuotaInicial,adj.Financiacion,adj.Contado,adj.Extraordinaria,adj.TipoOperacion,adj.trm "+
                  "FROM Adjudicacion adj "+
                  "INNER JOIN inmuebles inm ON inm.IdInmueble = adj.IdInmueble "+
                  "WHERE adj.IdAdjudicacion = " + VarIdajudicacion);
@@ -154,6 +154,7 @@ namespace CarteraGeneral
             this.TxtValorContado.Text = String.Format("{0:#,##0.00;-#,##0.00;0.00}", decimal.Parse(this.TxtValorContado.Text));
             TxtValorExtra.Text = DatosAdjudicacion.Rows[0][19].ToString();
             TipoContrato = DatosAdjudicacion.Rows[0][20].ToString();
+            txtTRMContrato.Text = DatosAdjudicacion.Rows[0][21].ToString();
             //TxtPlazoFnc.Text = DatosAdjudicacion.Rows[0][14].ToString();
             //TxtTasaFnc.Text = DatosAdjudicacion.Rows[0][15].ToString();
             //TxtCuotaFnc.Text = DatosAdjudicacion.Rows[0][16].ToString();
@@ -274,7 +275,7 @@ namespace CarteraGeneral
                     ClsComision comision = new ClsComision();
                     if (TipoContrato.Equals("Normal"))
                     {
-                        comision.ActualizarComisiones(TxtAdjudicacion.Text);
+                        comision.ActualizarComisiones(TxtAdjudicacion.Text,txtTRMContrato.Text);
                     }
                     else if(TipoContrato.Equals("PIV")){
                         comision.ActualizarComisiones_PIV(TxtAdjudicacion.Text);

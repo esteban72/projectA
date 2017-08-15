@@ -42,7 +42,7 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     {
                         try
                         {
-                            if (comision.PagoComision(cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
+                            if (comision.PagoComision("sp_PagoComision", cmbContrato.SelectedValue.ToString(), cmbVecesPagoComision.Text))
                             {
                                 MessageBox.Show("Se realizó el registro del pago exitosamente.", "REGISTRO EXITOSO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 btnPagar.Enabled = false;
@@ -123,10 +123,18 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
 
                 if (comision.cargarInformacionContrato())
                 {
-                    TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
-                    tcrmResponse response = default(tcrmResponse);
-                    response = client.queryTCRM(comision.FechaContrato);
-                    TRM_FechaContrato = response.value.ToString("###,###.###");
+                    if (comision.MarcaDolarTecho == 1 && comision.valTRMcontrato > 1)
+                    {
+                        txtTRM.Text = comision.valTRMcontrato.ToString("###,###.###");
+                    }
+                    else
+                    {
+                        TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
+                        tcrmResponse response = default(tcrmResponse);
+                        response = client.queryTCRM(comision.FechaContrato);
+                        TRM_FechaContrato = response.value.ToString("###,###.###");
+                        txtTRM.Text = TRM_FechaContrato;
+                    }
 
                     txtCliente.Text = comision.Cliente;
                     txtInmueble.Text = comision.Inmueble;
@@ -348,6 +356,11 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             {
                MessageBox.Show("Ups! hubo un inconveniente: "+ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -42,6 +42,8 @@
             this.BtnRsmCredito = new DevExpress.XtraBars.BarButtonItem();
             this.BtnExportar = new DevExpress.XtraBars.BarButtonItem();
             this.btnPIV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddPoblado = new DevExpress.XtraBars.BarButtonItem();
+            this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -84,9 +86,11 @@
             this.BtnRecaudoDetallado,
             this.BtnRsmCredito,
             this.BtnExportar,
-            this.btnPIV});
+            this.btnPIV,
+            this.btnAddPoblado,
+            this.btnActualizar});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 14;
+            this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -206,6 +210,24 @@
             this.btnPIV.Name = "btnPIV";
             this.btnPIV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPIV_ItemClick);
             // 
+            // btnAddPoblado
+            // 
+            this.btnAddPoblado.Caption = "Nuevo Modulo Adicion Normal";
+            this.btnAddPoblado.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddPoblado.Glyph")));
+            this.btnAddPoblado.Id = 14;
+            this.btnAddPoblado.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAddPoblado.LargeGlyph")));
+            this.btnAddPoblado.Name = "btnAddPoblado";
+            this.btnAddPoblado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddPoblado_ItemClick);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Caption = "Actualizar";
+            this.btnActualizar.Glyph = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Glyph")));
+            this.btnActualizar.Id = 15;
+            this.btnActualizar.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnActualizar.LargeGlyph")));
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActualizar_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -216,9 +238,11 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.BtnAdd);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddPoblado);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnAddMonterey);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPIV);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnAdd);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnActualizar);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnMod);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnDel);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnCambiarBase);
@@ -487,5 +511,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraGrid.Columns.GridColumn FechaContrato;
         private DevExpress.XtraBars.BarButtonItem btnPIV;
+        private DevExpress.XtraBars.BarButtonItem btnAddPoblado;
+        private DevExpress.XtraBars.BarButtonItem btnActualizar;
     }
 }

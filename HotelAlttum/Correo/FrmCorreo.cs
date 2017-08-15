@@ -15,6 +15,7 @@ namespace CarteraGeneral.Correo
     public partial class FrmCorreo : Form
     {
         public string contrato;
+        public string mensaje = "";
         public FrmCorreo()
         {
             InitializeComponent();
@@ -87,7 +88,14 @@ namespace CarteraGeneral.Correo
 
         private void FrmCorreo_Load(object sender, EventArgs e)
         {
-            txtAsunto.Text = "Corrección de personas que comisionan contrato " + contrato;
+            if(mensaje != ""){
+                txtAsunto.Text = mensaje + " " + contrato;
+            }
+            else
+            {
+                txtAsunto.Text = "Corrección contrato "+contrato;
+            }
+            
         }
         
     }

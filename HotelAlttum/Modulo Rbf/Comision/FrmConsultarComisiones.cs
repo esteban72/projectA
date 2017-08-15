@@ -91,10 +91,18 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     
                     if (comision.cargarInformacionContrato() && comision.NumVecesComisionada())
                     {
-                        TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
-                        tcrmResponse response = default(tcrmResponse);
-                        response = client.queryTCRM(comision.FechaContrato);
-                        TRM_FechaContrato = response.value.ToString("###,###.###");
+                        if (comision.MarcaDolarTecho == 1 && comision.valTRMcontrato > 1)
+                        {
+                            txtTRM.Text = comision.valTRMcontrato.ToString("###,###.###");
+                        }
+                        else
+                        {
+                            TCRMServicesInterfaceClient client = new TCRMServicesInterfaceClient();
+                            tcrmResponse response = default(tcrmResponse);
+                            response = client.queryTCRM(comision.FechaContrato);
+                            TRM_FechaContrato = response.value.ToString("###,###.###");
+                            txtTRM.Text = TRM_FechaContrato;
+                        }
 
                         txtVecesPagadaComision.Text = comision.VecesContratoComisionado;
                         txtCliente.Text = comision.Cliente;
@@ -102,7 +110,6 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                         txtFechaContrato.Text = comision.FechaContrato.ToString("dd/MM/yyyy");
                         txtVentaTotal.Text = Convert.ToDouble(comision.TotalVenta).ToString("###,###.###");
                         txtTotalRecaudado.Text = Convert.ToDouble(comision.TotalRecaudado).ToString("###,###.###");
-                        txtTRM.Text = TRM_FechaContrato;
                         txtPorcentajeComisionado.Text = Convert.ToDouble(comision.PorcentajeComisionado).ToString() + "%";
                         txtTotalComisionPagada.Text = Convert.ToDouble(comision.TotalPagoComision).ToString("###,###.###");
                         grdConsultarComisiones.DataSource = comision.cargarInformacionComisiones();
