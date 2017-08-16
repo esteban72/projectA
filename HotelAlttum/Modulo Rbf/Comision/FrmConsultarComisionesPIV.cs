@@ -15,68 +15,141 @@ using DevExpress.XtraPrinting;
 
 namespace CarteraGeneral.Modulo_Rbf.Comision
 {
-    public partial class FrmConsultarComisiones : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FrmConsultarComisionesPIV : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         ClsComision comision = new ClsComision();
         string TRM_FechaContrato;
         string contrato;
         string Titulo;
-        public FrmConsultarComisiones()
+        public FrmConsultarComisionesPIV()
         {
             InitializeComponent();
         }
 
         
 
-        private void FrmConsultarComisiones_Load(object sender, EventArgs e)
+        private void FrmConsultarComisionesPIV_Load(object sender, EventArgs e)
         {
-            try { 
-            lblMensaje.Text = "";
-            dpFecha2Comision.Enabled = false;
-            cmbContrato.DataSource = comision.ListaContratos("sp_Alttum_ContratosComisionados", "Contrato");
-            if (comision.ContadorContratos > 0)
+            try
             {
-                btnExcel.Enabled = true;
-                btnImprimir.Enabled = true;
-                cmbContrato.Enabled = true;
-                if (cmbContrato.DataSource != null)
+                lblMensaje.Text = "";
+                dpFecha2Comision.Enabled = false;
+                cmbContrato.DataSource = comision.ListaContratos("sp_PIV_ContratosComisionados", "Contrato");
+                if (comision.ContadorContratos > 0)
                 {
-                    pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
-                    pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                    lblMensaje.Text = comision.ContadorContratos+"  c o n t r a t o (s)   c a r g a d o (s).";
+                    btnExcel.Enabled = true;
+                    btnImprimir.Enabled = true;
+                    cmbContrato.Enabled = true;
+                    if (cmbContrato.DataSource != null)
+                    {
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.comprobado;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
+                        lblMensaje.Text = comision.ContadorContratos + "  c o n t r a t o (s)   c a r g a d o (s).";
+                    }
+                    else
+                    {
+                        pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
+                        pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
+                        lblMensaje.Text = "Error cargando los contratos " + comision.Error;
+                    }
                 }
                 else
                 {
-                    pictureBoxVerificar.Image = global::CarteraGeneral.RecursosIconos.error;
-                    pictureBoxVerificar.SizeMode = PictureBoxSizeMode.StretchImage;
-                    lblMensaje.Text = "Error cargando los contratos " + comision.Error;
+                    lblMensaje.Text = "S i n   c o m i s i o n e s   p a g a d a s.";
+                    btnExcel.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    cmbContrato.Enabled = false;
                 }
-            }
-            else
-            {
-                lblMensaje.Text = "S i n   c o m i s i o n e s   p a g a d a s.";
-                btnExcel.Enabled = false;
-                btnImprimir.Enabled = false;
-                cmbContrato.Enabled = false;
-            }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sucedio el siguiente inconveniente: " + ex.Message);
             }
-
         }
 
         
+        private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            comision.exportarArchivo(grdExportar, sender, e);
+        }
+
+        private void btnImprimir_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            imprimir(grdConsultarComisiones, "COMISIONES PAGADAS");
+        }
+
+        
+        private void imprimir(GridControl GrdGrilla, string MiTitulo)
+        {
+            Titulo = MiTitulo;
+            PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
+            link.Component = GrdGrilla;
+            link.CreateMarginalHeaderArea += new CreateAreaEventHandler(Link_CreateMarginalHeaderArea);
+            link.CreateDocument();
+            link.ShowPreview();
+        }
+
+        private void Link_CreateMarginalHeaderArea(object sender, CreateAreaEventArgs e)
+        {
+            DevExpress.XtraPrinting.TextBrick brick;
+            DevExpress.XtraPrinting.ImageBrick imagen;
+            brick = e.Graph.DrawString(Titulo, Color.Navy, new RectangleF(160, 0, 455, 60), DevExpress.XtraPrinting.BorderSide.None);
+            imagen = e.Graph.DrawImage(global::CarteraGeneral.RecursosIconos.LogoAlttum, new RectangleF(10, 0, 150, 50), DevExpress.XtraPrinting.BorderSide.None, Color.Transparent);
+            brick.Font = new Font("Arial", 10, System.Drawing.FontStyle.Bold);
+            //brick.BackColor = Color.Blue;
+            brick.ForeColor = Color.Gray;
+            brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
+        }
+
         private void chkRangoFechas_CheckedChanged(object sender, EventArgs e)
         {
-            if(chkRangoFechas.Checked){
+            if (chkRangoFechas.Checked)
+            {
                 dpFecha2Comision.Enabled = true;
             }
             else
             {
                 dpFecha2Comision.Enabled = false;
+            }
+        }
+        private void btnActualizar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmConsultarComisionesPIV_Load(sender, e);
+        }
+
+        private void btnBuscarFecha_Click(object sender, EventArgs e)
+        {
+            comision.Fecha1Comision = dpFechaComision.Value;
+            if (dpFecha2Comision.Enabled == true)
+            {
+                comision.Fecha2Comision = dpFecha2Comision.Value;
+                cmbContrato.DataSource = comision.ContratosXFecha("sp_PIV_ContratosXFecha", "Contrato");
+
+            }
+            else
+            {
+                comision.dFecha2Comision = null;
+                cmbContrato.DataSource = comision.ContratosXFecha("sp_PIV_ContratosXFecha", "Contrato");
+            }
+            if (comision.ContadorContratos == 0)
+            {
+                lblMensaje.Text = "0  c o n t r a t o s   e n   l a (s)   f e c h a (s)   s e l e c c i o n a d a (s).";
+                btnExcel.Enabled = false;
+                btnImprimir.Enabled = false;
+                cmbContrato.Enabled = false;
+                cmbContrato.Text = "";
+                txtVecesPagadaComision.Text = "";
+                dpFechaComision.Enabled = false;
+                dpFecha2Comision.Enabled = false;
+                txtCliente.Text = "";
+                txtInmueble.Text = "";
+                txtFechaContrato.Text = "";
+                txtVentaTotal.Text = "";
+                txtTotalRecaudado.Text = "";
+                txtTRM.Text = "";
+                txtPorcentajeComisionado.Text = "";
+                txtTotalComisionPagada.Text = "";
             }
         }
 
@@ -89,10 +162,10 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                 if (comision.ContadorContratos > 0)
                 {
                     lblMensaje.Text = comision.ContadorContratos + "  c o n t r a t o (s)   c a r g a d o (s).";
-                    
-                    if (comision.cargarInformacionContrato() && comision.NumVecesComisionada())
+
+                    if (comision.cargarInformacionContratoPIV() && comision.NumVecesComisionada())
                     {
-                        if (comision.MarcaDolarTecho == 1 && comision.valTRMcontrato > 1)
+                        if (comision.MarcaDolarTecho == 1 && comision.valTRMcontrato > 0)
                         {
                             txtTRM.Text = comision.valTRMcontrato.ToString("###,###.###");
                         }
@@ -139,94 +212,22 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show("Ups! Hubo el siguiente inconveniente: " + ex.Message + " " + comision.Error, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        private void btnBuscarFecha_Click(object sender, EventArgs e)
-        {
-            comision.Fecha1Comision = dpFechaComision.Value;
-            if(dpFecha2Comision.Enabled == true){
-                comision.Fecha2Comision = dpFecha2Comision.Value;
-                cmbContrato.DataSource = comision.ContratosXFecha("sp_Alttum_ContratosXFecha", "Contrato");
-                
-            }
-            else
-            {
-                comision.dFecha2Comision = null;
-                cmbContrato.DataSource = comision.ContratosXFecha("sp_Alttum_ContratosXFecha", "Contrato");
-            }
-            if (comision.ContadorContratos == 0)
-            {
-                lblMensaje.Text = "0  c o n t r a t o s   e n   l a (s)   f e c h a (s)   s e l e c c i o n a d a (s).";
-                btnExcel.Enabled = false;
-                btnImprimir.Enabled = false;
-                cmbContrato.Enabled = false;
-                cmbContrato.Text = "";
-                txtVecesPagadaComision.Text = "";
-                dpFechaComision.Enabled = false;
-                dpFecha2Comision.Enabled = false;
-                txtCliente.Text = "";
-                txtInmueble.Text = "";
-                txtFechaContrato.Text = "";
-                txtVentaTotal.Text = "";
-                txtTotalRecaudado.Text = "";
-                txtTRM.Text = "";
-                txtPorcentajeComisionado.Text = "";
-                txtTotalComisionPagada.Text = "";
-            }
-        }
 
-        private void btnActualizar_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FrmConsultarComisiones_Load(sender, e);
-        }
-
-        private void btnExcel_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            comision.exportarArchivo(grdExportar, sender, e);            
-        }
-
-        private void btnImprimir_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            imprimir(grdConsultarComisiones,"COMISIONES PAGADAS");
-        }
-        
-        private void FrmConsultarComisiones_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmConsultarComisionesPIV_FormClosing(object sender, FormClosingEventArgs e)
         {
             comision = null;
         }
 
-        
-        private void imprimir(GridControl GrdGrilla, string MiTitulo)
-        {
-            Titulo = MiTitulo;
-            PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
-            link.Component = GrdGrilla;
-            link.CreateMarginalHeaderArea += new CreateAreaEventHandler(Link_CreateMarginalHeaderArea);
-            link.CreateDocument();
-            link.ShowPreview();
-        }
-
-        private void Link_CreateMarginalHeaderArea(object sender, CreateAreaEventArgs e)
-        {
-            DevExpress.XtraPrinting.TextBrick brick;
-            DevExpress.XtraPrinting.ImageBrick imagen;
-            brick = e.Graph.DrawString(Titulo, Color.Navy, new RectangleF(160, 0, 455, 60), DevExpress.XtraPrinting.BorderSide.None);
-            imagen = e.Graph.DrawImage(global::CarteraGeneral.RecursosIconos.LogoAlttum, new RectangleF(10, 0, 150, 50), DevExpress.XtraPrinting.BorderSide.None, Color.Transparent);
-            brick.Font = new Font("Arial", 10, System.Drawing.FontStyle.Bold);
-            //brick.BackColor = Color.Blue;
-            brick.ForeColor = Color.Gray;
-            brick.StringFormat = new DevExpress.XtraPrinting.BrickStringFormat(StringAlignment.Center);
-        }
-
-        
         private void txtFiltrarContrato_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter)){
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
                 contrato = txtFiltrarContrato.Text;
-                comision.ConsultarContrato("sp_Alttum_FiltrarContrato", contrato);
+                comision.ConsultarContrato("sp_PIV_FiltrarContrato", contrato);
                 if (comision.ContadorContratos > 0)
                 {
                     cmbContrato.Text = contrato;
@@ -262,10 +263,12 @@ namespace CarteraGeneral.Modulo_Rbf.Comision
                     txtTotalComisionPagada.Text = "";
                     grdConsultarComisiones.Enabled = false;
                 }
-            }            
+            }
         }
 
         
+
         
+
     }
 }

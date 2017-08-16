@@ -197,7 +197,6 @@ namespace CarteraGeneral.Clases
         #endregion
 
         
-
         #endregion
 
         #region "Metodos"
@@ -392,6 +391,8 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        /*Este metodo lo utiliza el modulo de pago de comisiones sobre el 75%, se separo los contratos
+         antiguos con los nuevos, este metodo maneja la misma logica que el metodo vecesPagoComisionContrato*/
         public Boolean vecesPagoComisionContrato_Antiguo(string campo, int ingreso)
         {
             try
@@ -504,6 +505,10 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        /*En este momento hay 2 tipos de rechazo, el de los comisionistas, por si la persona
+         * encargada se equivoco radicando las personas y el rechazo de adjudicaciones, en caso
+         * tambien de alguna equivocacion por medio del sp sp_Rechazar_Operacion es posible
+         * realizar estos rechazos */
         public Boolean RechazarOperacion(string contrato, string tipoRechazo)
         {
             try
@@ -528,7 +533,7 @@ namespace CarteraGeneral.Clases
             }
         }
 
-        
+        /*Metodo para exportar a excel*/
         public void exporta_a_excel(DataGridView tabla)
         {
             //Microsoft.Office.Interop.Excel.ApplicationClass excel = new ApplicationClass();
@@ -682,7 +687,8 @@ namespace CarteraGeneral.Clases
                 MysqlConexion.Close();
             }
         }
-
+        /*metodo privado que lo utiliza el metodo cargarInformacionContrato_Monterrey()
+         para saber la fecha de un contrato*/
         private void fechaContrato()
         {
             MySqlCommand Query = new MySqlCommand();
@@ -752,7 +758,8 @@ namespace CarteraGeneral.Clases
         #endregion
 
         #region "Metodos PIV"
-
+        /*Metodo para agregar los valores de pago de comisiones a las personas que comisionan
+         tambien se trae con que trm se hizo el contrato*/
         public void ActualizarComisiones_PIV(string IdAdjudicacion)
         {
             string IdTercero;
@@ -800,7 +807,9 @@ namespace CarteraGeneral.Clases
             }
         }
 
-
+        /*Es similar a los demas metodos para cargar informacion, solo que no se filtran fechas
+         ya que estos contratos se empezaron a realizar despues del 01-06-2017 y se tienen que
+         pagar 24 comisiones*/
         public bool cargarInformacionContratoPIV()
         {
 
@@ -845,6 +854,7 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        /*Metodo generico para consultar un valor numerico*/
         #endregion
         public void Consultar(string Sentencia)
         {
@@ -873,6 +883,7 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        /*metodo para consultar un contrato*/
         public void ConsultarContrato(string sentencia, string campo)
         {
             MySqlCommand Query = new MySqlCommand();
@@ -902,8 +913,9 @@ namespace CarteraGeneral.Clases
             }
         }
 
-        #region "Metodos para consultas comisiones pagadas"
 
+        #region "Metodos para consultas comisiones pagadas"
+        //Metodo que trae todos los contratos que se han comisionado de monterrey
         public List<string> ListaContratos_Monterrey(string Sentencia, string Campo)
         {
 
@@ -936,6 +948,7 @@ namespace CarteraGeneral.Clases
             }
         }
 
+        /*Metodo que se utiliza para validar cuantas veces se ha comisionado un contrato*/
         public bool NumVecesComisionada()
         {
             try

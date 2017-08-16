@@ -75,7 +75,7 @@ namespace CarteraGeneral.Correo
 
                 SmtpClient cliente = new SmtpClient("smtp.gmail.com", 25);
                 cliente.EnableSsl = true;
-                cliente.Credentials = new NetworkCredential("desarrolladorab@alttum.land", "E$teban07052011.");
+                cliente.Credentials = new NetworkCredential("desarrolladorab@alttum.land", "D3sarrollador.");
                 cliente.Send(mail);
                 MessageBox.Show("Correo enviado exitosamente.", "¡EXITO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
